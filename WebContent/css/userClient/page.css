@@ -1,7 +1,0 @@
-/* 分页 */
-.PagingUl li{display:inline-block; border: 1px solid #ccc; height: 22px; line-height:22px; 
-padding-left: 8px; padding-right: 8px;background: #fcfcfc; margin-left: 5px; margin-right: 5px;}
-.PagingUl .PagingUlHover{border: 0px; background:0px; font-weight: bold;}
-.PagingUl li a{color:#505050;}
-.PagingUl li:hover{border: 1px solid #8f8f8f;}
-.PagingUl .PagingUlHover:hover{border: 0px;background:0px;}
