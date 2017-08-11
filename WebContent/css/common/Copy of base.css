@@ -1,0 +1,477 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+body {
+	font-size: 12px;
+	font-family: "微软雅黑"
+}
+
+a {
+	text-decoration: none;
+	color: #3c3c3c
+}
+
+img {
+	border: 0
+}
+
+.fl {
+	float: left
+}
+
+.fr {
+	float: right
+}
+
+.cb {
+	clear: both
+}
+
+.ov {
+	overflow: hidden
+}
+
+.middle {
+	vertical-align: middle
+}
+
+.middleTop {
+	vertical-align: top
+}
+
+.w_1160 {
+	width: 1160px;
+	margin: 0 auto
+}
+
+.minW_1160 {
+	min-width: 1160px
+}
+
+.w_1200 {
+	width: 1200px;
+	margin: 0 auto
+}
+
+.bold {
+	font-weight: 700
+}
+
+.icon {
+	background-image: url(../../images/dum_icon.png)
+}
+
+.clear {
+	clear: both
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.clearfix {
+	display: inline-block
+}
+
+* html .clearfix {
+	height: 1%
+}
+
+.vb {
+	vertical-align: middle
+}
+
+.clearfix {
+	display: block
+}
+
+.pr {
+	position: relative
+}
+
+.fixed {
+	position: fixed
+}
+
+.tc {
+	text-align: center
+}
+
+.tl {
+	text-align: left
+}
+
+.tr {
+	text-align: right
+}
+
+.cursor {
+	cursor: pointer
+}
+
+.mt5 {
+	margin-top: 5px
+}
+
+.mt10 {
+	margin-top: 10px
+}
+
+.mt15 {
+	margin-top: 15px
+}
+
+.mt20 {
+	margin-top: 20px
+}
+
+.mt30 {
+	margin-top: 30px
+}
+
+.ml5 {
+	margin-left: 5px
+}
+
+.ml10 {
+	margin-left: 10px
+}
+
+.ml15 {
+	margin-left: 15px
+}
+
+.ml20 {
+	margin-left: 20px
+}
+
+.ml30 {
+	margin-left: 30px
+}
+
+.ml50 {
+	margin-left: 50px
+}
+
+.mr5 {
+	margin-right: 5px
+}
+
+.mr10 {
+	margin-right: 10px
+}
+
+.mr15 {
+	margin-right: 15px
+}
+
+.mr20 {
+	margin-right: 20px
+}
+
+.mr30 {
+	margin-right: 30px
+}
+
+.mb5 {
+	margin-bottom: 5px
+}
+
+.mb10 {
+	margin-bottom: 10px
+}
+
+.mb20 {
+	margin-bottom: 20px
+}
+
+.mb30 {
+	margin-bottom: 30px
+}
+
+.pl15 {
+	padding-left: 15px
+}
+
+.pl20 {
+	padding-left: 20px
+}
+
+.pr20 {
+	padding-right: 20px
+}
+
+.pt15 {
+	padding-top: 15px
+}
+
+.pt30 {
+	padding-top: 30px
+}
+
+.pb15 {
+	padding-bottom: 15px
+}
+
+.border {
+	border: 1px solid #DDD
+}
+
+.none {
+	display: none
+}
+
+.fz10 {
+	font-size: 10px
+}
+
+.fz12 {
+	font-size: 12px
+}
+
+.fz14 {
+	font-size: 14px
+}
+
+.fz15 {
+	font-size: 15px
+}
+
+.fz16 {
+	font-size: 16px
+}
+
+.fz18 {
+	font-size: 18px
+}
+
+.fz20 {
+	font-size: 20px
+}
+
+.fz22 {
+	font-size: 22px
+}
+
+.fz24 {
+	font-size: 24px
+}
+
+.fz30 {
+	font-size: 30px
+}
+
+.fz36 {
+	font-size: 36px
+}
+
+.fz46 {
+	font-size: 46px
+}
+
+.fw {
+	font-weight: 700
+}
+
+.lightblack,.lightblack * {
+	color: #666
+}
+
+.orange,.orange * {
+	color: #ff854e
+}
+
+.white,.white * {
+	color: #fff
+}
+
+.blue,.blue * {
+	color: #ff8f3d
+}
+
+.pink,.pink * {
+	color: #ed7371
+}
+
+.green,.green * {
+	color: #57c0a1
+}
+
+.grayblue,.grayblue * {
+	color: #6eaee5
+}
+
+.khaki,.khaki * {
+	color: #eeb53b
+}
+
+.oranges,.oranges * {
+	color: #ff8261
+}
+
+.gray,.gray * {
+	color: #ccc
+}
+
+.red,.red * {
+	color: red
+}
+
+.mt15 span {
+	color: #02589d;
+	font-size: 18px;
+	font-weight: 600
+}
+
+.btn_blue {
+	display: inline-block;
+	background-color: #5e7ed7;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 12px;
+	width: 80px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center
+}
+
+.btn_red {
+	display: inline-block;
+	background-color: #ff8468;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-size: 12px;
+	width: 80px;
+	height: 26px;
+	text-align: center;
+	line-height: 26px
+}
+
+.color50 {
+	color: #505050
+}
+
+.color68 {
+	color: #ff8468
+}
+
+.colorF8 {
+	color: #ff8f3d
+}
+
+.color8f {
+	color: #8f8f8f
+}
+
+.color8468 {
+	color: #ff8468
+}
+
+.color6e {
+	color: #6eaee5
+}
+
+.backFc {
+	background: #FCFCFC
+}
+
+.backFFF {
+	background: #fff
+}
+
+.text {
+	width: 195px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 5px;
+	border: 1px solid #CCC
+}
+
+.text1 {
+	width: 400px;
+	height: 28px;
+	line-height: 28px;
+	padding-left: 5px;
+	border: 1px solid #CCC
+}
+
+textarea {
+	resize: none
+}
+
+.breadLines a {
+	font-size: 14px;
+	display: inline-block;
+	margin-left: 5px;
+	margin-right: 5px;
+	vertical-align: middle
+}
+
+.breadLines .lineTit {
+	color: #ff8f3d;
+	vertical-align: middle
+}
+
+.breadLines {
+	margin-top: 15px;
+	margin-bottom: 15px
+}
+
+.breadLines span {
+	vertical-align: middle
+}
+
+.waring {
+	border: 1px solid red!important
+}
+
+.fly {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	z-index: 999
+}
+
+.verify {
+	background: url(../../../v2/images/jyIcon.png) no-repeat -22px -32px;
+	width: 206px;
+	height: 90px;
+	position: absolute;
+	top: 61px;
+	display: none
+}
+
+.verifyClose {
+	background: url(../../../v2/images/jyIcon.png) no-repeat -223px -15px;
+	width: 15px;
+	height: 15px;
+	float: right;
+	margin-right: 27px;
+	margin-top: 16px;
+	cursor: pointer
+}
+
+.verifySize {
+	padding: 5px 10px 5px 10px;
+	text-align: center;
+	color: red
+}
+
+ins#qiao-wrap {
+	display: none
+}
+
+.sprite {
+	background-image: url(../../../v2/images/sprite.png);
+	background-repeat: no-repeat
+}
+

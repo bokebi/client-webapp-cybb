@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>我的服务进程</title>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/ordServiceCompany.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/page.css">
+<script type="text/javascript" src="${ctxPath}/js/userClient/ordServiceCompany.js"></script>
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+<div class="w_1160 wrap clearfix">
+	<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+	<div id="content">
+	<div class="clientRight">
+		<div class="baseMargin ov">
+			<h4 class="infoTit fl"><span>我的服务进程</span></h4>
+			<div class="fl speakerNews"></div>
+			 <div class="fr mr10"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2853528177&site=qq&menu=yes">
+			 	<img src="${ctxPath}/images/img/kfIcon.png" class="middle mr5" />
+			 	<span class="middle color68">联系客服</span></a></div> 
+			<p class="cb"></p>
+			
+			<!-- 订单list -->
+			<table class="orderTab" cellpadding="0" cellspacing="0">
+					<th width="10%"  class="leftBorder">公司名称</th>
+					<th width="10%">服务名称</th>
+					<th width="10%">服务周期</th>
+					<th width="10%">单位</th>
+					<th width="10%">服务状态</th>
+					<th class="rightBorder" width="15%">操作</th>
+				<tbody id="orderBoday">
+				
+				</tbody>
+				<tfoot>
+					<!-- table底部 -->
+					<tr class="footTr">
+						<!-- <td width="15%">&nbsp;<p class="batch">批量完善信息</p></td> -->
+						<td width="15%"></td>
+						<td width="15%" colspan="5" class="tr">
+							<ul class="PagingUl"> </ul>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+			
+		</div>
+	</div>
+</div>
+<%includeFileTemplate("renewals.html"){ %><%}%>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+</body>
+</html>

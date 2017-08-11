@@ -1,0 +1,35 @@
+/*地址*/
+
+.address{ border-top: 2px solid #c8c8c8; margin-top: 10px; width: 580px;}
+/* .address b:HOVER{border: 1px solid #6fba2c;} */
+.addressDisplay{border: 1px solid #c8c8c8; position: relative; cursor: pointer;padding-right: 30px; min-width: 90px; padding-top: 5px;
+padding-bottom: 5px;}
+.choseing .addressDisplay{background-color:#ff8468;color:#fff;border: 1px solid #ff8468;}
+.addressDisplay b{ position: absolute; right: 5px; top: 8px; display:inline-block; width: 15px; height: 10px;}
+.addressDisplay span{ margin-left: 5px;}
+.addressChoose{width: 435px; min-height: 118px; border: 1px solid #ff8261;  position: absolute; background: #FFFFFF; z-index: 99999;}/* behavior:url(../../css/radius.htc); */
+.commonImg{ background-position:-386px -68px;}
+.choseing .commonImg{background-position:-217px -333px;}
+.addressChoose1{ margin-left: 10px; margin-right: 10px;}
+.addressDisplay1{ border-bottom:1px solid #ff8261; font-size: 12px; position: relative; margin-bottom: 10px; margin-top: 15px;}
+.addressDisplay1 span{ display: inline-block; padding:3px 8px 3px 8px; color: #3C3C3C; border: 1px solid #DDDDDD; border-bottom: 0px; cursor: pointer;}
+.closeAddress{ display: block; width: 14px; height: 14px; position: absolute; right: 10px; top: 10px; z-index: 9999; cursor: pointer;
+background: url(../../v2/images/clos1.png) no-repeat;}
+.addressUl .addressChooseUl li{float: left; margin:5px; text-align: center; margin-top: 10px; margin-bottom: 10px; cursor: pointer; font-size: 12px; padding-left: 10px; padding-right: 10px;}
+.addressChooseUl li{float: left; margin-top: 10px; margin-bottom: 10px; text-align: center; cursor: pointer; font-size: 12px; padding-left: 10px; 
+padding-right: 10px; height: 20px; line-height: 20px;}
+.addressUl .addressChooseUl li:hover{ background: #ff8261; color:#fff; }
+.addressChooseUl li:hover{ background: #ff8261; color:#fff; }
+.addressChooseUl{overflow: hidden;}
+/*.addressDisplay1 .addressbR{border-right: 1px solid #00A5A8;}*/
+
+
+/*地址结束*/
+
+/* 提示选择地址 */
+.promptAddress{width:205px; height:98px; background: url(../../v2/images/commonImg.png) -758px -216px no-repeat;
+ text-align: center; font-size: 18px; color: #BA2C2C; position: absolute; top: -70px; left:-30px; z-index: 999;}
+.promptAddress b{width: 12px; height: 12px;background: url(../../v2/images/commonImg.png) -522px -140px no-repeat; display: block; float: right;  
+margin-bottom: 5px; margin-right: 20px; margin-top: 10px; cursor: pointer;}
+.promptAddress p{ line-height: 20px; }
+.addressColor{ color:#BA2C2C;}

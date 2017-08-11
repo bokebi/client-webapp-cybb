@@ -1,0 +1,76 @@
+ <ul class="suspendNav f14">
+	<li class="pr" id="fillPriceDifference">
+		<a href="${ctxPath}/productModel/fillPriceDifference.html">
+			<div class="center"><span class="sprite bc"></span></div>
+			<div class="center"><span>补差</span></div>
+		</a>
+	</li>
+	<li class="pr">
+		<div class="center"><span class="sprite callKf"></span></div><div class="center"><span>在线客服</span></div>
+	</li>
+	<!-- <li class="pr">
+		<div class="center"><span class="sprite mfdh"></span></div><div class="center"><span>免费通话</span></div>
+	</li> -->
+	<li class="light-black pr">
+		<a id="qq-service" class="iblock icon color-blue font22 qq-service" title="在线客服" href="javascript:;" rel="external nofollow" data-icon="qq" >
+			<div class="center">
+				<span class="sprite zx"></span>
+			</div>
+			<div class="center">
+				<span>免费咨询</span>
+			</div>
+		</a>
+	</li>
+	<li class="pr js_shop"><a href="${ctxPath}/ordCart/shoppingCart.html">
+		<div class="center">
+				<span class="sprite gwc"></span>
+			</div>
+		<span class="icon shop_icon"></span><span class="jion jion_number"><%if(jionNumber!=0){%>${jionNumber}<%}%></span>
+			<div class="center">
+				<span>购物车</span>
+			</div>
+		</a>
+	</li>
+	<li class="tsps pr">
+		<div class="center">
+			<span class="sprite fx"></span>
+		</div>
+		<div class="center">
+			 <div class="jiathis_style">
+				<a class="jiathis_button_tsina"></a>
+				<a class="jiathis_button_weixin"></a>
+			</div>
+			<div class="clear"></div>
+			<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+		</div>
+	</li>
+	<!-- <li class="pr">
+		<div class="center"><span class="sprite dtmp"></span></div><div class="center"><span>地图名片</span></div>
+	</li> -->
+	<li class="tops pr" onclick="goTop()">
+		<div class="center"><span class="sprite tps"></span></div><div class="center">TOP</div>
+	</li>
+</ul>
+<div class="Call_kf_close" style="display: none;">
+	<div class="theme-popover-mask"></div>
+		<div class="Call_kf">
+			<div class="Call_kf_h3">
+				<p class="fr close" onclick="$('.Call_kf_close').hide()">×</p>
+				<h3 class=" fl"><b></b>在线客服</h3>
+				<div class="cb"></div>
+			</div>	
+		    <form class="call_form" method="post" id="call_form">
+	        	<p class="call_from_name"><span>您的姓名：<input type="text" name="customerName" class="text_name required" placeholder="请输入您的姓名" /></span></p>
+	            <p class="call_from_name"><span>手机号码：<input type="text" name="customerMobile" class="text_name required isMobile" placeholder="填写手机号码" /></span></p>
+	            <p class="btn_p">
+	            	<input  class="btn_1" type="button" id="atOnceCall" onclick="TatOnceCall();" value="立即拨打" name="btn_bd" />
+	            </p>
+		    </form>   
+	</div>
+</div>
+<script type="text/javascript">
+//回到顶部函数
+function goTop(){
+	$('html,body').animate({'scrollTop':0},300);
+}
+</script>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>我的帐号</title> <%includeFileTemplate("/html/dumCommon.html"){
+%><%}%>
+<link rel="stylesheet" type="text/css"
+	href="${ctxPath}/css/userClient/nav_userClient.css" />
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/myAccount.css">
+<script type="text/javascript"
+	src="${ctxPath}/js/userClient/userClientIndex.js"></script>
+<script language=javascript src="${ctxPath}/js/userClient/myaccount.js"></script>
+<script type="text/javascript"
+	src="${ctxPath}/js/userClient/birthday.js"></script>
+<script language=javascript src="${ctxPath}/js/common/upload.js"></script>
+<script language=javascript
+	src="${ctxPath}/js/common/webuploader.nolog.js"></script>
+<script>
+	$(function() {
+
+		/* 显示用户生日 */
+		setBirthday();
+
+		$.ms_DatePicker({
+			YearSelector : ".sel_year",
+			MonthSelector : ".sel_month",
+			DaySelector : ".sel_day"
+		});
+		$.ms_DatePicker();
+
+		/*点击头像选择图片*/
+		$('div.infoPortraitImg img').click(function() {
+			$('#upload_picker input[type="file"]').trigger('click');
+		});
+		
+		
+		$("#attrPhotoId").click(function() {
+			$("#fileId").trigger("click");
+		});
+		
+		$("#fileId").change(function() {
+			var formData = new FormData();
+			var name = $("input").val();
+			formData.append("file",$(this)[0].files[0]);
+			formData.append("name",name);
+			$.ajax({ 
+			url : "${ctxPath}/file/upload.api", 
+			type : 'POST', 
+			dataType: "json",
+			data : formData, 
+			// 告诉jQuery不要去处理发送的数据
+			processData : false, 
+			// 告诉jQuery不要去设置Content-Type请求头
+			contentType : false,
+			success : function(responseStr) {
+				if(responseStr.executeStatus==0){
+					$("#attrPhotoId").attr("src", responseStr.values.fillFilePath);
+					dum.common.post("/customer/updateCustomerPhoto.html", {
+						photoId:responseStr.values.id,
+						path:responseStr.values.fillFilePath
+					}, function() {
+						window.location.href = window.location.href;
+					});
+				}else{
+					console.log("失败");
+				}
+			}, 
+			error : function(responseStr) { 
+				console.log("上传文件错误！");
+			} 
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+	<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+		<div id="content">
+			<div class="clientRight clientRightCommon">
+				<!--个人信息 -->
+				<div class="">
+					<h4 class="infoTit">
+						<span>个人信息</span>
+					</h4>
+					<p class="fz14 ml15 mt15 color50">亲爱的${session.user.customerName}，请填写真实的资料，以便更好的为您服务。</p>
+				</div>
+				<div class="infoPortrait">
+					<div class="tc infoPortraitImg">
+					</div>
+					<input type="file" id="fileId" style="display: none;" >
+					<center>
+						<%if(session!=null&&session.user!=null&&session.user.attachment!=null){%>
+							<img src="${session.user.attachment.fillFilePath}" id="attrPhotoId" style="cursor: pointer;  width: 100px;"/>
+						<%}else{%> 
+							<img src="${ctxPath}/images/img/infoImg.png" id="attrPhotoId" style="cursor: pointer; width: 100px;"/> 
+						<%}%>
+					</center>
+					<p class="tc fz14 color50 mt10 cursor passwordRevise"
+						onclick=" $('.infoDiv').hide(); $('.promptModifyDiv').show();$(this).hide();">修改密码</p>
+				</div>
+				<div class="infoDiv">
+					<div class="userInfo">
+						<input id="customerBirthday" type="hidden" value="${session.user.customerBirthday!,dateFormat="yyyy-MM-dd"}" />
+						<form id="userInfoForm" class="clearfix">
+							<input type="hidden" name="customerId" value="${session.user.id}" />
+							<table class="userInfoTab fl userInfoTab1">
+								<tr>
+									<td>个人姓名：</td>
+									<td>
+										<p class="ml15">
+											<input type="text" name="customerName" value="${session.user.customerName}" />
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td>注册电话：</td>
+									<td><p class="ml15">${session.user.customerMobile}</p></td>
+								</tr>
+								<tr>
+									<td>QQ号码：</td>
+									<td>
+										<p class="ml15">
+											<input id="customerQQ" type="text" class="clinetTxt" name="customerQQ" value="${session.user.customerQq}" /> 
+											<span class="tips"></span>
+										</p>
+									</td>
+								</tr>
+							</table>
+							<table class="userInfoTab fl">
+								<tr>
+									<td>性别：</td>
+									<td>
+										<p class="ml15">
+											<label>
+											  <%if(session.user.customerSex=='0'){%>
+												 <input type="radio"  checked="checked" name="customerSex" value="0" /> 
+											  <%}else{%>
+												 <input type="radio"   name="customerSex" value="0" /> 
+											  <%}%>
+											   
+											   <span class="middle">男</span>
+											</label> 
+											<label class="ml30">
+											  <%if(session.user.customerSex=='1'){%>
+											  	 <input type="radio" checked="checked"  name="customerSex" value="1"  class="middle mr5" />
+											  <%}else{%>
+												 <input type="radio"   name="customerSex" value="1"  class="middle mr5" />
+											  <%}%>
+											  <span class="middle">女</span>
+											</label>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td>生日：</td>
+									<td>
+										<p class="ml15" id="customerP">
+											<select id="sel_year" class="selectClient1">
+												<option>年</option>
+											</select> <select id="sel_month" class="selectClient2">
+												<option>月</option>
+											</select> <select id="sel_day" class="selectClient2">
+												<option>日</option>
+											</select> <span class="tips"></span>
+										</p>
+									</td>
+								</tr>
+							</table>
+						</form>
+					</div>
+					<p class="tc infoSave_p">
+						<input type="submit" value="保存" class="infoSave"
+							onclick="updateInfo()" />
+					</p>
+					<div class="savePrompt none">
+						<div class=" fz14 color50 tc savePrompt1">
+							<p class="savePrompt_span"></p>
+							<p class="savePrompt_p"></p>
+						</div>
+					</div>
+				</div>
+				<!-- 修改密码 -->
+				<div class=" promptModifyDiv none">
+					<div class="promptModify">
+						<p class="promptModify_p tc fz14 color50 none">
+							<span class="middle mr10"></span>密码保存成功！
+						</p>
+					</div>
+					<div class="modifyPassword">
+						<p class="fz14 color50">
+							<b>修改密码</b>
+						</p>
+						<form id="updatePwdForm">
+							<dl>
+								<dd>
+									<span class="fz14 color50 widthSpan">当前密码：</span><input
+										type="password" name="oldPwd" class="clinetTxt" /> <span
+										class="tips"></span>
+								</dd>
+								<dd>
+									<span class="fz14 color50 widthSpan">新密码：</span><input
+										id="newPwd" type="password" name="newPwd" class="clinetTxt" />
+									<span class="tips"></span>
+								</dd>
+								<dd>
+									<span class="fz14 color50 widthSpan">确认密码：</span><input
+										id="reNewPwd" type="password" name="reNewPwd"
+										class="clinetTxt" /> <span class="tips"></span>
+								</dd>
+								<dd>
+									<span class="fz14 color50 widthSpan">短信验证码：</span><input
+										type="text" name="updateCode" class="clinetTxt1 middle" />
+									<input id="validateBtn" type="button" value="获得验证码"  onclick="sendValidateCode();"  class="yzmBtn middle" /> 
+									<span class="tips"></span>
+								</dd>
+								<dd id="errmsg">
+									<span class="tips"></span>
+								</dd>
+							</dl>
+						</form>
+					</div>
+					<div class="saveReturn tc mt20 mb10">
+						<a href="javascript:void();" class="modifySave"
+							onclick="updatePwd()">保存</a> <a href="javascript:void();"
+							class="modifyReturn" onclick="handleReturn()">返回</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

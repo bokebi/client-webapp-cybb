@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<%if(!isEmpty(seoAboutusInfo)){%>
+	<title>${seoAboutusInfo.title!}</title>
+	<meta name="keywords" content="${seoAboutusInfo.keywords!}" />
+	<meta name="description" content="${seoAboutusInfo.description!}" />
+	<%}%>
+	<link type="image/x-icon" href="${ctxPath}/images/favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="${ctxPath}/css/common/base.css" />
+	<link rel="stylesheet" href="${ctxPath}/css/jms.css" />
+	<script src="${ctxPath}/js/plugin/jquery-1.9.1.js"></script>
+</head>
+<body>
+	<!--头部导航-->
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+
+	<!-- 广告栏 -->
+	<div class="jms_gg">
+		<a href="javascript:;"><img src="${ctxPath}/images/jmsImg/jm_ad1.jpg" ></a>
+	</div>
+
+	<!-- 拓展市场 -->
+	<div class="block1_bg">
+		<div class="jms_block1 w_1200">
+			<div class="block1_tt">
+				<h3>创业爸爸</h3>
+				<p>城市合伙人计划</p>
+				<p>多有米&创业爸爸诚邀您共拓企业服务大市场</p>
+			</div>
+			<div class="block1_nr clearfix">
+				<div class="block1_item">
+					<span class="sprite_bg block_icon1"></span>
+					<p>互联网营销覆盖全国<br/>每天稳定客户资源推送</p>
+					<span class="sprite_bg icon_line"></span>
+				</div>
+				<div class="block1_item">
+					<span class="sprite_bg block_icon2"></span>
+					<p>业内最强销售团队规范<br> 提供信息化工具、<br>协助内部改革 </p>
+					<span class="sprite_bg icon_line"></span>
+				</div>
+				<div class="block1_item">
+					<span class="sprite_bg block_icon3"></span>
+					<p>9倍PE回购股权<br> 共享资本收益 </p>
+					<span class="sprite_bg icon_line"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 创业爸爸介绍 -->
+	<div class="produce_bg">
+		<h3 class="jms_bt">创业爸爸介绍<span class="jms_line"></span></h3>
+		<div class="produce_nr w_1200">
+			<div class="pro_pic"><img src="${ctxPath}/images/jmsImg/introduce_pic.jpg" ></div>
+			<div class="pro_txt">
+				<p>创业爸爸以刚需产品工商注册及高粘性产品代理记账为入口，为全国中小企业提供工商注册、税收筹划、法律合规、企业金融、人事服务、集团采购、上市及并购等优质的一站式企业服务，为万千企业服务提供商赋能，共建企业级服务产业生态链、共享企业级服务的产品用户资源、共赢企业级服务的美好未来!</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 市场空间 -->
+	<div class="market_space">
+		<h3 class="jms_bt">市场空间<span class="jms_line"></span></h3>
+		<div class="w_1200 market_nr clearfix">
+			<ul>
+				<li><img src="${ctxPath}/images/jmsImg/sckj_pic1.jpg" ></li>
+				<li><img src="${ctxPath}/images/jmsImg/sckj_pic2.jpg" ></li>
+				<li><img src="${ctxPath}/images/jmsImg/sckj_pic3.jpg" ></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 获客能力 -->
+	<div class="ability_box">
+		<h3 class="jms_bt dark_black">加盟创业爸爸，赋予十倍获客能力<span class="jms_line bg_grey"></span></h3>
+		<div class="ability_nr w_1200 clearfix">
+			<ul>
+				<li class="sckj_bg1">
+					<a class="sprite_bg hk_icon1" href="javascript:;"></a>
+					<h4>客户导流</h4>
+					<p>每日持续推送精准客户资源<br>为合伙人年度增量参考值：<br>300~1000家客户</p>
+				</li>
+				<li class="sckj_bg2">
+					<a class="sprite_bg hk_icon2" href="javascript:;"></a>
+					<h4>体系规范</h4>
+					<p>销售团队管理规范<br>企业内部管理规范<br>产品及服务标准化规范</p>
+				</li>
+				<li class="sckj_bg3">
+					<a class="sprite_bg hk_icon3" href="javascript:;"></a>
+					<h4>软件工具</h4>
+					<p>CRM客户管理系统<br>企业管理全面信息化系统<br>交易平台</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 客户输送 -->
+	<div class="khss_bg">
+		<div class="khss_box w_1200">
+			<h3 class="jms_bt">客户输送<span class="jms_line"></span></h3>
+			<p class="khss_ms">创业爸爸覆盖全国的互联网营销推广向合伙人持续输送流量和客户询盘</p>
+			<p class="khss_pic"><img src="${ctxPath}/images/jmsImg/khss_pic.jpg" ></p>
+			<div class="khss_info">
+				<p>创业爸爸为城市合伙人输送的增量参考值:300~1000家/年（视合伙人承接能力而定）</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- 体系规范 -->
+	<div class="txgf_bg">
+		<div class="txgf_box w_1200">
+			<h3 class="jms_bt dark_black">体系规范<span class="jms_line bg_grey"></span></h3>
+			<div class="txgf_nr">
+				<div class="txgf_item clearfix">
+					<div class="txgf_lpic"><img src="${ctxPath}/images/jmsImg/tx_pic1.jpg" ></div>
+					<div class="txgf_rwz">
+						<h4>销售规范</h4>
+						<p>创业爸爸为合伙人提供每月一次销售技能培训，提升合伙人销售团队综合技能</p>
+					</div>
+				</div>
+				<div class="txgf_item clearfix">
+					<div class="txgf_lpic"><img src="${ctxPath}/images/jmsImg/tx_pic2.jpg" ></div>
+					<div class="txgf_rwz">
+						<h4>CRM软件</h4>
+						<p>创业爸爸为合伙人提供自主研发的适宜财税行业的CRM客户管理系统</p>
+					</div>
+				</div>
+				<div class="txgf_item clearfix">
+					<div class="txgf_lpic"><img src="${ctxPath}/images/jmsImg/tx_pic3.jpg" ></div>
+					<div class="txgf_rwz">
+						<h4>管理规范</h4>
+						<p>创业爸爸为加盟商输送标准化客户管理和会计服务管理方案，协助合伙人做企业管理信息化改革</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 双方权责 -->
+	<div class="sfqz_box w_1200">
+			<h3 class="jms_bt dark_black">双方权责<span class="jms_line bg_grey"></span></h3>
+			<div class="txgf_nr">
+				<div class="txgf_item clearfix">
+					<div class="txgf_lpic"><img src="${ctxPath}/images/jmsImg/sfqz_pic1.jpg" ></div>
+					<div class="txgf_rwz">
+						<h4>合资设立公司</h4>
+						<p>创业爸爸与合伙人合资成立新公司（简称合资公司），合资公司经营主权为合伙人所有，创业爸爸<br>以技术、资源、品牌入股占19%</p>
+					</div>
+				</div>
+				<div class="txgf_item clearfix">
+					<div class="txgf_lpic"><img src="${ctxPath}/images/jmsImg/sfqz_pic2.jpg" ></div>
+					<div class="txgf_rwz">
+						<h4>CRM软件</h4>
+						<p>创业爸爸在当地开展营销，向合资公司持续输送精准客户资源<br>合伙人向合资公司输送全职会计人员、工商人员、客服人员各1名或以上<br>合伙人原有公司客户资源无需导入合资公司</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 加盟条件 -->
+		<div class="jmtj_bg">
+			<div class="jmtj_box w_1200">
+				<h3 class="jms_bt">加盟条件<span class="jms_line"></span></h3>
+				<div class="jmtj_nr">
+					<ul>
+						<li>
+							<span class="jm_num">1</span>
+							<p class="jm_nr"> 从事企业注册、财务代理、社保代理、人事外包、法律服务、保险经纪、税收筹划、企业投融资及其它与企业服务相关领域</p>
+						</li>
+						<li>
+							<span class="jm_num">2</span>
+							<p class="jm_nr">成立2年以上，服务覆盖整个城市</p>
+						</li>
+						<li>
+							<span class="jm_num">3</span>
+							<p class="jm_nr">有一定服务团队积累，具备自负盈亏能力</p>
+						</li>
+						<li>
+							<span class="jm_num">4</span>
+							<p class="jm_nr">在当地市场有着相对成熟行业沉淀与用户积累</p>
+						</li>
+						<li>
+							<span class="jm_num">5</span>
+							<p class="jm_nr">认同创业爸爸的品牌价值、经营理念</p>
+						</li>
+						<li>
+							<span class="jm_num">6</span>
+							<p class="jm_nr">希望与创业爸爸长期稳定共同发展，为当地的中小微及各类企业提供专业、诚信、经典的服务交付体验</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 加盟费与资源成本 -->
+		<div class="jm_cost">
+			<h3 class="jms_bt dark_black">加盟费与资源成本<span class="jms_line bg_grey"></span></h3>
+			<div class="cost_nr w_1200 clearfix">
+				<div class="cost_item">
+					<h3><span class="cost_tbg">加盟费</span></h3>
+					<table class="jm_table">
+						<tr>
+							<th>级别</th>
+							<th>地区</th>
+							<th>加盟费</th>
+							<th>向合资公司注资</th>
+						</tr>
+						<tr>
+							<td><b>特级</b></td>
+							<td>北京、上海<br>深圳、广州</td>
+							<td>3万元</td>
+							<td>1万元</td>
+						</tr>
+						<tr>
+							<td><b>一级</b></td>
+							<td>杭州、成都、郑州<br>厦门、天津、苏州等</td>
+							<td>2万元</td>
+							<td>1万元</td>
+						</tr>
+						<tr>
+							<td><b>二级</b></td>
+							<td>南昌、沈阳<br>西安、石家庄等</td>
+							<td>2万元</td>
+							<td>1万元</td>
+						</tr>
+					</table>
+				</div>
+				<div class="cost_item">
+					<h3><span class="cost_tbg">资源成本</span></h3>
+					<div class="zycb">
+						<p>合伙人需要向创业爸爸推广部支付<span class="orange">意向客户资源</span>的广告成本，广告成本为：<span class="orange">一线城市180元/条，二线城市130元/条，三线城市80元/条</span></p>
+						<div class="zycb_btn clearfix">
+							<div class="zycb_lbtn"><span>资源成本使用计划</span></div>
+							<div class="zycb_rbtn">
+								<ul>
+									<li><span>推广营销</span></li>
+									<li><span>SEM持续投放</span></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 战略资金方背景 -->
+		<div class="zlzj_bg">
+			<h3 class="jms_bt">战略资金方背景<span class="jms_line"></span></h3>
+			<div class="zlzj_box w_1200 clearfix">
+				<div class="zlzj_item">
+					<div class="zlzj_tt"><img src="${ctxPath}/images/jmsImg/tx_pic.gif" alt="腾讯"></div>
+					<div class="zlzj_nr">
+						<dl>
+							<dt>腾讯 战略领投</dt>
+							<dd>客户资源</dd>
+							<dd>渠道资源</dd>
+							<dd>软件支持</dd>
+							<dd>品牌推广</dd>
+							<dd>市场活动</dd>
+							<dd>与创业爸爸城市合伙人共享！</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="zlzj_item">
+					<div class="zlzj_tt"><img src="${ctxPath}/images/jmsImg/kyzb_pic.gif" alt="凯盈资本"></div>
+					<div class="zlzj_nr">
+						<dl>
+							<dt>凯盈资本</dt>
+							<dd>五大产业集团</dd>
+							<dd>新经济领域</dd>
+							<dd>大型投资平台</dd>
+							<dd>十余家上市公司</dd>
+							<dd>投资眼光独到</dd>
+							<dd>创业爸爸城市合伙人经营无忧！</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="zlzj_item">
+					<div class="zlzj_tt"><img src="${ctxPath}/images/jmsImg/hlzb_pic.gif" alt="海量资本"></div>
+					<div class="zlzj_nr">
+						<dl>
+							<dt>海量资本</dt>
+							<dd>客户资源</dd>
+							<dd>活动资源</dd>
+							<dd>媒体资源</dd>
+							<dd>品牌包装</dd>
+							<dd>创业辅导</dd>
+							<dd>推进创业爸爸城市合伙人落地成长！</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 互联网运营能力 -->
+		<div class="yyln_bg">
+			<h3 class="jms_bt">互联网运营能力<span class="jms_line"></span></h3>
+			<div class="yynl_nr w_1200">
+				<p><img src="${ctxPath}/images/jmsImg/yynl_pic1.jpg"></p>
+				<p><img src="${ctxPath}/images/jmsImg/yynl_pic2.jpg"></p>
+			</div>
+		</div>
+	
+		<!-- 媒体报道 -->
+		<div class="mtbd_bg">
+			<h3 class="jms_bt">媒体报道<span class="jms_line"></span></h3>
+			<div class="mtbd_box w_1200 clearfix">
+				<div class="mtbd_item clearfix">
+					<div class="mtbd_wz fl">
+						<p><span class="fs20">法制时空</span>之<br>《寻找第二个腾讯》<br>栏目专访</p>
+					</div>
+					<div class="mtbd_pic"><img src="${ctxPath}/images/jmsImg/mtbd_pic1.jpg" ></div>
+				</div>
+				<div class="mtbd_item clearfix">
+					<div class="mtbd_pic fl"><img src="${ctxPath}/images/jmsImg/mtbd_pic2.jpg" ></div>
+					<div class="mtbd_wz fl">
+						<p><span class="fs20">广东电视台</span><br>深圳市青年创业辅导与发<br>展论坛上采访多有米</p>
+					</div>
+				</div>
+				<div class="mtbd_item clearfix">
+					<div class="mtbd_wz fl">
+						<p><span class="fs20">众创TV</span>在筑梦深圳<br>创启未来活动上<br>采访多有米</p>
+					</div>
+					<div class="mtbd_pic"><img src="${ctxPath}/images/jmsImg/mtbd_pic3.jpg" ></div>
+				</div>
+				<div class="mtbd_item clearfix">
+					<div class="mtbd_pic fl"><img src="${ctxPath}/images/jmsImg/mtbd_pic4.jpg" ></div>
+					<div class="mtbd_wz fl">
+						<p><span class="fs20">CCTV2</span>报道多有米<br>深圳湾创业服务中心服务窗</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 战略合作伙伴 -->
+		<div class="zlhz_bg">
+			<h3 class="jms_bt">战略合作伙伴<span class="jms_line"></span></h3>
+			<div class="zlhz_box w_1200 clearfix">
+				<div class="zlhz_item mr23">
+					<p class="pb23"><img src="${ctxPath}/images/jmsImg/zlhz_pic1.jpg"></p>
+					<p><img src="${ctxPath}/images/jmsImg/zlhz_pic2.jpg"></p>
+				</div>
+				<div class="zlhz_item mr23">
+					<p><img src="${ctxPath}/images/jmsImg/zlhz_pic3.jpg"></p>
+				</div>
+				<div class="zlhz_item">
+					<div class="zlhz_item">
+					<p class="pb23"><img src="${ctxPath}/images/jmsImg/zlhz_pic4.jpg"></p>
+					<p><img src="${ctxPath}/images/jmsImg/zlhz_pic5.jpg"></p>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 腾讯引流 -->
+		<div class="txyl w_1200">
+			<h3 class="jms_bt dark_black">腾讯引流<span class="jms_line bg_grey"></span></h3>
+			<div class="txyl_nr">
+				<p><img src="${ctxPath}/images/jmsImg/txyl_pic1.jpg" ></p>
+				<p class="mt18"><img src="${ctxPath}/images/jmsImg/txyl_pic2.jpg" class="mr18" ><img src="${ctxPath}/images/jmsImg/txyl_pic3.jpg" ></p>
+			</div>
+		</div>
+		
+		<!-- 科技研发 -->
+		<div class="kjyf_bg">
+			<h3 class="jms_bt">科技研发<span class="jms_line"></span></h3>
+			<div class="kjyf_nr w_1200">
+				<div class="kjyf_pic clearfix">
+					<div class="kjyf_lpic fl"><img src="${ctxPath}/images/jmsImg/kjyf_pic1.jpg" ></div>
+					<div class="kjyf_rpic fr"><img src="${ctxPath}/images/jmsImg/kjyf_pic2.jpg" ></div>
+				</div>
+				<div class="kjyf_wz">
+					<p>多有米自成立以来，一直十分重视科技研发的投入<br>公司依托雄厚的研发力量为科技研发自主创新产生了良好的经济效益和深厚的技术积累 两年内研发自主创新并取得技术成果的项目有16项 完成产业转化的达到15项</p> 
+				</div>
+			</div>
+		</div>
+
+		<!-- 常见问题 -->
+		<div class="cjwt_bg">
+			<h3 class="jms_bt">常见问题<span class="jms_line"></span></h3>
+			<div class="cjwt_box w_1200 clearfix">
+				<ul>
+					<li>
+						<h4>问：加盟创业爸爸后，每天可以获得多少客户资源？</h4>
+						<p>答：视您承接能力、销售团队规模来定，每个销售人员我们每天会推送4~8个客户咨询。客户咨询的转化率参考值为：25%。在您销售团队扩张的情况下，可以向我们申请加大资源推送力度。</p>
+					</li>
+					<li>
+						<h4>问：每个地区会合作多少加盟商？</h4>
+						<p>答：这个根据当地市场规模和已合作的加盟商承接能力来定。在市场仍有较大待开拓空间、而加盟商承接饱和的情况下，我们会继续招募加盟商。</p>
+					</li>
+					<li>
+						<h4>问：如果我要合作，现在应该找谁？</h4>
+						<p>答：您联系我们工作人员索取加盟协议，阅读无异议后，付款加盟费到我们账户即可。我们开始与您进行合资公司设立事宜</p>
+					</li>
+					<li>
+						<h4>问：你们跟上市公司的收购模式有什么区别？</h4>
+						<p>答：上市公司收购大家的存量客户，而我们不碰存量。我们的模式是与您合资成立新公司共同开拓增量。</p>
+					</li>
+					<li>
+						<h4>问：合资公司谁来管理？经营权在谁？</h4>
+						<p>答：合资公司由您来管理，我们不参与公司任何经营。</p>
+					</li>
+					<li>
+						<h4>问：关于合资公司的盈利和亏损呢？</h4>
+						<p>答：您对合资公司盈亏自负，我们首年结算到的19%股东分红也会全部返还给您</p>
+					</li>
+					<li>
+						<h4>问：创业爸爸后期会进一步收购合资公司股份吗？</h4>
+						<p>答：在合资公司发展良好的情况下，我们会与您洽谈进一步收购的事宜，在双方协商一致的情况下我们会以9倍PE进一步收购32%股份。</p>
+					</li>
+					<li>
+						<h4>问：是否会给我们加盟商提供多有米的系统呢？</h4>
+						<p>答：我们会给您提供CRM客户管理系统，不提供其他模块的功能，也不提供网站。客户统一流量入口为创业爸爸官网</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 联系我们 -->
+		<div class="lxwm_bg">
+			<h3 class="jms_bt">联系我们<span class="jms_line"></span></h3>
+			<div class="lxwm_box clearfix">
+				<div class="lxwm_pic"><img src="${ctxPath}/images/jmsImg/lxwm_ewm.jpg" ></div>
+				<div class="lxwm_wz">
+					<p>联系人：黄小明<br>微信号：13410169068</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 其他 -->
+		<div class="other_bg">
+			<div class="other"><img src="${ctxPath}/images/jmsImg/cybb_card.jpg" alt=""></div>	
+		</div>
+
+		<!--===========================content6 start======================================-->
+			<div class="content6">
+			<form id="validForm">
+				<div class="con6con">
+					<p class="fs35 mb40">加盟申请</p>
+					<div class="c6down">
+						<div class="c6dwleft fl">
+							<div class="mb12">
+								<p class="p1 fl"><img src="${ctxPath}/newImages/img35.png"></p>
+								<div class="div1 fl" style="border: none">
+										<select id="s_province" name="s_province"></select>  
+								</div> 
+								<div class="div1 fl ml11" style="border: none">
+									<select id="s_city" name="s_city" ></select>  
+								</div>
+								<div class="div1 fl ml11" style="border: none">
+									 <select id="s_county" name="s_county"></select>
+								</div>
+								<div class="clear" style="border: none"></div>
+							</div>
+							<div class="mb12">
+								<p class="p1 fl"><img src="${ctxPath}/newImages/img34.png"></p>
+								<input class="input1" type="text" name="companyName" id="companyName" placeholder="请输入您的公司全称">
+								<div class="clear"></div>
+							</div>
+							<div class="mb12">
+								<p class="p1 fl"><img src="${ctxPath}/newImages/img36.png"></p>
+								<input class="input1" type="text" name="userName" id="userName" placeholder="请输入您的姓名">
+								<div class="clear"></div>
+							</div>
+							<div class="mb12">
+								<p class="p1 fl"><img src="${ctxPath}/newImages/img37.png"></p>
+								<input class="input1" type="text" name="phone" id="phone" placeholder="请输入您的手机号码">
+								<div class="clear"></div>
+							</div>
+							<div class="mb12">
+								<p class="p2 fl"><img src="${ctxPath}/newImages/img38.png"></p>
+								<input class="input1" type="text" name="email" id="email" placeholder="请输入您的联系邮箱">
+								<div class="clear"></div>
+							</div>
+							<div class="mb12">
+								<p class="p3 fl"><img src="${ctxPath}/newImages/img33.png"></p>
+								<input class="input1" type="text" name="adress" id="adress" placeholder="请输入您公司的办公地址">
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="c6dwright fl">
+							<div class="mb12">
+								<p class="p1 fl"><img src="${ctxPath}/newImages/img31.png"></p>
+								<textarea class="txta" name="mainBusiness" id="mainBusiness" placeholder="请输入您公司的主营业务"></textarea>
+								<div class="clear"></div>
+							</div>
+							<div class="mb33">
+								<p class="p4 fl"><img src="${ctxPath}/newImages/img32.png"></p>
+								<textarea class="txta" name="advantage" id="advantage" placeholder="请输入您公司的优势"></textarea>
+								<div class="clear"></div>
+							</div>
+							<div class="rad">
+								<p class="fl">加盟类型：</p>
+								<div id="dx1" class="radi2 fl radi dx"><input name="joinType" class="input2" type="radio" value="1" checked=""></div>
+								<div  class="fl fs18">代帐企业加盟</div>
+								<div id="dx2"class="radi2 fl radi "><input name="joinType" class="input3" type="radio" value="2"></div>
+								<div class="fl fs18">个人会计加盟</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="btn queryCompanyBtn"><a href="javascript:void(0);" >提交申请</a></div>
+				</div>
+				</form>
+			</div>
+		<!--===========================content6 end========================================-->	
+	<script class="resources library" src="${ctxPath}/js/area.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	_init_area();
+	
+	//单选
+	$("#dx1").click(function(){
+		$(this).addClass("dx");
+		$("#dx2").removeClass("dx");
+	});
+	$("#dx2").click(function(){
+		$(this).addClass("dx");
+		$("#dx1").removeClass("dx");
+	});
+	
+	$(function(){
+		$(".queryCompanyBtn").click(function(){
+			if($("#userName").val() == ""){
+				alert("姓名不能为空！");
+				return;
+			}else if($("#phone").val() == ""){
+				alert("手机号不能为空！");
+				return;
+			}
+			$.ajax({
+				type : "post",
+				url : "/addFws.html",
+				data : $('#validForm').serialize(),
+				success : function(data) {
+					console.log(data);
+					if(data =="1"){
+						alert("提交申请成功！");
+						window.location.reload();
+					}
+				}
+			});
+		});
+	});	
+	
+	</script>
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+
+	
+
+</body>
+</html>
+

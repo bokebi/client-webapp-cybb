@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>直接提问-${sysCompanyResult.values.companyAbb!}</title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+    <link rel="stylesheet" href="${ctxPath}/css/question/main.css">
+    <link rel="stylesheet" href="${ctxPath}/css/question/ui-dialog.css">
+    <script type="text/javascript" src="${ctxPath}/js/question/dialog-min.js"></script>  
+
+  </head>
+  <body class="bgc-gray ask-page">
+   <!--头部导航-->
+  <%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+  <%if(!isEmpty(recommendAccount)){%>
+	  <script type="text/javascript">
+		  $(function(){
+			$('.quit').attr({"href":"${ctxPath}/cus/loginOut.html?quiturl=/ask/addQuestion?cusid=${recommendAccount.id}"});			  
+		  });
+	   </script>
+  <%}else{%>
+	   <script type="text/javascript">
+		  $(function(){
+			 $('.quit').attr({"href":"${ctxPath}/cus/loginOut.html?quiturl=/ask/addQuestion"});
+		  });
+	   </script>
+  <%}%>
+  
+  
+	<%includeFileTemplate("/WEB-INF/view/login/jumpLogin.html"){ %><%}%>
+    
+    <ol class="breadcrumb">
+    	<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+		<a href="${ctxPath}/ask/index.html">问答库</a><span>></span><span>我要提问</span>
+    </ol>
+
+    <form class="quiz-form" id="saveQuestion">
+      <h1>
+        <span class="icon glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+        <%if(!isEmpty(recommendAccount)){%>
+        	向<span>${recommendAccount.userName!}</span>提出你的问题
+        	<input value="${recommendAccount.id!}" name="appointUser" type="hidden">
+        <%}else{%>
+       		提出你的问题，<span>5分钟</span>就有答案
+       	<%}%>
+      </h1>
+
+      <div class="quiz-area-box">
+        <input name="majorQuestion" id="majorQuestion" type="text" placeholder="请输入问题" value="${content!}" style="height: 45px;"></input>
+        <p class="conut" style="margin-bottom: 5px;">
+          	还能输入40个字
+        </p>
+        <!-- 提示 -->
+        <div id="validPrompt" class="questionPrompt pr none">
+        	<img src="${ctxPath}/images/question/directions.png" class="middle ml10"/>
+        	<font class="middle ml10"></font>
+        	<img src="${ctxPath}/images/question/angle.png" class="angle"/>
+        </div>
+      </div>
+
+      <div class="quiz-complement-box">
+        <h2 class="title">问题补充<span>(选填)</span></h2>
+        <textarea name="additionalQuestion" id="additionalQuestion"></textarea>
+        <p class="conut" style="margin-bottom: 5px;margin-left: 95%;margin-top: -30px;color: #ccc;">
+          	还能输入1000个字
+        </p>
+      </div>
+
+      <div class="form-line">
+        <label>
+          <span>分类：</span>
+          <select name="typeCode" id="type">
+          </select>
+        </label>
+
+        <label class="bounty"> 
+				悬赏：<!-- <input type="text" class="form-control" value="0" name="price" data-max="10000" data-min="0" data-step="10"> -->
+				<select id="price" name="price" onchange="gradeChange()">
+					<option value="0">悬赏0</option>
+					<option value="5">悬赏5</option>
+					<option value="10">悬赏10</option>
+					<option value="15">悬赏15</option>
+					<option value="20">悬赏20</option>
+					<option value="25">悬赏25</option>
+				</select>
+        </label>
+
+        <label class="anonymous">
+          <input name="isAnonymity" type="checkbox" value="0"/>
+          <span>匿名</span>
+        </label>
+      </div>
+      <div class="form-line">
+        <span class="area-select-box">
+          <label for="area">
+            <span>地区：</span>
+          </label>
+          <select id="area" name="areaId">
+          
+          </select>
+        </span>
+        <button type="button" class="btn btn-primary" onclick="submitQuestion()">提交问题</button>
+      </div>
+      <!--提示-->
+    <div class="promptQuize1 none">
+	    <div class="promptDalog"></div>
+	    <div class="promptQuize tc">
+	    	<p>提交成功，请等待后台审核。</p>
+	    	<a href="javascript:void(0);" class="promptQuizefix btn btn-success">确定</a>
+	    </div>
+    </div>
+
+    </form>
+
+    
+    <%includeFileTemplate("/html/footer_temp.html"){ %><%}%>  
+    <script src="${ctxPath}/js/question/plugin_spinner/jquery.spinner.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/js/question/saveQuestion.js"></script>
+  </body>
+</html>

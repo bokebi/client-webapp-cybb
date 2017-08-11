@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>全部公司</title> <%includeFileTemplate("/html/dumCommon.html"){
+%><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/recommend.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/js/easyui/themes/gray/easyui.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/js/easyui/themes/icon.css">
+<script type="text/javascript" src="${ctxPath}/js/easyui/jquery.easyui.min.js"></script>
+<style type="text/css">
+	.datagrid-row{
+		height:35px;
+	}
+</style>
+<script type="text/javascript">
+/**
+ * 删除公司信息
+ */
+ function delcompany(){
+	var row = $('#legalpersonList').datagrid('getSelected');
+    if (row){
+		$.messager.confirm('提示', '确定要删除该条数据吗?', function(r){
+			if (r){
+				var url="/cusEnterprise/delCusEnterprise";
+		    	dum.common.ajax({
+		    		type : 'post',
+		    		url : url+'.api',
+		    		dataType : 'json',
+		    		data:{id:row.id},
+		    		async : false,
+		    		success : function(data) {
+		    			$('#legalpersonList').datagrid('reload');
+		    		}
+		    	});
+			}
+		});
+    }else{
+		$.messager.alert('提示','请先选择一行数据!','确定');
+    }	
+}
+</script>
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<div class="w_1160 wrap clearfix">
+	<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+	<div id="content">
+	<div class="clientRight">
+		<div class="baseMargin ov">
+			<h4 class="infoTit fl"><span>全部公司</span></h4>
+			<div class="fl speakerNews"></div>
+			<div style="padding:10px;margin-top: 50px;border-top: 1px dashed #ccc;">
+				<div id="zycytb" style="height:auto;padding:5px;">
+					<a href="${ctxPath}/myCompany/addCompanyInfo.html" class="easyui-linkbutton" data-options="iconCls:'icon-add',plain:true">新增</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-remove',plain:true" onclick="delcompany()">删除</a>
+				</div>
+				<table id="legalpersonList" title="我的全部公司" style="width:100%;height:400px;"
+						data-options="rownumbers:true,singleSelect:true,pagination:true,url:'${ctxPath}/myCompany/myEnterpriseAll.html',method:'get',toolbar:'#zycytb'">
+					<thead>
+						<tr>
+							<th data-options="field:'name',width:300">公司名称</th>
+							<th data-options="field:'natureText',width:350">公司性质</th>
+							<th data-options="field:'id',width:200,formatter:op">操作</th>
+						</tr>
+					</thead>
+				</table>
+				<script type="text/javascript">
+					$(function(){										
+						var pager = $('#legalpersonList').datagrid().datagrid('getPager');	// get the pager of datagrid
+						pager.pagination({
+							pageSize: 10,//每页显示的记录条数，默认为10  
+			                beforePageText: '第',//页数文本框前显示的汉字  
+			                afterPageText: '页    共 {pages} 页',
+							displayMsg:'{from}-{to} 共{total}条记录'
+						});
+					});
+					
+					function op(v,r,i){
+						return "<a style='color:blue' href='${ctxPath}/myCompany/myCompanyInfo/"+v+".html' >查看信息</a>"
+					}
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+</body>
+</html>

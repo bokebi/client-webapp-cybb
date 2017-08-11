@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>投诉建议</title> <%includeFileTemplate("/html/dumCommon.html"){
+%><%}%>
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/suggestions.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/js/easyui/themes/gray/easyui.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/js/easyui/themes/icon.css">
+<script type="text/javascript" src="${ctxPath}/js/easyui/jquery.easyui.min.js"></script>
+<script language=javascript src="${ctxPath}/js/userClient/suggestion.js"></script> 
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+	<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+		<div id="content">
+			<div class="clientRight">
+				<div class="baseMargin">
+					<h4 class="infoTit">
+						<span onclick="$('.suggestionsDiv .suggestionsTab').show();">投诉建议</span>
+					</h4>
+					<div class="suggestionsBox">
+						<!-- 新增投诉 -->
+						<p class="addSuggestions fr none" onclick="$('.suggestionsDiv .suggestionsTab').show(); $('.addSuggestions').hide();">添加投诉</p>
+						<div class="cb"></div>
+						<div class="mt30 suggestionsDiv">
+							<table class="suggestionsTab">
+								<tr>
+									<td><p class="fz14 color50">投诉主题：</p></td>
+									<td><p class="pr">
+											<input name="adviseTitle" type="text" maxlength="255" placeholder="请务必填写正确" class="themeTxt" />
+											<span class="tips"></span>
+										</p></td>
+								</tr>
+								<tr>
+									<td align="right" class="middleTop"><p
+											class="fz14 color50">内容：</p></td>
+									<td>
+										<p class="pr">
+											<textarea name="adviseContent" class="contentText" maxlength="500"></textarea>
+											<span class="tips"></span>
+											<span class="color50 limit">0/500</span>
+										</p>
+									</td>
+								</tr>
+								<tr>
+									<td><p></p></td>
+									<td class="tr">
+										<p class="subClose">
+											<a href="javascript:void();" class="subSuggestions" id="submitSugg">提交</a> <a
+												href="javascript:void();" class="closeSuggestions" onclick="$('.suggestionsDiv .suggestionsTab').hide();$('.addSuggestions').show();">关闭</a>
+										</p>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					
+					<h4 class="infoTit">
+						<span onclick="$('.suggestionsDiv .suggestionsTab').show();">建议列表</span>
+					</h4>
+					<div class="suggestionList">
+						<% for(advise in dataList) {%>
+							<div id="p" class="easyui-panel" title="标题：${advise.adviseTitle} (${advise.createDate!,dateFormat='yyyy-MM-dd HH:mm:ss'})" style="width:100%;padding:10px;margin-bottom: 20px;">								
+								${advise.adviseContent}
+								<%if(!isEmpty(advise.listCusAdvise)){for(item in advise.listCusAdvise){%>
+									<div id="p" class="easyui-panel" title="回复${itemLP.index} (${item.createDate!,dateFormat='yyyy-MM-dd HH:mm:ss'})" style="width:100%;padding:10px;">
+										${item.adviseContent} 
+									</div>
+								<%}}%>
+							</div>
+						<%}%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

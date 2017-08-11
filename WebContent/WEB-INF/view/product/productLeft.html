@@ -1,0 +1,179 @@
+
+	<style>
+.c_tj_tit {
+    margin-bottom: 23px;
+    line-height: 48px;
+    height: 48px;
+    background: #f4a100;
+    padding-left: 28px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+.zcgsImg {
+    width: 238px;
+}
+.c_tj_l dl {
+    width: 238px;
+    margin: 0 auto 4px;
+}
+.c_tj_l dt {
+    height: 34px;
+    line-height: 34px;
+    padding-left: 36px;
+    background: #f0f0f0 url(${ctxPath}/newImages/c_zhuce_jia.png) no-repeat 13px 11px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+.c_tj_l dd {
+    line-height: 34px;
+    padding-left: 36px;
+    font-size: 14px;
+    color: #666;
+    display: none;
+    margin: 0;
+}
+.c_tj_l dd a {
+    color: #666;
+    display: block;
+}
+.c_tj_l dl.on dd {
+    display: block;
+}
+
+/*新增咨询顾问*/
+.mt20 {margin-top: 20px; }
+.mb20{ margin-bottom: 20px;}
+.border {border: 1px solid #DDDDDD; }
+.related{height: 40px; background: #f6f6f6; font-size: 16px; color: #505050; text-align: center; line-height: 40px;margin-bottom: 15px;}
+.relatedCounselor {margin-bottom: 0px;}
+.relatedCounselor li {border-bottom: 1px solid #ddd;margin-top: 10px;}
+.relatedCounselor li:last-child{border:0;}
+.relatedCounselor li a {display: block;height: 100%;padding: 0 25px;}
+.rel-cou-hide{text-align: left;font-size: 0px;vertical-align: top;line-height: 100%;display:none;height:80px;}
+.relatedCounselor li:first-child .rel-cou-hide{display:block;}
+.rel-cou-hide>img{width: 80px;height: 80px;overflow: hidden;border-radius: 50%;display: inline-block;background-color: pink;}
+.rel-cou-hide>div{display: inline-block;vertical-align: top;margin-left: 20px;margin-top:6px;}
+.rel-cou-hide>div>p{font-size: 14px;line-height: 20px;}
+.rel-cou-hide>div>p.rel-cou-hide-pri{color: #DC3644;}
+.rel-cou-hide>div>button{border: 0;background-color: #DC3644;color: #FFF;width: 80px;height: 26px;line-height: 26px;margin-top: 3px;border-radius: 4px;cursor: pointer;}    
+.rel-cou-hide>p{color: #333;font-size: 14px;line-height: 22px;margin-top:3px;}  
+
+
+</style>
+
+<div class="border c_tj_l">
+	<!-- <div class="c_tj_tit ">相关服务推荐</div> -->
+        <div class="">
+        <p class="related">咨询顾问</p>
+        <ul class="relatedCounselor">
+            <li><a href="http://lzt.zoosnet.net/LR/Chatpre.aspx?id=LZT58330793&lng=cn" target="_blank">
+                <div class="rel-cou-hide">
+                    <img src="/images/gw1.jpg" alt="">
+                    <div>
+                        <p class="rel-cou-hide-pri">￥  <span>0</span>元</p>
+                        <p>5年执业经验</p>
+                        <button>我要咨询</button>
+                    </div>  
+                </div>
+                <p>弯弯 财税顾问</p>
+            </a></li>
+            <li><a href="http://lzt.zoosnet.net/LR/Chatpre.aspx?id=LZT58330793&lng=cn" target="_blank">
+                <div class="rel-cou-hide">
+                    <img src="/images/gw2.jpg" alt="">
+                    <div>
+                        <p class="rel-cou-hide-pri">￥  <span>0</span>元</p>
+                        <p>5年执业经验</p>
+                        <button>我要咨询</button>
+                    </div>  
+                </div>
+                <p>静静 工商顾问</p>
+            </a></li>
+            <li><a href="http://lzt.zoosnet.net/LR/Chatpre.aspx?id=LZT58330793&lng=cn" target="_blank">
+                <div class="rel-cou-hide">
+                    <img src="/images/gw3.jpg" alt="">
+                    <div>
+                        <p class="rel-cou-hide-pri">￥   <span>0</span>元</p>
+                        <p>6年执业经验</p>
+                        <button>我要咨询</button>
+                    </div>  
+                </div>
+                <p>达达 营销顾问</p>
+            </a></li>
+            <li><a href="http://lzt.zoosnet.net/LR/Chatpre.aspx?id=LZT58330793&lng=cn" target="_blank">
+                <div class="rel-cou-hide">
+                    <img src="/images/gw4.jpg" alt="">
+                    <div>
+                        <p class="rel-cou-hide-pri">￥   <span>0</span>元</p>
+                        <p>4年执业经验</p>
+                        <button>我要咨询</button>
+                    </div>  
+                </div>
+                <p>飘飘 综合顾问</p>
+            </a></li>
+        </ul>
+    </div>
+
+    <p class="mt10 ad_center">
+        <a href="#" target="_blank"><img src="${ctxPath}/newImages/zcgsImg2.png"
+            class="zcgsImg"></a>
+    </p>
+    
+    <div class="mt20">
+	<%if(!isEmpty(categoryTreee)&&!isEmpty(categoryTreee[0])){%>
+        <%for(serviceCategory in categoryTreee[0].nodes){%> 
+        <dl class="dorpdown-more ">
+                <dt>${serviceCategory.text}</dt>
+                <%if(serviceCategory.nodes!=null){for(service in serviceCategory.nodes){%>
+                    <dd style="display: none;">
+                        <%for(product in service.product){%>        
+                            <a href="${ctxPath}/productModel/${product.id}.html">${product.name}</a>
+                        <%}%>
+                    </dd>
+                <%}}%>
+        </dl>
+    <%}}%>
+	</div>
+	
+</div>
+<!-- 左侧广告位 -->
+
+<div class="border mt20" style="display: none;">
+	<p class="related">最新的文章</p>
+	<ul class="relatedArticle" id="newArticle">
+		<!-- <%if(!isEmpty(newArticle)){%>
+            <%for(item in newArticle) {%>
+                <li><a target="_blank" href="${ctxPath}/wz/${item.id}.html"><span></span>${item.articleTitle}</a></li>
+            <%}%>
+        <%}%> -->
+	</ul>
+</div>
+
+<script>
+	$(function(){
+        // 默认展示1、4
+       /*$(".c_tj_l .dorpdown-more").eq(0).find("dd").show();
+       $(".c_tj_l .dorpdown-more").eq(3).find("dd").show();*/
+		// 菜单
+        $(".dorpdown-more").click(function(){
+        	if($(this).find("dd").css("display")=="none"){
+        		$(this).find("dd").show();
+        	}else{
+        		$(this).find("dd").hide();
+        	}
+        });
+
+        // 详情页左侧咨询顾问
+        var related=0;
+        $(".relatedCounselor li").mouseenter(function(){
+            if($(this).index()==related){return;}
+            console.log($(this).index());
+            related=$(this).index();
+            
+            $(".rel-cou-hide").stop(true,true).slideUp(300);
+            $(this).children("a").children(".rel-cou-hide").stop(true,true).slideDown(300);
+        });
+
+	});
+</script>

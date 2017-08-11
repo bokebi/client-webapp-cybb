@@ -1,0 +1,29 @@
+.collocationZy{border:1px solid #ccc; height: 640px;}
+.companyCollocation{ background: #fff; padding:10px 0px 10px 30px;}
+.boxSelect{position: absolute; bottom:2px; left:-2px; background: #fff;}
+.collocationAdd{font-size: 20px; margin: 35px 20px 0px 20px;}
+.ml20{margin-left: 20px;}
+.packagePrice{ color:#ff8468; margin-top: 20px;}
+.packagePrice b{font-size:16px;}
+.packagePrice span{font-size:10px;}
+.packageNumber{color:#505050; margin-top: 20px;}
+.collocationAddress{ margin: 20px 0px 20px 30px;}
+.registeredAddress{margin-top: 3px;  margin-right: 10px;}
+.collocationDetail{margin-left: 30px; margin-right: 30px;}
+.collocationZcgs{background: #fff; padding: 10px; width:520px;}
+
+.collocationBody .serviceArea{padding:0px; margin-left: 0; width: 395px;}
+.collocationBody .serviceArea li .taxesType dd{ width:70px; margin-right: 5px;}
+.collocationBody .serviceArea li .collocationType1 dd{ width:120px; margin-right: 5px;}
+.collocationBody .serviceArea li .areaMarignTop{color:#505050; margin-top: 16px;}
+.collocationBody .serviceArea li .areaMarignTop span{font-size: 11px;}
+.collocationBody .serviceArea li .areaMarignTop1{color:#505050; margin-top: 19px;}
+.lessColor{ color:#ff001e;font-size: 14px; }
+.collocationPrice{ color:#ff854e; font-size: 16px; letter-spacing: 1px;}
+.determineCollocation{ height:60px; line-height:60px; background: #fff; position: absolute;bottom: 0px; width:100%;}
+.sleeveTxt{width:32px; height: 26px; line-height:26px; border:1px solid #ccc; text-align: center; margin-left: 2px; margin-right:2px;}
+.collocationTotal{font-size: 12px; color:#ff8468;}
+.collocationTotal b{font-size: 14px;}
+.buyCollocation{ cursor:pointer; display: inline-block;width:120px; height: 40px; line-height:40px; background: #ff8468; color:#fff; text-align: center;}
+
+

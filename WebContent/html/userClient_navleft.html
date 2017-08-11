@@ -1,0 +1,87 @@
+<div id="nav_left" class="nav_left border_right">
+	<input type="hidden" id="leftNav" value="${session.leftNav!}" />
+	<div id="userInfo">
+		<div class="clearfix usinfo">
+			<a href="${ctxPath}/account/index.html?leftNav=myOrder">
+				<%if(session!=null&&session.user!=null&&session.user.attachment!=null){%>
+							<img src="${session.user.attachment.fillFilePath}" />
+						<%}else{%> <img src="${ctxPath}/images/img/infoImg.png" /> <%}%>
+					<div>
+						<p class="fz14">${session.user.customerName!}</p>
+						<p class="esp1 color50">${session.user.customerMobile!}</p>
+					</div>
+			</a>
+		</div>
+		<div class="simpleOrder fz14 color50">
+			<ul class="clearfix">
+				<li>
+					<a href="${ctxPath}/ordPaymentOrder/index.html"><p id="orderCount">0</p></a>
+					<p>订单项</p>
+				</li>
+				<li class="cen_li">
+					<a href="${ctxPath}/ordService/index.html?leftNav=myService"><p id="serviceCount">0</p></a>
+					<p>我的服务</p>
+				</li>
+				<li>
+					<a href="${ctxPath}/myCompany/myEnterprise.html?leftNav=myCompany"><p id="cusEnterpriseCount">0</p></a>
+					<p>企业数</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<ul class="fz14">
+		<a href="${ctxPath}/account/index.html?leftNav=myOrder" id="myAccount"><li class="first_li bdnone" id="myOrder" ><span class="icon icon_u"></span>我的账号</li></a>
+	</ul>
+	<ul class="fz14">
+		<a href="${ctxPath}/ordPaymentOrder/index.html?leftNav=orderCenter"><li class="first_li" id="orderCenter" ><span class="icon icon_o"></span>订单中心</li></a>
+	</ul>
+	<ul class="fz14">
+		<a href="${ctxPath}/myCompany/myEnterprise.html?leftNav=myCompany"><li class="first_li" id="myCompany" ><span class="icon icon_s"></span>我的公司</li></a>
+	</ul>
+ 	<ul class="fz14">
+		<a href="${ctxPath}/ordService/index.html?leftNav=myService"><li class="first_li" id="myService" ><span class="icon icon_s"></span>我的服务</li></a>
+	</ul> 
+	<ul class="fz14">
+		<a href="${ctxPath}/voucher/index.html?leftNav=voucher"><li class="first_li" id="voucher" ><span class="icon icon_s"></span>优惠卷</li></a>
+	</ul>
+	<ul class="fz14">
+		<a href="${ctxPath}/myCompany/companyListdljz.html?leftNav=companyListdljz"><li class="first_li" id="companyListdljz" ><span class="icon icon_s"></span>查看报表</li></a>
+	</ul>
+	<!-- <ul class="fz14">
+		<li class="first_li bdnone"><span class="icon icon_i"></span><a href="#">有奖调研</a></li>
+	</ul> -->
+	<ul class="fz14">
+		<a href="${ctxPath}/recommend/index.html?leftNav=myRecommend"><li class="first_li bdnone" id="myRecommend" ><span class="icon icon_r"></span>我的推荐</li></a>
+	</ul>
+	<ul class="fz14">
+		<a href="${ctxPath}/suggestion/index.html?leftNav=suggestion"><li class="first_li bdnone" id="suggestion" ><span class="icon icon_l"></span>投诉建议</li></a>
+	</ul>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var leftNav="${session.leftNav}";
+		$("#"+leftNav).addClass("active");
+		
+		dum.common.ajax({
+			type : "get",
+			url : "/ordPaymentOrder/findCountQuantity.api",
+			dataType : "json",
+			success : function(data) {
+				var status=data["executeStatus"];
+				 if("0"==status){
+					var result=data["values"];
+					if(result){
+						for(var key in result){
+							$("#"+key).text(result[key]);
+						}
+					}
+				}else{
+					if(data["errorCode"]=='login001'){
+						window.location.href = dum.appName+"/customer/loginUI.html";
+					}
+				}
+				
+			}
+		});
+	})
+</script>

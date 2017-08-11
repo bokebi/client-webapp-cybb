@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>注册公司+记账报税套餐-${@com.jxhc.utils.SysConfigUtils.config.getShortName()}</title>
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+		<link rel="stylesheet" href="${ctxPath}/css/service/collocation.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/service/serviceCommon.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/common/baseArea.css" />
+		<script type="text/javascript" src="${ctxPath}/js/channel/changeService.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/common/baseArea.js" ></script>
+	</head>
+	<body class="backFc collocationBody">
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+		<div class="w_1160">
+			<!--面包线-->
+			<div class="breadLines mt10">
+				<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+				<a href="${ctxPath}/product/collocation.html" class="lineTit">注册公司+记账报税套餐</a>
+			</div>
+			<div class="collocationZy pr">
+				<div class="companyCollocation">
+					<div class="pr fl">
+						<img src="${ctxPath}/images/img/zcgsIcon.jpg"/>
+						<img src="${ctxPath}/images/img/box2.png" class="boxSelect" />
+					</div>
+					<p class="fl collocationAdd">+</p>
+					<div class="pr fl">
+						<img src="${ctxPath}/images/img/dljzIcon.jpg"/>
+						<img src="${ctxPath}/images/img/box2.png" class="boxSelect" />
+					</div>
+					<div class="fl ml20">
+						<p class="packagePrice">套餐价：<b>￥128.00</b><span>/月起</span></p>
+						<p class="packageNumber">已搭配1件</p>
+					</div>
+					<p class="cb"></p>
+				</div>
+				<div class="collocationAddress">
+					<p class="fl registeredAddress"><img src="${ctxPath}/images/img/collocation.png" class="middle"/>
+						<span class="middle">请选择注册公司地址</span>
+					</p>
+					<div areaName="companyAreaCode" class="areaSelectText fl" areaSelect="getPrice"></div>
+					<p class="cb"></p>
+				</div>
+				<div class="collocationDetail">
+					<div class="fl collocationZcgs mr15">
+						<div class="fl">
+							<p><img src="${ctxPath}/images/img/zcgsIcon.jpg"/></p>
+							<h4 class="tc mt5">注册公司</h4>
+						</div>
+						<div class="fl ml20">
+							<ul class="serviceArea pr">
+								<li>
+									<input type="radio" name="companyType" id="xgmnsr" value="1" checked="checked" style="display: none"/>
+									<input type="radio" name="companyType" id="ybnsr" value="0" style="display: none"/>
+									<p class="zcArea fl areaMarignTop" id="zcAreaCollocation1">股东中是否有非大陆籍人士</p>
+									<dl class="taxesType collocationType">
+										<dd><label for="xgmnsr" class="service_lable">有</label></dd>
+										<dd class="texesTypeHover"><label for="ybnsr" class="service_lable">无</label></dd>
+									</dl>
+								</li>
+								<li>
+									<input type="radio" name="companyType" id="xgmnsr" value="1" checked="checked" style="display: none"/>
+									<input type="radio" name="companyType" id="ybnsr" value="0" style="display: none"/>
+									<p class="zcArea fl areaMarignTop" id="zcAreaCollocation1">
+										是否需要代领执照及刻章<br/><span>(前两项可多选)</span>
+									</p>
+									<dl class="taxesType collocationType">
+										<dd class="texesTypeHover"><label for="xgmnsr" class="service_lable">企业三章</label></dd>
+										<dd><label for="ybnsr" class="service_lable">发票专用章</label></dd>
+										<dd><label for="ybnsr" class="service_lable">我自己办</label></dd>
+									</dl>
+								</li>
+								<li style="margin-top: 13px;">
+									<span class="middle color50">服务费： </span>
+									<b class="collocationPrice middle">¥00</b>
+								</li>
+							</ul>
+						</div>
+						<p class="cb"></p>
+					</div>
+					<!-- 记账报税  -->
+					<div class="fl collocationZcgs">
+						<div class="fl">
+							<p><img src="${ctxPath}/images/img/dljzIcon.jpg"/></p>
+							<h4 class="tc mt5">记账报税</h4>
+						</div>
+						<div class="fl ml20">
+							<ul class="serviceArea pr">
+								<li class="serviceAreaLi">
+								<input type="radio" name="companyType" id="xgmnsr" value="1" checked="checked" style="display: none"/>
+								<input type="radio" name="companyType" id="ybnsr" value="0" style="display: none"/>
+								<p class="zcArea fl areaMarignTop1" id="zcAreaCollocation1">选择纳税类型</p>
+								<dl class="taxesType collocationType1">
+									<dd class="texesTypeHover"><label for="xgmnsr" class="service_lable">小规模纳税人</label></dd>
+									<dd><label for="ybnsr" class="service_lable">一般纳税人</label></dd>
+								</dl>
+							</li>
+							<li>
+								<input type="radio" name="businessType" id="dljzyn" value="DLJZ_001" checked="checked" style="display: none"/>
+								<input type="radio" name="businessType" id="dljzln" value="DLJZ_002" style="display: none"/>
+								<p class="zcArea fl areaMarignTop1" id="zcAreaCollocation1">选择记帐周期</p>
+								<dl class="taxesType collocationType1">
+									<dd class="texesTypeHover"><label for="dljzyn" class="service_lable">一年</label></dd>
+									<dd><label for="dljzln" class="service_lable">两年</label></dd>
+								</dl>
+							</li>
+							<li style="margin-top: 16px;">
+								<span class="middle color50">服务费： </span><b class="middle fz14 color50">168/月*12</b>
+								<b class="middle fz14 lessColor">-200</b><b class="collocationPrice middle">=¥1816.00</b>
+							</li>
+							</ul>
+						</div>
+						<p class="cb"></p>
+					</div>
+					<p class="cb"></p>
+				</div>
+				<!-- 确定购买套餐 -->
+				<div class="determineCollocation">
+					<div class="fr mr10">
+						购买<input type="text" value="1" class="sleeveTxt" />套
+						&nbsp;&nbsp;合计<span class="collocationTotal">￥<b>3099.00</b></span>
+						&nbsp;&nbsp;<span class="buyCollocation">确定购买套餐</span>
+					</div>
+					<p class="cb"></p>
+				</div>
+			</div>
+			
+		</div>
+		<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+	</body>
+</html>

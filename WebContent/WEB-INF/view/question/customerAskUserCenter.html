@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>${sysCompanyResult.values.companyAbb!}-用户中心</title>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link rel="stylesheet" href="${ctxPath}/css/question/main.css" />
+<link rel="stylesheet" href="${ctxPath}/css/question/problem.css" />
+</head>
+<body class="bgc-gray ask-page">
+   <!--头部导航-->
+  <%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+  <script type="text/javascript">
+	  $(function(){
+		  $('.quit').attr({"href":"${ctxPath}/cus/loginOut.html?quiturl=/ask/yhzx-yh-${userinfo.id}-${index}.html"});
+		  
+	  });
+   </script>
+
+	<ol class="breadcrumb">
+		<img src="${ctxPath}/images/img/home.png" class="middle mr10" alt=""/><a href="${ctxPath!}/">首页</a><span>></span>
+		<a href="${ctxPath}/ask/">问答库</a><span>></span>
+		<span>
+		<%if(!isEmpty(ismyselft) && ismyselft == 'Y'){%>
+				我
+			<%}else{%>
+				${userinfo.customerName!}
+			<%}%>的个人中心
+		</span>
+	</ol>
+
+	<div class="user-center clearfix">
+		<div class="left">
+			<input type="hidden" name="index" id="index" value="${index!}"/>
+			<input type="hidden" name="userid" id="userid" value="${userinfo.id!}"/>
+			<ul class="user-nav">
+				<li><a href="${ctxPath}/ask/yhzx/${userinfo.id!}/0.html" <%if(!isEmpty(index) && index == 0){%>class="current"<%}%>>
+				TA的首页</a></li>
+				<li><a href="${ctxPath}/ask/yhzx/${userinfo.id!}/1.html" <%if(!isEmpty(index) && index == 1){%>class="current"<%}%>>
+				TA的提问</a></li>
+				<li><a href="${ctxPath}/ask/yhzx/${userinfo.id!}/2.html" <%if(!isEmpty(index) && index == 2){%>class="current"<%}%>>
+				TA的回答</a></li>
+			</ul>
+
+			<div>
+			  <br><br>
+				<p class="info-Introduction">简介：<%if(isEmpty(userinfo.customerDesc)){%>暂时没有简介</p><%}else{%>${userinfo.customerDesc!}<p></p><%}%>
+				<!-- <p class="info-login-time">上次登录时间： ${loginDate!}</p> -->
+			</div>
+
+			<h2>
+				<%if(!isEmpty(index) && index == 0){%>
+					TA的最新动态
+				<%}else if(!isEmpty(index) && index == 1){%>
+					TA的提问<%if(!isEmpty(customerCenterQuestionList)){%>(${customerCenterQuestionList.total!})<%}%>
+				<%}else if(!isEmpty(index) && index == 2){%>
+					TA的回答<%if(!isEmpty(customerCenterAnswerList)){%>(${customerCenterAnswerList.total!})<%}%>
+				<%}%>
+			</h2>
+			<%if(!isEmpty(index) && index == 0){%>
+				<!-- TA的最新动态  开始-->
+				<ul class="user-space">
+					<%if(!isEmpty(allquestionAndAnswerList)){for(item in allquestionAndAnswerList){%>
+						<li>
+							<p class="type">
+							 TA 
+							<%if(!isEmpty(item.type) && item.type == 0){%>
+								提问了该问题
+							<%}else{%>
+								回答了该问题 
+							<%}%>
+							<span> ${item.createtimeFmt!}</span>
+							</p> 	
+							<%if(!isEmpty(item.text) && strutil.length(item.text) > 70){%>
+								<%if(!isEmpty(ismyselft) && ismyselft == 'Y' && !isEmpty(item.type) && item.type == 0){%>
+									<%if(!isEmpty(item.majorQuestion) && item.majorQuestion=='1'){%>
+										${!isEmpty(item.text) && strutil.subStringTo (item.text,0,70)}...<span style="color: red;">(审核中...)</span>
+									<%}else if(!isEmpty(item.questionStatus) && item.questionStatus=='2'){%>
+										${!isEmpty(item.text) && strutil.subStringTo (item.text,0,70)}...<span style="color: red;">(审核未通过)</span>
+									<%}%>
+								<%}else{%>
+									<a href="${ctxPath}/ask/${item.id!}.html">${!isEmpty(item.text) && strutil.subStringTo (item.text,0,70)}...</a>
+								<%}%>
+							<%}else{%>
+								<%if(!isEmpty(ismyselft) && ismyselft == 'Y' && !isEmpty(item.type) && item.type == 0){%>
+									<%if(!isEmpty(item.questionStatus) && item.questionStatus=='1'){%>
+										${item.text}<span style="color: red;">(审核中...)</span>
+									<%}else if(!isEmpty(item.questionStatus) && item.questionStatus=='2'){%>
+										${item.text}<span style="color: red;">(审核未通过)</span>
+									<%}%>
+								<%}else{%>
+									<a href="${ctxPath}/ask/${item.id!}.html">${item.text}</a>
+								<%}%>
+							<%}%>
+							<p class="info">
+								<span>${item.answerNum!}个回答</span>| <span>${item.browseNum!}次浏览</span>
+							</p>
+						</li>
+					<%}}%>					
+				</ul>
+				<!-- TA的最新动态  结束-->
+			<%}else if(!isEmpty(index) && index == 1){%>
+				<!-- TA的提问  开始-->
+				<ul class="user-space">
+				<%if(!isEmpty(customerCenterQuestionList) && !isEmpty(customerCenterQuestionList.rows)){for(item in customerCenterQuestionList.rows){%>
+						<li>
+							<p class="type">TA发表了该问题 <span> ${item.formatCreateDate}</span>
+							</p> 
+							
+								<%if(strutil.length(item.majorQuestion) > 70){%>
+									<%if(!isEmpty(ismyselft) && ismyselft == 'Y'){%>
+										<%if(item.questionStatus=='1'){%>
+											${strutil.subStringTo (item.majorQuestion,0,70)}...<span style="color: red;">(审核中...)</span>
+										<%}else if(item.questionStatus=='2'){%>
+											${strutil.subStringTo (item.majorQuestion,0,70)}...<span style="color: red;">(审核未通过)</span>
+										<%}%>
+									<%}else{%>
+										<a href="${ctxPath}/ask/${item.id}.html">${strutil.subStringTo (item.majorQuestion,0,70)}...</a>
+									<%}%>
+								<%}else{%>
+									
+									<%if(!isEmpty(ismyselft) && ismyselft == 'Y'){%>
+										<%if(item.questionStatus=='1'){%>
+											${item.majorQuestion}<span style="color: red;">(审核中...)</span>
+										<%}else if(item.questionStatus=='2'){%>
+											${item.majorQuestion}<span style="color: red;">(审核未通过)</span>
+										<%}%>
+									<%}else{%>
+										<a href="${ctxPath}/ask/${item.id}.html">${item.majorQuestion}</a>
+									<%}%>
+								<%}%>
+							<p class="info">
+								<span>${item.qestionanswereCount!}个回答</span>| <span>${item.readNumber!}次浏览</span>
+							</p>
+						</li>
+					<%}}%>
+				</ul>
+				<!-- 分页 -->
+				<%if(!isEmpty(customerCenterQuestionList)){%>
+				<div class="paging solvePageCode" style="text-align: center;">
+				</div>
+				<%}%>
+				<input type="hidden" id="solveTotalPages" name="solveTotalPages" value="${customerCenterQuestionList.total!}"/>
+				<input type="hidden" id="currentPage" name="currentPage" value="${customerCenterQuestionList.page!}"/>
+				<!-- TA的提问  结束-->
+			<%}else if(!isEmpty(index) && index == 2){%>
+				<!-- TA的回答  开始-->
+				<ul class="user-space">
+				<%if(!isEmpty(customerCenterAnswerList) && !isEmpty(customerCenterAnswerList.rows)){for(item in customerCenterAnswerList.rows){%>
+						<li>
+							<p class="type">
+							<%if(!isEmpty(ismyselft) && ismyselft == 'Y'){%>
+								我					
+							<%}else{%>
+							    TA
+							<%}%> 回答了该问题 <span> ${item.formatCreateDate}</span>
+							</p> 
+								<a href="${ctxPath}/ask/${item.question.id}.html">
+									<%if(strutil.length(item.question.majorQuestion) > 70){%>
+										${strutil.subStringTo (item.question.majorQuestion,0,70)}...
+									<%}else{%>
+										${item.question.majorQuestion}
+									<%}%>
+								</a>
+							<p class="info">
+								<span>${item.wthdNumber!}个回答</span>| <span>${item.question.readNumber!}次浏览</span>
+							</p>
+						</li>
+					<%}}%>
+				</ul>
+				<!-- 分页 -->
+				<%if(!isEmpty(customerCenterAnswerList)){%>
+				<div class="paging solvePageCode" style="text-align: center;">
+				</div>
+				<%}%>
+				<input type="hidden" id="solveTotalPages" name="solveTotalPages" value="${customerCenterAnswerList.total!}"/>
+				<input type="hidden" id="currentPage" name="currentPage" value="${customerCenterAnswerList.page!}"/>
+				<!-- TA的回答  结束-->
+			<%}%>
+			
+		</div>
+
+		<div class="people">
+			<div class="info clearfix">
+				<%if(!isEmpty(userinfo) && !isEmpty(userinfo.attachment) && !isEmpty(userinfo.attachment.fillFilePath) ){%>
+					<div class="user-img-box"
+						style='background-image: url("${userinfo.attachment.fillFilePath}")'></div>
+				<%}else{%>
+					<div class="user-img-box"
+						style='background-image: url("${ctxPath}/images/img/infoImg.png")'></div>
+				<%}%>
+				
+				<div class="right">
+					<h2 style="padding-bottom: 10px;">${userinfo.customerName}</h2>
+					<p><span class="label label-info">
+						普通用户
+					</span></p>
+				</div>
+			</div>
+			<ul id="customercount">
+				<li>
+					<p id="hds">0</p>
+					<p>回答数</p>
+				</li>
+				<li>
+					<p id="cns">0</p>
+					<p>采纳数</p>
+				</li>
+				<li>
+					<p id="cnl">0%</p>
+					<p>采纳率</p>
+				</li>
+				<li>
+					<p id="cfz">0</p>
+					<p>财富值</p>
+				</li>
+				<li>
+					<p id="bzrs">0</p>
+					<p>帮助人数</p>
+				</li>
+				<li>
+					<p id="sddz">0</p>
+					<p>收到的赞</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+	<script type="text/javascript" src="${ctxPath}/js/question/jquery.page.js" ></script>
+	<script type="text/javascript" src="${ctxPath}/js/question/customerAskUserCenter.js"></script>
+</body>
+</html>

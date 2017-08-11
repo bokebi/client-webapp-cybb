@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<title>404错误页 - 对不起，您找的内容找不到了</title>
+<meta http-equiv="x-ua-compatible" content="ie=emulateie7">
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+dl, dt, dd, ul, ol, li, strong, p, em, h1, h2, h3, h4, h5, h6, form, input, select, td {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #dad9d7;
+	font-family: Microsoft yahei, 微软雅黑;
+}
+img, input {
+	vertical-align: middle;
+	border: 0;
+}
+a {
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+ .cf:unknown {
+clear:both;
+display:block;
+font-size:0px;
+visibility:hidden;
+height:0px;
+content:".";
+}
+.cf {
+	clear: both;
+	zoom: 1;
+}
+.container {
+	background: url(images/404/01.jpg) no-repeat center top #dad9d7;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+	top: 0px;
+	left: -23px;
+	height: 600px;
+	background-attachment: fixed;
+}
+.cont {
+	margin: 0px auto;
+	width: 500px;
+	line-height: 20px;
+}
+.c1 {
+	height: 360px;
+	text-align: center;
+	margin-top: 100px;
+}
+.c1 .img1 {
+	margin-top: 180px;
+}
+.c1 .img2 {
+	margin-top: 165px;
+}
+.cont h1 {
+	font-weight: normal;
+	font-size: 20px;
+	color: #000;
+	height: 35px;
+	text-align: center;
+}
+.c2 {
+	height: 35px;
+	text-align: center;
+}
+.c2 a {
+	display: inline-block;
+	font-size: 14px;
+	margin: 0px 4px;
+	color: #626262;
+	padding-top: 1px;
+	height: 23px;
+	text-align: left;
+	text-decoration: none;
+}
+.c2 a:hover {
+	color: #626262;
+	text-decoration: none;
+}
+.c2 a.home {
+	padding-left: 30px;
+	background: url(images/404/02.png);
+	width: 66px;
+}
+.c2 a.home:hover {
+	background: url(images/404/02.png) 0px -24px;
+}
+.c2 a.home:active {
+	background: url(images/404/02.png) 0px -48px;
+}
+.c2 a.re {
+	padding-left: 30px;
+	background: url(images/404/02.png);
+	width: 66px;
+}
+.c2 a.re:hover {
+	background: url(images/404/03.png) 0px -24px;
+}
+.c2 a.re:active {
+	background: url(images/404/03.png) 0px -48px;
+}
+.c2 a.sr {
+	padding-left: 28px;
+	background: url(images/404/04.png);
+	width: 153px;
+}
+.c2 a.sr:hover {
+	background: url(images/404/04.png) 0px -24px;
+}
+.c2 a.sr:active {
+	background: url(images/404/04.png) 0px -48px;
+}
+.c3 {
+	font-size: 13px;
+	color: #666;
+	height: 180px;
+	text-align: center;
+}
+.search {
+	padding-right: 0px;
+	margin-top: 0px;
+}
+.search input.s_txt {
+	background: url(images/404/s_box.jpg) no-repeat;
+	width: 372px;
+	height: 17px;
+	padding: 10px;
+	color: #333;
+	font-size: 14px;
+}
+.search input.s_btn {
+	background: url(images/404/s_btn.jpg) no-repeat;
+	width: 76px;
+	height: 37px;
+	cursor: pointer;
+	text-indent: -9999px;
+	margin-right: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<script type="text/javascript">
+//<!--
+	function getContextPath() {
+		var contextPath = document.location.pathname;
+		var index = contextPath.substr(1).indexOf("/");
+		contextPath = contextPath.substr(0, index + 1);
+		delete index;
+		return contextPath;
+	}
+
+	function isIFrameSelf() {
+		try {
+			if (window.top == window) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (e) {
+			return true;
+		}
+	}
+	
+	var number = 5;
+	function toHome() {
+		if (number == 1) {
+			clearInterval(timer);
+			if (!isIFrameSelf()) {
+
+				var url = window.location.href;
+				url = url.replace("/error/404.html","")
+				window.location.href = '${ctxPath}/';
+			}
+		} else {
+			number = number - 1;
+			var times = document.getElementById("times");
+			times.innerText = number;
+		}
+	}
+	// 	window.setTimeout("toHome()", 1000);
+	var timer = window.setInterval(toHome, 1000);
+//-->
+</script>
+
+
+<div class="container">
+  <div style="position:relative; width:600px; margin:0 auto;">
+    <div style="position:absolute; width:auto; margin:0 auto; left: 20px; top: 100px;">
+      <div class="search"> </div>
+    </div>
+    <div class="cont">
+      <div class="c1"><a href="${ctxPath}/"><img class="img1" src="${ctxPath}/images/404/01.png"></a></div>
+      <h1>对不起，俺把您找的内容弄丢了！您可以选择以下操作：</h1>
+      <div class="c2" align="left"><a class="home" href="${ctxPath}/">网站首页</a><span id="times" style="color: red;">5</span>秒钟之后将会带你进入导航页面</div>
+      <div class="c3"> <a class="c3" href="#">本站</a>提醒您 - 您找的内容暂时不可用或者被删除了！ </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

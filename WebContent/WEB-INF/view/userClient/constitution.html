@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>公司章程</title>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/constitution.css">
+<script type="text/javascript" src="${ctxPath}/js/userClient/constitution.js"></script>
+</head>
+<body>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+	<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%>
+		</div>
+		<div id="content">
+			<div class="clientRight">
+				<div class="baseMargin">
+					<h4 class="infoTit"><span>公司资料</span></h4>
+					<div class="border reports">
+					<div class="reportsTop">
+						<ul class="fl reportsUl">
+							<li class="reportsHover">公司章程</li>
+						</ul>
+						<a href="${ctxPath}/information/companyListzcgs"><p class="fz14 color68 fr cursor mr20">返回</p></a>
+						<div class="cb"></div>
+					</div>
+						<!-- 第一页 -->
+						<div id="dgdConstitution1" class="">
+							<h4 class="mt30 mb30 fz16 color50 tc">${constitution.companyName!}章程</h4>
+							<!-- 第一章  总  则 -->
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第一章<span class="ml10">总&nbsp;&nbsp;则</span></h5>
+								<p><span class="mr20">第一条</span>根据《中华人民共和国公司法》、《深圳经济特区有限责任公司条例》和有关法律法规，制定本章程。</p>
+								<p><span class="mr20">第二条</span>本公司（以下简称公司）的一切活动必须遵守国家的法律法规，并受国家法律法规的保护。</p>
+								<p><span class="mr20">第三条</span>公司在深圳市市场监督管理局登记注册。</p>
+								<p><span class="mr20">名  称：</span><span class="fw">${constitution.companyName!}</span></p>
+								<p><span class="mr20">住  址：</span><span class="fw">${constitution.cusOrderCompany.areaFullname!}${constitution.cusOrderCompany.addressDetails!}</span></p>
+								<p><span class="mr20">第四条</span>公司的经营范围：<b>${constitution.scopeDesc!}</b></p>
+								<p><span class="mr20">第五条</span>公司根据业务需要，可以对外投资，设立分公司和办事机构。</p>
+								<p><span class="mr20">第六条</span>公司的营业期限为永续经营,自公司核准登记注册之日起计算。</p>
+							</div>
+							<!-- 第二章  股  东 -->
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第二章<span class="ml10">股&nbsp;&nbsp;东</span></h5>
+								<p><span class="mr20">第七条</span>公司股东共<%if(!isEmpty(constitution.cusCompanyShareholders)){%>${constitution.cusCompanyShareholders.~size}<%}else{%>0<%}%>个，名称与住所如下：</p>
+								<table>
+									<tr>
+										<td><p>股东名称</p></td>
+										<td><p class="ml50">身份证号</p></td>
+										<td><p class="ml50">住&nbsp;&nbsp;&nbsp;&nbsp;所</p></td>
+									</tr>
+									<%if(!isEmpty(constitution.cusCompanyShareholders)){%>
+												<%for(shareholders in constitution.cusCompanyShareholders){%>
+												<tr>
+													<td><p class="fw">${shareholders.shareholderName!}</p></td>
+													<td><p class="fw ml50">${shareholders.documentNo!}</p></td>
+													<td><p class="fw ml50">${shareholders.cardAddress!}</p></td>
+												</tr>
+										 <%}%>
+									<%}%>
+								</table>
+								<p><span class="mr20">第八条</span>股东享有下列权利： </p>
+								<p>（一）有选举和被选举为公司执行董事、监事的权利；</p>
+								<p>（二）根据法律法规和本章程的规定要求召开股东会；</p>
+								<p>（三）对公司的经营活动和日常管理进行监督；</p>
+								<p>（四）有权查阅公司章程、股东会会议记录和公司财务会计报告，对公司的经营提出建议和质询；</p>
+								<p>（五）按出资比例分取红利，公司新增资本时，有优先认缴权；</p>
+								<p>（六）公司清盘解散后，按出资比例分享剩余资产；</p>
+								<p>（七）公司侵害其合法利益时，有权向有管辖权的人民法院提出要求，纠正该行为，造成经济损失的，可要求予以赔偿。</p>
+								<p><span class="mr20">第九条</span>股东履行下列义务： </p>
+								<p>（一）按规定缴纳所认出资；</p>
+								<p>（二）以认缴的出资额对公司承担责任；</p>
+								<p>（三）公司经核准登记注册后，不得抽回出资；</p>
+								<p>（四）遵守公司章程，保守公司秘密；</p>
+								<p>（五）支持公司的经营管理，提出合理化建议，促进公司业务发展。</p>
+								<p><span class="mr20">第十条</span>公司成立后，应当向股东签发出资证明书，出资证明书载明下列事项： </p>
+								<p>（一）公司名称；</p>
+								<p>（二）公司登记日期；</p>
+								<p>（三）公司注册资本；</p>
+								<p>（四）股东的姓名或名称，缴纳的出资；</p>
+								<p>（五）出资证明书的编号和核发日期。</p>
+								<p>出资证明书应当由公司法定代表人签名并由公司盖章。</p>
+								<p><span class="mr20">第十一条</span>公司置备股东名册，记载下列事项：</p>
+								<p>（一）股东的姓名或名称；</p>
+								<p>（二）股东的住所；</p>
+								<p>（三）股东的出资额、出资比例；</p>
+								<p>（四）出资证明书编号。</p>
+							</div>
+							<!-- 第三章  注册资本-->
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第三章<span class="ml10">注册资本</span></h5>
+								<p><span class="mr20">第十二条</span>公司注册资本为<%if(isEmpty(constitution.cusCompanyLegalperson.moneyUnit) || constitution.cusCompanyLegalperson.moneyUnit =='0'){%>人民币<%}else if(constitution.cusCompanyLegalperson.moneyUnit == '1'){%>港币<%}%>${constitution.cusCompanyLegalperson.registeredCapital!}万元各股东出资额及出资比例如下：</p>
+								<table>
+									<tr>
+										<td><p>股东名称</p></td>
+										<td><p class="ml50">出资额</p></td>
+										<td><p class="ml50">出资比例</p></td>
+									</tr>
+									
+									<%if(!isEmpty(constitution.cusCompanyShareholders)){%>
+												<%for(shareholders in constitution.cusCompanyShareholders){%>
+												
+												<tr>
+													<td><p class="fw">${shareholders.shareholderName!}</p></td>
+													<td><p class="fw ml50">${shareholders.shareholderMoney!}万</p></td>
+													<td><p class="fw ml50">${shareholders.shareholderRatio!}%</p></td>
+												</tr>
+											<%}%>
+									<%}%>
+								</table>
+							</div>
+						</div>
+						<!-- 第二页 -->
+						<div id="dgdConstitution2" class="none">
+							<div class="mb30 article mt20">
+								<p><span class="mr20">第十三条</span>股东以货币出资。 </p>
+								<p><span class="mr20">第十四条</span>公司注册资本实行认缴制，各股东承诺于公司2034年5月13日前足额缴纳各自所认缴的出资额。</p>
+								<p>股东不缴纳所认缴的出资，应当向已足额缴纳出资的股东承担违约责任。</p>
+								<p><span class="mr20">第十五条</span>股东可以以非货币出资，但必须按照法律法规的规定办理有关手续。 </p>
+								<p><span class="mr20">第十六条</span>股东可以依法转让其出资。 </p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第四章<span class="ml10">股东会</span></h5>
+								<p><span class="mr20">第十七条</span>公司设股东会，股东会由全体股东组成，股东会是公司的最高权力机构。 </p>
+								<p><span class="mr20">第十八条</span>股东会行使下列职权： </p>
+								<p>（一）决定公司的经营方针和投资计划；</p>
+								<p>（二）选举和更换执行董事，决定有关执行董事的报酬事项；</p>
+								<p>（三）选举和更换由股东代表出任的监事，决定有关监事的报酬事项；</p>
+								<p>（四）审议批准执行董事的报告；</p>
+								<p>（五）审议批准监事的报告；</p>
+								<p>（六）审议批准公司的年度财务预算方案，决算方案；</p>
+								<p>（七）审议批准公司的利润分配方案和弥补亏损方案；</p>
+								<p>（八）对公司增加或者减少注册资本作出决议；</p>
+								<p>（九）对发行公司债券作出决议；</p>
+								<p>（十）对股东转让出资作出决议；</p>
+								<p>（十一）对公司合并、分立、变更公司组织形式、解散和清算等事项作出决议；</p>
+								<p>（十二）制定和修改公司章程。</p>
+								<p><span class="mr20">第十九条</span>股东会会议由股东按出资比例行使表决权。</p>
+								<p>公司增加或者减少注册资本、分立、合并、解散、变更公司形式以及修改公司章程，必须经代表三分之二以上表决权的股东同意。</p>
+								<p><span class="mr20">第二十条</span>股东会每年召开一次年会。年会为定期会议，在每年的十二月召开。公司发生重大问题，经代表四分之一以上表决权的股东、执行董事，或者监事提议，可召开临时会议。</p>
+								<p><span class="mr20">第二十一条</span>股东会会议由执行董事召集并主持，执行董事因特殊原因不能履行职务时，由执行董事指定的股东召集并主持。</p>
+								<p><span class="mr20">第二十二条</span>召开股东会议，应当于会议召开十五日前以书面方式或其它方式通知全体股东。股东因故不能出席时，可委托代理人参加。</p>
+								<p>一般情况下，经全体股东人数半数（含半数）以上，并且代表二分之一表决权的股东同意，股东会决议有效。修改公司章程，必须经过全体股东人数半数（含半数）以上，并且代表三分之二以上表决权的股东同意，股东会决议方为有效。</p>
+								<p><span class="mr20">第二十三条</span>股东会应当对所议事项的决定作成会议记录，出席会议的股东应当在会议记录上签名。</p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第五章<span class="ml10">执行董事</span></h5>
+								<p><span class="mr20">第二十四条</span>公司不设董事会，设执行董事壹名，执行董事行使董事会权利。</p>
+								<p><span class="mr20">第二十五条</span>执行董事为公司法定代表人，由股东会选举产生。任期三年。</p>
+								<p><span class="mr20">第二十六条</span>执行董事由股东提名候选人，经股东会选举产生。</p>
+								<p><span class="mr20">第二十七条</span>执行董事任期届满，可以连选连任。在任期届满前，股东会不得无故解除其职务。</p>
+								<p><span class="mr20">第二十八条</span>执行董事对股东会负责，行使下列职权：</p>
+								<p>（一）负责召集股东会，并向股东会报告工作；</p>
+								<p>（二）执行股东会的决议；</p>
+								<p>（三）决定公司的经营计划和投资方案；</p>
+								<p>（四）制订公司年度财务预算方案、决算方案；</p>
+								<p>（五）制订利润分配方案和弥补亏损方案；</p>
+								<p>（六）制定增加或者减少注册资本方案；</p>
+								<p>（七）拟订公司合并、分立、变更公司组织形式、解散方案；</p>
+								<p>（八）决定公司内部管理机构的设置；</p>
+								<p>（九）聘任或者解聘公司经理，根据经理提名，聘任或者解聘公司副经理，财务负责人、其他部门负责人等，决定其报酬事项；</p>
+								<p>（十）制定公司的基本管理制度。</p>
+								<p><span class="mr20">第二十九条</span>执行董事应当将其根据本章程规定的事项所作的决定以书面形式报送股东会。</p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第六章<span class="ml10">经营管理机构</span></h5>
+								<p><span class="mr20">第三十条</span>公司设立经营管理机构，经营管理机构设经理一人，并根据公司情况设若干管理部门。</p>
+								<p>公司经营管理机构经理由执行董事聘任或解聘，任期三年。经理对执行董事负责，行使下列职权：</p>
+								<p>（一）主持公司的生产经营管理工作、组织实施股东会决议或者执行董事决定；</p>
+								<p>（二）组织实施公司年度经营计划和投资方案；</p>
+								<p>（三）拟定公司内部管理机构设置方案；</p>
+								<p>（四）拟定公司的基本管理制度；</p>
+							</div>
+						</div>
+						<!-- 第三页 -->
+						<div id="dgdConstitution3" class="none">
+							<div class="mb30 article mt20">
+								<p>（五）制定公司的具体规章； </p>
+								<p>（六）提请聘任或者解聘公司副经理、财务负责人；</p>
+								<p>（七）聘任或者解聘除应由执行董事聘任或者解聘以外的负责管理人员；</p>
+								<p>（八）公司章程和股东会授予的其他职权。</p>
+								<p><span class="mr20">第三十一条</span>执行董事、经理不得将公司资产以其个人名义或者以其他个人名义开立账户存储。</p>
+								<p>执行董事、经理不得以公司资产为本公司的股东或者其他个人、债务提供担保。</p>
+								<p><span class="mr20">第三十二条</span>执行董事、经理不得自营或者为他人经营与本公司同类的业务或者从事损害本公司利益的活动。从事上述业务或者活动的，所有收入应当归公司所有。</p>
+								<p>
+									执行董事、经理除公司章程规定或者股东会同意外，不得同本公司订立合同或者进行交易。<br/>执行董事、经理执行公司职务时违反法律、行政法规或者公司章程的规定，给公司造成损害的，应当依法承担赔偿责任。
+								</p>
+								<p><span class="mr20">第三十三条</span>执行董事和经理的任职资格应当符合法律法规和国家有关规定。</p>
+								<p>经理及高级管理人员有营私舞弊或严重失职行为的，经股东会决议，可以随时解聘。</p>
+								
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第七章<span class="ml10">监事</span></h5>
+								<p><span class="mr20">第三十四条</span>公司不设监事会，设监事一名，监事由股东会委任，任期三年。监事在任期届满前，股东会不得无故解除其职务，执行董事、经理及财务负责人不得兼任监事。</p>
+								<p>监事行使下列职权：</p>
+								<p>1、检查公司财务。</p>
+								<p>2、对执行董事、经理执行公司职务时违反法律法规或者公司章程的行为进行监督。</p>
+								<p>3、当执行董事和经理的行为损害公司的利益时，要求执行董事和经理予以纠正。
+								<p>4、提议召开临时股东会。</p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第八章<span class="ml10">财务、会计</span></h5>
+								<p><span class="mr20">第三十五条</span>公司应当依照法律法规和有关主管部门的规定建立财务会计制度，依法纳税。</p>
+								<p><span class="mr20">第三十六条</span>公司应当在每一会计年度终了时制作财务会计报告，并依法经中国注册会计师审查验证。</p>
+								<p>财务会计报告应当包括下列财务会计报表及附属明细表：</p>
+								<p>（一）资产负债表；</p>
+								<p>（二）损益表；</p>
+								<p>（三）财务状况变动表；</p>
+								<p>（四）财务情况说明书；</p>
+								<p>（五）利润分配表。</p>
+								<p><span class="mr20">第三十七条</span>公司分配当年税后利润时，应当提取利润的百分之十列入公司法定公积金，并提取利润的百分之五至百分之十列入公司法定公益金。公司法定公积金累计额超过了公司注册资本的百分之五十后，可不再提取。
+公司法定公积金不足以弥补上一年度公司亏损的，在依照前款规定提取法定公积金和法定公益金之前，应当先用当年利润弥补亏损。</p>
+								<p>公司在税后利润中提取法定公积金、法定公益金后所剩利润，按照股东的出资比例分配。</p>
+								<p><span class="mr20">第三十八条</span>公司法定公积金用于弥补公司的亏损，扩大公司生产经营或者转为增加公司资本。</p>
+								<p><span class="mr20">第三十九条</span>公司提取的法定公益金用于本公司职工的集体福利。</p>
+								<p><span class="mr20">第四十条</span>公司除法定的会计账册外，不得另立会计账册。</p>
+								<p><span class="mr20">第四十一条</span>对公司资产，不得以任何个人名义开设帐户存储。</p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第九章<span class="ml10">解散和清算</span></h5>
+								<p><span class="mr20">第四十二条</span>公司的合并或者分立，应当按国家法律法规的规定办理。</p>
+								<p><span class="mr20">第四十三条</span>在法律法规规定的诸种解散事由出现时，可以解散。</p>
+								<p><span class="mr20">第四十四条</span>公司正常（非强制性）解散，由股东会确定清算组，并在股东会确认后十日内成立。</p>
+								<p><span class="mr20">第四十五条</span>清算组成立后，公司停止与清算无关的经营活动。</p>
+								<p><span class="mr20">第四十六条</span>清算组在清算期间行使下列职权：</p>
+								<p>（一）清理公司财产，编制资产负债表和财产清单；</p>
+								<p>（二）通知或者公告债权人；</p>
+								<p>（三）处理与清算有关的公司未了结的业务；</p>
+								<p>（四）清缴所欠税款；</p>
+								<p>（五）清理债权债务；</p>
+								<p>（六）处理公司清偿债务后的剩余财产；</p>
+								<p>（七）代表公司参与民事诉讼活动。</p>
+								<p><span class="mr20">第四十七条</span>清算组应当自成立之日起十日内通知债权人，并于六十日内在报纸上至少公告一次。清算组应当对公司债权人的债权进行登记。</p>
+								<p><span class="mr20">第四十八条</span>清算组在清理公司财产、编制资产负债表和财产清单后，应当制定清算方案，并报股东会确认。</p>
+								<p><span class="mr20">第四十九条</span>财产清偿顺序如下：1、支付清算费用；2、职工工资和劳动保险费用；3、缴纳所欠税款；4、清偿公司债务。</p>
+							</div>	
+						</div>
+						<!-- 第四页 -->
+						<div id="dgdConstitution4" class="none">
+							<div class="mb30 article mt20">
+								<p>公司财产按前款规定清偿后的剩余财产，按照出资比例分配给股东。</p>
+								<p><span class="mr20">第五十条</span>公司清算结束后，清算组制作清算报告，报股东会或公司主管机关确认。并向公司登记机关申请公司注销登记，公告公司终止。</p>
+								<p><span class="mr20">第五十一条</span>清算组成员应当忠于职守，依法履行清算义务，不得利用职权收受贿赂或者有其它非法收入，不得侵占公司财产。</p>
+								<p>清算组成员因故意或者重大过失给公司或者债权人造成损失的，应当承担赔偿责任。</p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第十章<span class="ml10">附  则</span></h5>
+								<p><span class="mr20">第五十二条</span>本章程中涉及登记事项的变更及其它重要条款变动应当修改公司章程。</p>
+								<p>公司章程修改程序，应当符合公司法及其本章程的规定。</p>
+								<p>修改公司章程，只对所修改条款作出修正案。</p>
+								<p><span class="mr20">第五十三条</span>股东会通过的章程修正案，应当报公司登记机关备案。</p>
+								<p><span class="mr20">第五十四条</span>本章程与国家法律法规相抵触的，以国家法律法规的规定为准。</p>
+								<p><span class="mr20">第五十五条</span>公司股东会通过的有关公司章程的补充决议，均为本章程的组成部分，应当报公司登记机关备案。</p>
+								<p><span class="mr20">第五十六条</span>本章程的解释权归公司股东会，本章程于公司核准登记注册后生效。</p>
+							</div>
+						</div>
+						
+					</div>
+					<!--分页-->
+					<div id="dgdPageDiv" class="paging">
+						<a pageIndex="up" href="javascript:void(0);">上一页</a>
+						<a class="hoverPage" pageIndex="1" href="javascript:void(0);">1</a>
+						<a  pageIndex="2" href="javascript:void(0);">2</a>
+						<a  pageIndex="3" href="javascript:void(0);">3</a>
+						<a  pageIndex="4" href="javascript:void(0);">4</a>
+						<a  pageIndex="next" href="javascript:void(0);">下一页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

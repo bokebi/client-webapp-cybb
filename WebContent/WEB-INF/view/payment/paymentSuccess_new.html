@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>${@com.jxhc.utils.SysConfigUtils.config.getShortName()}-支付成功</title>
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+		<link rel="stylesheet" href="${ctxPath}/css/paymentsuccess.css" type="text/css" />
+	</head>
+	<body>
+		<div class="w_1160">
+			<table cellspacing="0" cellpadding="0" width="100%" class="fz14">
+				<thead>
+					<tr>
+						<td colspan = "2" class="tc"><img alt="" src="${ctxPath}/images/img/paymentsuccess.png"></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="item_title">您的支付方式：</td>
+						<td class="item_content">支付宝</td>
+					</tr>
+					<tr>
+						<td class="item_title">您的订单号：</td>
+						<td class="item_content blue">123456789123456789</td>
+					</tr>
+					<tr>
+						<td class="item_title">您的账号：</td>
+						<td class="item_content">13823352356</td>
+					</tr>
+					<tr>
+						<td class="item_title">您的支付金额：</td>
+						<td class="item_content bold orange">￥3000.00</td>
+					</tr>
+					<tr>
+						<td class="item_title">如果您还有未支付的交易：</td>
+						<td class="item_content">点此<a href="javascript:void(0)" class="blue bold">查看付款</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2" class="tc fz16 foot"><span class="orange">5</span>秒后页面将跳转到完善信息页，请尽快完善信息，开始服务。</td>
+					</tr>
+				</tfoot>
+			</table>
+			<div class="recommends">
+				<div class="tabs">
+					<ul>
+						<li class="focus">为您推荐</li>
+					</ul>
+				</div>
+				<ul class="clearfix">
+					<li class="first">
+						<p><img alt="" src=""><span class="icon icon_add"></span><img alt="" src=""></p>
+						<p class="tc">注册公司+记账报税<span class="icon icon_hot"></span></p>
+						<p class="price">￥2016.00</p>
+						<p><a href="javascript:void(0)" class="joinCart">加入购物车</a></p>
+					</li>
+					<li>
+						<p><img alt="" src=""></p>
+						<p class="tc">股权变更<span class="icon icon_hot"></span></p>
+						<p class="price">￥1000.00</p>
+						<p><a href="javascript:void(0)" class="joinCart">加入购物车</a></p>
+					</li>
+					<li>
+						<p><img alt="" src=""></p>
+						<p class="tc">公司注销<span class="icon icon_hot"></span></p>
+						<p class="price">￥3000.00</p>
+						<p><a href="javascript:void(0)" class="joinCart">加入购物车</a></p>
+					</li>
+					<li>
+						<p><img alt="" src=""></p>
+						<p class="tc">公司章程<span class="icon icon_hot"></span></p>
+						<p class="price">￥800.00</p>
+						<p><a href="javascript:void(0)" class="joinCart">加入购物车</a></p>
+					</li>
+					<li>
+						<p><img alt="" src=""></p>
+						<p class="tc">经营范围变更<span class="icon icon_hot"></span></p>
+						<p class="price">￥800.00</p>
+						<p><a href="javascript:void(0)" class="joinCart">加入购物车</a></p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

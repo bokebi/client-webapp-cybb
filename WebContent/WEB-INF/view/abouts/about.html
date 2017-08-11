@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%if(!isEmpty(seoAboutusInfo)){%>
+	<title>${seoAboutusInfo.title!}-${sysCompanyResult.values.companyAbb!}</title>
+	<meta name="keywords" content="${seoAboutusInfo.keywords!}" />
+	<meta name="description" content="${seoAboutusInfo.description!}" />
+<%}%>
+<link rel="stylesheet" type="text/css" href="${ctxPath}/css/about.css"/>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.5&ak=B3f7707c25da5b29a6ff69618788a296"></script>
+</head>
+<body>
+	<!--头部导航-->
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+	<div><img class="aboutBanner" src="${ctxPath}/images/img/aboutBanner.png" alt="关于我们"/></div>
+	<div class="w_1160">
+		${content}
+	</div>
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+</body>
+</html>

@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>我的服务-服务评价</title> <%includeFileTemplate("/html/dumCommon.html"){
+%><%}%>
+<link rel="stylesheet" type="text/css"
+	href="${ctxPath}/css/userClient/nav_userClient.css" />
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/myAccount.css">
+<link rel="stylesheet" href="${ctxPath}/css/client/pingjia.css">
+<link rel="stylesheet" href="${ctxPath}/css/question/ui-dialog.css">
+<script type="text/javascript"
+	src="${ctxPath}/js/question/dialog-min.js"></script>
+<style>
+#content {
+	background-color: none;
+	min-height: 0px;
+	float: none;
+	border-left: 0px;
+}
+
+.hide {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+	<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+		<div>
+			<!--右侧内容-->
+			<div class="right fr">
+				<div class="rightTop">
+					<h1>服务评价</h1>
+				</div>
+				<form id="cusEvaluateForm">
+					<div class="rightContent">
+						<input id="evaluateDumId" name="evaluateDum.id"
+							value="${cusEvaluateVo.evaluateDum.id!}" type="hidden"> <input
+							id="id" name="id" value="${cusEvaluateVo.id!}" type="hidden">
+
+						<div class="service-pj">
+							<div class="pj-cont fl">
+								<div class="img fl">
+									<img src="${ctxPath}/images/newImg/logo.jpg"
+										style="margin-left: 68px; width: 75px;">
+								</div>
+								<div class="pj-label fl">
+									<dl>
+										<dd>综合</dd>
+										<dd class="colore66">${cusEvaluateVo.evaluateDum.evaluateSum!}</dd>
+									</dl>
+									<dl>
+										<dd>态度</dd>
+										<dd>${cusEvaluateVo.evaluateDum.evaluateAttitude!}</dd>
+									</dl>
+									<dl>
+										<dd>效率</dd>
+										<dd>${cusEvaluateVo.evaluateDum.workEfficiency!}</dd>
+									</dl>
+									<dl>
+										<dd>专业</dd>
+										<dd>${cusEvaluateVo.evaluateDum.majorDegree!}</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="fl" id="evaluateAttitude_score">
+								<p class="colorff8">请填写对${sysCompanyResult.values.companyAbb!}的服务评价</p>
+								<div class="score">
+									<span>服务态度好</span>
+									<p id="evaluateAttitude_div">
+										<i onclick="a(this,1,'#evaluateAttitude')"<%if((!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.workEfficiency >= 1) ||
+											isEmpty(cusEvaluateVo.evaluateDum)){%> class="ihover"
+											<%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,2,'#evaluateAttitude')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.evaluateAttitude! >= 2){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,3,'#evaluateAttitude')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.evaluateAttitude! >= 3){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,4,'#evaluateAttitude')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.evaluateAttitude! >= 4){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,5,'#evaluateAttitude')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.evaluateAttitude! >= 5){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <input
+											type="hidden" value="1" name="evaluateDum.evaluateAttitude">
+										<font id="evaluateAttitude"><%if(!isEmpty(cusEvaluateVo.evaluateDum)){%>
+											${cusEvaluateVo.evaluateDum.evaluateAttitude!}
+											<%}else{%>1<%}%> </font>分
+									</p>
+
+									<span>办事效率高度</span>
+									<p id="workEfficiency_div">
+										<i onclick="a(this,1,'#workEfficiency')"<%if((!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.workEfficiency >= 1) ||
+											isEmpty(cusEvaluateVo.evaluateDum)){%> class="ihover"
+											<%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,2,'#workEfficiency')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.workEfficiency >= 2){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,3,'#workEfficiency')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.workEfficiency >= 3){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,4,'#workEfficiency')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.workEfficiency >= 4){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,5,'#workEfficiency')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.workEfficiency >= 5){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <input
+											type="hidden" value="1" name="evaluateDum.workEfficiency">
+										<font id="workEfficiency"><%if(!isEmpty(cusEvaluateVo.evaluateDum)){%>
+											${cusEvaluateVo.evaluateDum.workEfficiency!} <%}else{%>1<%}%>
+										</font>分
+									</p>
+
+									<span>响应速度快</span>
+									<p id="responseSpeed_div">
+										<i onclick="a(this,1,'#responseSpeed')"<%if((!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.responseSpeed >=1) ||
+											isEmpty(cusEvaluateVo.evaluateDum)){%> class="ihover"
+											<%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,2,'#responseSpeed')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.responseSpeed >= 2){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,3,'#responseSpeed')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.responseSpeed >= 3){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,4,'#responseSpeed')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.responseSpeed >= 4){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,5,'#responseSpeed')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.responseSpeed >= 5){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <input
+											type="hidden" value="1" name="evaluateDum.responseSpeed">
+										<font id="responseSpeed"><%if(!isEmpty(cusEvaluateVo.evaluateDum)){%>
+											${cusEvaluateVo.evaluateDum.responseSpeed!} <%}else{%>1<%}%>
+										</font>分
+									</p>
+								</div>
+								<div class="score">
+									<span>专业程度高</span>
+									<p id="majorDegree_div">
+										<i onclick="a(this,1,'#majorDegree')"<%if((!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.majorDegree >= 1) ||
+											isEmpty(cusEvaluateVo.evaluateDum) ){%> class="ihover"
+											<%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,2,'#majorDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.majorDegree >= 2){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,3,'#majorDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.majorDegree >= 3){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,4,'#majorDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.majorDegree >= 4){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,5,'#majorDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.majorDegree >= 5){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <input
+											type="hidden" value="1" name="evaluateDum.majorDegree">
+										<font id="majorDegree"><%if(!isEmpty(cusEvaluateVo.evaluateDum)){%>
+											${cusEvaluateVo.evaluateDum.majorDegree!} <%}else{%>1<%}%> </font>分
+									</p>
+
+									<span>细心脾气好</span>
+									<p id="temperDegree_div">
+										<i onclick="a(this,1,'#temperDegree')"<%if((!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.temperDegree >= 1) ||
+											isEmpty(cusEvaluateVo.evaluateDum)){%> class="ihover"
+											<%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,2,'#temperDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.temperDegree >= 2){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,3,'#temperDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.temperDegree >= 3){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,4,'#temperDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.temperDegree >= 4){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,5,'#temperDegree')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.temperDegree >= 5){%>
+											class="scorei ihover" <%}else{%>class="scorei" <%}%> ></i> <input
+											type="hidden" value="1" name="evaluateDum.temperDegree">
+										<font id="temperDegree"><%if(!isEmpty(cusEvaluateVo.evaluateDum)){%>
+											${cusEvaluateVo.evaluateDum.temperDegree!} <%}else{%>1<%}%></font>分
+									</p>
+
+									<span>主动又热情</span>
+									<p id="activeHot_div">
+										<i onclick="a(this,1,'#activeHot')"<%if((!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.activeHot >= 1) ||
+											isEmpty(cusEvaluateVo.evaluateDum) ){%> class="ihover"
+											<%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,2,'#activeHot')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.activeHot >= 2){%> class="scorei
+											ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,3,'#activeHot')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.activeHot >= 3){%> class="scorei
+											ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,4,'#activeHot')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.activeHot >= 4){%> class="scorei
+											ihover" <%}else{%>class="scorei" <%}%> ></i> <i
+											onclick="a(this,5,'#activeHot')"<%if(!isEmpty(cusEvaluateVo.evaluateDum)
+											&& cusEvaluateVo.evaluateDum.activeHot >= 5){%> class="scorei
+											ihover" <%}else{%>class="scorei" <%}%> ></i> <input type="hidden"
+											value="1" name="evaluateDum.activeHot"> <font
+											id="activeHot"><%if(!isEmpty(cusEvaluateVo.evaluateDum)){%>
+											${cusEvaluateVo.evaluateDum.activeHot!} <%}else{%>1<%}%></font>分
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="service-zs">
+							<div class="zs-cont fl">
+								<div style="margin-top: 10px;">
+									<!-- <img src="" alt=""> -->
+								</div>
+								<div class="zs-title">
+									<p class="dljz">${cusEvaluateVo.serviceName!}</p>
+									<p class="xgm"></p>
+								</div>
+								<p>服务开始时间：${cusEvaluateVo.startDate!,dateFormat='yyyy-MM-dd'}</p>
+								<div class="xf">
+									<p>服务期限：${cusEvaluateVo.priodNumber!}</p>
+									<!-- <a href="#" class="xf-btn">续费</a> -->
+								</div>
+							</div>
+							<div class="fl" style="width: 650px;">
+								<p class="colorff8" style="margin-top: 20px;">请填写对专属顾问的服务评价</p>
+								<div class="score" id="business_score">
+									<%if(!isEmpty(cusEvaluateVo.evaluateBusinesses)){%> <%for(item
+									in cusEvaluateVo.evaluateBusinesses){%> <span>${item.businessName}</span>
+									<input type="hidden" value="${item.businessId!}"
+										name="evaluateBusinesses[${itemLP.index-1}].businessId">
+									<p>
+										<i onclick="a(this,1,'#business${itemLP.index-1}')"<%if((!isEmpty(item.businessEvaluate)
+											&& item.businessEvaluate >= 1) ||
+											isEmpty(item.businessEvaluate)){%> class="ihover"
+											<%}else{%>class="scorei" <%}%>></i> <i
+											onclick="a(this,2,'#business${itemLP.index-1}')"<%if(!isEmpty(item.businessEvaluate)
+											&& item.businessEvaluate >= 2){%> class="ihover"
+											<%}else{%>class="scorei" <%}%>></i> <i
+											onclick="a(this,3,'#business${itemLP.index-1}')"<%if(!isEmpty(item.businessEvaluate)
+											&& item.businessEvaluate >= 3){%> class="ihover"
+											<%}else{%>class="scorei" <%}%>></i> <i
+											onclick="a(this,4,'#business${itemLP.index-1}')"<%if(!isEmpty(item.businessEvaluate)
+											&& item.businessEvaluate >= 4){%> class="ihover"
+											<%}else{%>class="scorei" <%}%>></i> <i
+											onclick="a(this,5,'#business${itemLP.index-1}')"<%if(!isEmpty(item.businessEvaluate)
+											&& item.businessEvaluate >= 5){%> class="ihover"
+											<%}else{%>class="scorei" <%}%>></i> <input type="hidden"
+											value="${item.businessEvaluate!}"
+											name="evaluateBusinesses[${itemLP.index-1}].businessEvaluate">
+										<font id="business${itemLP.index-1}"><%if(!isEmpty(item.businessEvaluate)){%>
+											${item.businessEvaluate!} <%}else{%>1<%}%></font>分
+									</p>
+									<%}%> <%}else{%> 暂无可评论的业务！ <%}%>
+								</div>
+								<%if(!isEmpty(cusEvaluateVo.businessComtent)){%>
+								<div style="border-top: 1px solid #ccc" class="img_tt">
+									<p style="padding: 10px; font-size: 14px;">
+										${cusEvaluateVo.businessComtent.content!}</p>
+									<%if(!isEmpty(cusEvaluateVo.businessComtent.listEvaluateAttachment)){for(item
+									in cusEvaluateVo.businessComtent.listEvaluateAttachment){%> <img
+										
+										style="width: 200px; display: block; float: left; height: 200px; margin: 0px 5px;"
+										src="${item.attachment.fillFilePath!}"> <%}}%>
+								</div>
+								<%}else{%>
+								<div class="scoreCont">
+									<div class="score-text">
+										<label>评价服务</label>
+										<textarea name="businessComtent.content" id="content"
+											class="service-eva"></textarea>
+										<div class="num">0/200</div>
+									</div>
+									<div class="pd">
+										<div id="preview">
+											<img id="img1" border="0"
+												src="${ctxPath}/images/client/camera.png"
+												style="padding: 10px;" title="你可以上传3张图片"> <img
+												id="img2" border="0"
+												src="${ctxPath}/images/client/camera.png"
+												style="padding: 10px;" title="你可以上传3张图片"> <img
+												id="img3" border="0"
+												src="${ctxPath}/images/client/camera.png"
+												style="padding: 10px;" title="你可以上传3张图片">
+										</div>
+										<input type="file" style="display: none;" id="fileId1">
+										<input type="file" style="display: none;" id="fileId2">
+										<input type="file" style="display: none;" id="fileId3">
+										<input type="hidden" value=""
+											name="businessComtent.comtentAttachments[0].attachmentId"
+											id="evaluateAttr1"> <input type="hidden" value=""
+											name="businessComtent.comtentAttachments[1].attachmentId"
+											id="evaluateAttr2"> <input type="hidden" value=""
+											name="businessComtent.comtentAttachments[2].attachmentId"
+											id="evaluateAttr3">
+									</div>
+									<div class="pd" style="margin-top: 20px;">
+										<a class="score-btn">提交评价</a>
+									</div>
+								</div>
+								<%}%>
+							</div>
+						</div>
+					</div>
+				</form>
+				<!--提示弹框-->
+				<div class="prompt hide">
+					<div class="prompttop">
+						<p>提示</p>
+						<a href="#" class="x">X</a>
+					</div>
+					<div class="pjcon">
+						<div class="pj">评价成功！</div>
+					</div>
+					<div class="btn-clu">
+						<button class="btn-que">确定</button>
+						<button class="btn-qx">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="propBox1 none">
+		<div class="fixed mark mark1"></div>
+		<div class="prop1 fixed">
+			<div class="pr">
+				<img src="" alt="" />
+			</div>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			var PAGE = $('#J_page').val();
+			$(".all_services").mouseover(function() {
+				$(".childNav").show().width(991);
+				$(".childNavDl").show();
+				$(".allBotton").removeClass('allBotton').addClass('allTop');
+			});
+			$(".childNavDl dd").mouseover(function() {
+				$(".childNavDl dd").removeClass('childNavHover');
+				$(this).addClass('childNavHover');
+				$(".clildNavDiv").removeClass('clildNavDivHover');
+				var i = $(this).index();
+				$(".clildRight > div").hide();
+				$($(".clildNavDiv")[i]).show();
+				$($(".clildNavDiv")[i]).addClass('clildNavDivHover');
+				$(".prop").length && $(".prop").css({
+					zIndex : 10
+				});
+				$(".childNav").css({
+					width : "991px"
+				})
+			});
+			$(".childNav").mouseleave(
+					function() {
+						if (PAGE != 'index'
+								|| ($(window).scrollTop() >= $(".navTop")
+										.offset().top)) {
+							$(".childNav").hide();
+							$(".childNavDl").hide();
+						}
+						$(".clildNavDiv").hide();
+
+						$(".childNavDl dd").removeClass('childNavHover');
+						$(".allTop").removeClass('allTop')
+								.addClass('allBotton');
+						$(".prop").length && $(".prop").css({
+							zIndex : ""
+						});
+						$(".childNav").css({
+							width : ""
+						})
+					});
+			$(".all_servicesLi").mouseleave(
+					function() {
+						if (PAGE != 'index'
+								|| ($(window).scrollTop() >= $(".navTop")
+										.offset().top)) {
+							$(".childNavDl").hide();
+							$(".clildNavDiv").hide();
+						}
+						$(".prop").length && $(".prop").css({
+							zIndex : ""
+						})
+					});
+
+			/*城市切换*/
+			$(".location").mouseover(function() {
+				$(".urbanAreas").show();
+			});
+			$(".location").mouseleave(function() {
+				$(".urbanAreas").hide();
+			});
+			/*左侧导航*/
+			$('.accountUl li').click(
+					function() {
+						$(this).addClass('active').siblings('li').removeClass(
+								'active');
+					});
+			/*顶部二维码显示*/
+			$('.pointers').mouseover(function() {
+				$(this).find('img').show();
+			});
+			$('.pointers').mouseleave(function() {
+				$(this).find('img').hide();
+			});
+		});
+
+		/*点击头像选择图片*/
+		$("#img1").click(function() {
+			$("#fileId1").trigger("click");
+		});
+
+		$("#fileId1").change(function() {
+			var formData = new FormData();
+			var name = $("input").val();
+			formData.append("file", $(this)[0].files[0]);
+			formData.append("name", name);
+			$.ajax({
+				url : "${ctxPath}/file/upload.api",
+				type : 'POST',
+				dataType : "json",
+				data : formData,
+				// 告诉jQuery不要去处理发送的数据
+				processData : false,
+				// 告诉jQuery不要去设置Content-Type请求头
+				contentType : false,
+				success : function(resultData) {
+					if (resultData.executeStatus == 0) {
+						$("#img1").attr("value", resultData.values.id);
+						$("#evaluateAttr1").val(resultData.values.id);
+						$("#img1").attr("src", resultData.values.fillFilePath);
+					} else {
+						console.log("失败");
+					}
+				},
+				error : function(responseStr) {
+					console.log("上传文件错误！");
+				}
+			});
+		});
+
+		$("#img2").click(function() {
+			$("#fileId2").trigger("click");
+		});
+
+		$("#fileId2").change(function() {
+			var formData = new FormData();
+			var name = $("input").val();
+			formData.append("file", $(this)[0].files[0]);
+			formData.append("name", name);
+			$.ajax({
+				url : "${ctxPath}/file/upload.api",
+				type : 'POST',
+				dataType : "json",
+				data : formData,
+				// 告诉jQuery不要去处理发送的数据
+				processData : false,
+				// 告诉jQuery不要去设置Content-Type请求头
+				contentType : false,
+				success : function(resultData) {
+					if (resultData.executeStatus == 0) {
+						$("#img2").attr("value", resultData.values.id);
+						$("#evaluateAttr2").val(resultData.values.id);
+						$("#img2").attr("src", resultData.values.fillFilePath);
+					} else {
+						console.log("失败");
+					}
+				},
+				error : function(responseStr) {
+					console.log("上传文件错误！");
+				}
+			});
+		});
+
+		$("#img3").click(function() {
+			$("#fileId3").trigger("click");
+		});
+
+		$("#fileId3").change(function() {
+			var formData = new FormData();
+			var name = $("input").val();
+			formData.append("file", $(this)[0].files[0]);
+			formData.append("name", name);
+			$.ajax({
+				url : "${ctxPath}/file/upload.api",
+				type : 'POST',
+				dataType : "json",
+				data : formData,
+				// 告诉jQuery不要去处理发送的数据
+				processData : false,
+				// 告诉jQuery不要去设置Content-Type请求头
+				contentType : false,
+				success : function(resultData) {
+					if (resultData.executeStatus == 0) {
+						$("#img3").attr("value", resultData.values.id);
+						$("#evaluateAttr2").val(resultData.values.id);
+						$("#img3").attr("src", resultData.values.fillFilePath);
+					} else {
+						console.log("失败");
+					}
+				},
+				error : function(responseStr) {
+					console.log("上传文件错误！");
+				}
+			});
+		});
+
+		$(".btn-que")
+				.click(
+						function() {
+							window.location.href = '${ctxPath}/ordService/index.html?leftNav=myService';
+						});
+
+		$(".btn-qx")
+				.click(
+						function() {
+							window.location.href = '${ctxPath}/ordService/index.html?leftNav=myService';
+						});
+
+		//提交评价
+		$('.score-btn').click(function() {
+			if (dum.common.isNull($("#content").val())) {
+				var d = dialog({
+					content : '请填写评语！'
+				});
+				d.show();
+				setTimeout(function() {
+					d.close().remove();
+				}, 1500);
+			} else {
+				dum.common.ajax({
+					type : "post",
+					url : "/evaluate/saveCustomerEvaluate.api",
+					data : $("#cusEvaluateForm").serialize(),
+					dataType : "json",
+					success : function(data) {
+						if (data.executeStatus == '0') {
+							$(".prompt").show();
+						}
+					}
+				});
+			}
+		});
+		$(function() {
+			//根据数据给星星上色
+			function buildStart(obj, number) {
+				$.each(obj, function(i, v) {
+					if ((i + 1) <= parseInt(number)) {
+						$(this).addClass("ihover");
+					}
+					$(this).removeAttr("onclick");
+				});
+			}
+		});
+		function a(obj, score, fs) {
+			$(obj).nextAll().removeClass("ihover");
+			$(obj).prevAll().addClass("ihover");
+			$(obj).addClass("ihover");
+			$(obj).parent().find("input[type='hidden']").val(score);
+			$(fs).text(score);
+		}
+		$('.img_tt img').click(function() {
+			var src_img = $(this).attr('src')
+			console.log(src_img)
+			$('.prop1 img').attr('src', src_img)
+			$('.propBox1').show();
+		});
+		$('.propBox1 i').click(function() {
+			$('.propBox1').hide();
+		});
+		$('.mark1').click(function() {
+			$('.propBox1').hide();
+		});
+	</script>
+</body>
+</html>

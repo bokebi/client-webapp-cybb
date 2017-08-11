@@ -1,0 +1,15 @@
+.processTab{width:100%;margin-top: 40px;}
+.processTab tr th{ font-size: 14px; height: 36px; line-height: 36px; background: #6eaee5; color: #fff; font-weight: normal;}
+.processTab tr td{font-size: 14px; color:#505050; text-align: center; padding-top: 5px; padding-bottom: 5px;
+ border-top:10px solid #fff;}
+/* .processTab tr{background: #fcfcfc;} */
+.companyName{width: 230px; margin: 0px auto; text-align: left;}
+.operate{ width:80px; height: 26px; line-height:26px; background: #fff; border:1px solid #ccc; margin: 0px auto; color:#505050;}
+.operate:hover{border:1px solid #6eaee5; background: #6eaee5; color:#fff;}
+.operate1{width:80px; height: 26px; line-height:26px; background: #e5f7ff; border:1px solid #e5f7ff; margin: 0px auto;colro:#505050;}
+
+
+
+
+
+

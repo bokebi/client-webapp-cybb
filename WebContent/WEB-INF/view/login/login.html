@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<%if(!isEmpty(loginUISeo)){%>
+	<title>${loginUISeo.title!}-${sysCompanyResult.values.companyAbb!}</title>
+	<meta name="keywords" content="${loginUISeo.keywords!}" />
+	<meta name="description" content="${loginUISeo.description!}" />
+<%}%>
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+		<link rel="stylesheet" href="${ctxPath}/css/login/login.css" />
+		<script language=javascript src="${ctxPath}/js/login/login.js"></script>
+	</head>
+	<body>
+		<!--头部-->
+		<div class="loinTop">
+			<div class="w_1160">
+				<h1 class="fl mt10"><a href="${ctxPath}/"><img src="${ctxPath}/images/newImg/logo.jpg" /></a></h1>
+				<p class="leftLine fl"></p>
+				<p class="fl loginWriting">互联网+财税平台，全面实现信息化</p>
+				<div class="cb"></div>
+			</div>
+		</div>
+		<form class="form" id="loginForm" action="${ctxPath}/cus/login.html" name="loginForm" method="post">
+			<div class="loginCenter">
+				<div class="w_1160">
+					<p class="fl loginImg"><img src="${ctxPath}/images/img/login1.png"/></p>
+					<div class="fl login">
+						<div class="login1">
+							<div class="fl loginBox">
+								<p class="nubLogin">
+									<span><img src="${ctxPath}/images/img/name.png" /></span>
+									<input type="text" name="loginName" value="" class="text" placeholder="请输入登录" />
+								</p>
+								<p class="nubLogin">
+									<span><img src="${ctxPath}/images/img/pas.png" /></span>
+									<input type="password" name="loginPwd" value="" class="text" placeholder="请输入密码" />
+								</p>
+							</div>
+							<div class="fl loginBtn" onclick="login('');" >登录</div>
+							<p class="cb"></p>
+						</div>
+						<div class="password ov">
+							<p class="fl"><label><input type="checkbox" name="" class="middle mr5"/>记住密码</label></p>
+							<a href="${ctxPath}/customer/forgetPwd.html" class="colorF8 fr">忘记密码？</a>
+						</div>
+						<!-- 提示 -->
+						<div style="height: 30px;" class="error">
+						
+						</div>
+						<p class="cb"></p>
+						<p class="loginLine"></p>
+						<div class="straightway"><img src="${ctxPath}/images/img/left.png" class="middle mr10"/><span class="middle">还没有帐号，</span><a href="${ctxPath}/customer/registerUI.html" class="colorF8 middle">立即注册</a></div>
+					</div>
+					<p class="cb"></p>
+				</div>
+			</div>
+		</form>
+		
+		<!--底部-->
+		<div class="loginBottom">
+			<div class="loginFoot">
+				<a href="${ctxPath}/serviceProduct/modelList.html" target="_blank">全部服务</a><span>|</span>
+				<a href="${ctxPath}/" target="_blank">${sysCompanyResult.values.companyAbb} — 为创业者提供“星”级服务！</a><span>|</span>
+				<a href="${ctxPath}/aboutus.html" target="_blank">联系我们</a><span>|</span>
+				<a href="${ctxPath}/customer/agreement.html" target="_blank">法律声明</a>
+				<span class="tel"><b>客服电话：</b>${sysCompanyResult.values.phone}</span>
+			</div>
+			<p class="mt20">
+			<%if(!isEmpty(recordnoexternalinfo)){%>			
+				${recordnoexternalinfo.word}
+			<%}%></p>
+		</div>
+	</body>
+<script type="text/javascript">
+	document.onkeydown=function(e){ //回车登录
+		  if(e = e || window.event);
+		  if(e.keyCode == 13){
+			  $(".loginBtn").click();
+		   }
+	}
+</script>
+</html>

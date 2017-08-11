@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>我的服务</title> <%includeFileTemplate("/html/dumCommon.html"){
+%><%}%>
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/ordService.css">
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/page.css">
+<link rel="stylesheet" type="text/css"
+	href="${ctxPath}/js/easyui/themes/gray/easyui.css">
+<link rel="stylesheet" type="text/css"
+	href="${ctxPath}/js/easyui/themes/icon.css">
+<!-- <link rel="stylesheet" type="text/css" href="${ctxPath}/newCss/common/base.css" />
+<link rel="stylesheet" type="text/css" href="${ctxPath}/newCss/common/common.css" />
+<link href="${ctxPath}/newCss/nav_temp_20160910.css"  type="text/css" rel="stylesheet" /> -->
+<script type="text/javascript" src="${ctxPath}/js/easyui/jquery.easyui.min.js"></script>
+<style type="text/css">
+.datagrid-row{
+	height:35px;
+}
+	
+.rightContent {
+    font-size: 14px;
+}
+
+.rightUl {
+    line-height: 35px;
+    color: #FFFFFF;
+    background: #2f61ab;
+    overflow: hidden;
+}
+.rightUl li {
+    float: left;
+    width: 205px;
+    text-align: center;
+}
+.right-box table {
+    border-collapse: collapse;
+    border: 1px solid #f5f5f5;
+    margin-top: -1px;
+    width: 830px;
+}
+.right-box table td {
+    width: 180px;
+    text-align: center;
+    padding: 9px 0px;
+}
+.right-title {
+        background: #f5f5f5;
+    margin-top: 10px;
+    height: 40px;
+}
+.right-title .number {
+float: left;
+    width: 32px;
+    color: #999999;
+    text-align: center;
+}
+.right-title .company {
+    width: 315px;
+}
+.right-title .address {
+    width: 420px;
+    color: #999999;
+}
+.right-title .view {
+    float: right;
+    margin-right: 75px;
+    color: #2f61ab;
+}
+.right-title .view a {
+    color: #2f61ab;
+}
+.xq p a{
+    color: #2f61ab;
+}
+.rightUl li {
+    float: left;
+    width: 195px;
+    text-align: center;
+}
+.right-box table {
+    border-collapse: collapse;
+    border: 1px solid #f5f5f5;
+    margin-top: -1px;
+    width: 920px;
+}
+.right-title p {
+margin-top:10px;
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+<div class="w_1160 wrap clearfix">
+	<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+	<div id="content">
+	<div class="clientRight">
+		<div class="baseMargin ov">
+			<h4 class="infoTit fl"><span>我的服务</span></h4>
+			<div class="fl speakerNews"></div>
+			 <div class="fr mr10">
+			<%if(!isEmpty(qqexternalinfo)&&!isEmpty(qqexternalinfo.word)){%>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=${qqexternalinfo.word!}&site=qq&menu=yes" style="color: white;text-align: center;margin-left: 16px;">
+			<%}else{%>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=(check-your-QQ-in-the-background)&site=qq&menu=yes" style="color: white;text-align: center;margin-left: 16px;">
+			<%}%>
+			 	<img src="${ctxPath}/images/img/kfIcon.png" class="middle mr5" />
+			 	<span class="middle color68">联系客服</span></a></div> 
+			<p class="cb" style="margin-bottom: 20px;"></p>
+			
+            <div class="rightContent">
+                <ul class="rightUl">
+                    <li>服务名称</li>
+                    <li>服务创建时间</li>
+                    <li>服务进程</li>
+                    <li>操作</li>
+                </ul>
+                <div id="cusEnterpriseBody">
+	                
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+function getOrderListHtml (rows) {
+	var html = "";
+	if (rows) {
+		if(rows&&rows.length>0){
+			for (var i = 0; i < rows.length; i++) {
+				var cusEnterprise = rows[i];
+				html += getOrdServiceHtml(i,cusEnterprise);
+			}
+		}else{
+			html+='<tr><td colspan="6" class="backFc tc color50" style="height:30px; line-height:30px;">暂无信息</td></tr>';
+		}
+		
+	}
+	return html;
+}
+
+
+function getOrdServiceHtml(index,cusEnterprise) 
+{
+	var html = '';
+	html += '<div class="right-title">';
+	html += '<p class="number">'+(index+1)+'</p>';
+	var companyName = cusEnterprise.enterpriseName+'('+(cusEnterprise.nature=='0'?'一般纳税人':'小规模纳税人')+')';
+	html += '<p class="company"><a href="'+dum.appName+'/myCompany/myCompanyInfo/'+cusEnterprise.id+'.html">'+companyName+'</a></p>';
+	if(cusEnterprise.enterpriseAddress){
+		html += '<p class="address">'+cusEnterprise.enterpriseAddress+'</p>';
+	}else{
+		html += '<p class="address"></p>';
+	}
+	html += '<p class="view"><a href="'+dum.appName+'/cusReport/viewReport.html?companyId='+cusEnterprise.id+'">查看报表</a></p>';
+	html += '</div>';
+	html += '<div class="right-item"><div class="right-box">';
+	var orderServices = cusEnterprise.orderServices;
+	if(orderServices){
+		for (var i = 0; i < orderServices.length; i++) {
+			var service = orderServices[i];
+			html += '<table>';
+			html += '<tr>';
+			html += '<td>'+service.skuName+'</td>';
+			html += '<td class="date">';
+			if(service.startDate){
+				html += '<p>'+formatDate(service.startDate)+'</p>';
+			}
+			if(service.endDate){
+				html += '<p>'+formatDate(service.endDate)+'</p>';
+			}
+			html += '</td>';
+			//服务状态(0等待开启，1，服务中，2暂停，3已结束)
+            if(service.status=='1'){
+            	html += '<td>服务中</td>';
+            }else if(service.status=='2'){
+            	html += '<td>暂停</td>';
+            }else if(service.status=='3'){
+            	html += '<td>已结束</td>';
+            }else {
+            	html += '<td>等待开启</td>';
+            }
+            html += '<td class="xq"><p><a href="'+dum.appName+'/ordService/serviceDetail.html?leftNav=myService&entServerId='+service.entServerId+'&enterpriseId='+cusEnterprise.id+'" class="btn-pj">查看进度详情</a>';
+             html += '&nbsp;&nbsp;|&nbsp;&nbsp;<a href="'+dum.appName+'/ordService/evaluation.html?leftNav=myService&entServerId='+service.entServerId+'" target="_blank" class="btn-pj">评价</a>';
+            html +='</p></td>';
+            html += '</tr>';
+            html += '</table>';
+		}
+	}
+	html += '</div></div>';
+	return html;
+}
+
+var pageObj ;
+
+function pageHtml (page) {
+	var payType = $(".borderHover").attr("paymentStatus");
+	this.pageObj = page;
+	var html = '';
+	var pages = page.pages();
+	if (pages <=1) {
+		return html;
+	}
+	html += '<li><a onclick="loadOrderList(1);" href="javascript:void(0);">首页</a></li>';
+	if (page.current > 1) {
+		html += '<li><a onclick="loadOrderList(' + (page.current - 1)+ ');" href="javascript:void(0);">上一页</a></li>';
+	}
+	for (var i = page.current; i < pages + 1; i++) {
+		if (i == page.current) {
+			html += '<li class="PagingUlHover"><a  href="javascript:void(0);">'+ i + '</a></li>';
+		} else {
+			html += '<li><a onclick="loadOrderList(' + i + ');"  href="javascript:void(0);">' + i+ '</a></li>';
+		}
+	}
+	if (pages > page.current) {
+		html += '<li><a onclick="loadOrderList(' + (page.current + 1)+ ');" href="javascript:void(0);">下一页</a></li>';
+	}
+	html += '<li><a onclick="loadOrderList(' + pages + ');" href="javascript:void(0);">尾页</a></li>';
+	return html;
+}
+
+function openEnterpriseList(ordServiceId){
+$("#ordServiceId").val(ordServiceId);
+$('#enterpriseList_Div').window('open');
+$("#enterpriseList").datagrid( "load");
+}
+
+function choiceEnterprise(){
+var row = $('#enterpriseList').datagrid('getSelected');
+var ordServiceId=$("#ordServiceId").val();
+var param={"enterpriseId":row.id,"id":ordServiceId}
+if (row){
+	$.messager.confirm('提示框', '你确定要给该服务分配企业吗?',function(){
+		dum.common.ajax({
+			type : "post",
+			url : "/dyyApi/ordService/saveOrdService.api",
+			data : param,
+			dataType : "json",
+			success : function(data) {
+				if(data.executeStatus=="0"){
+					window.location.reload();
+				}else{
+					$.messager.alert('提示:','分配失败!');
+				}
+			}
+		});
+	})
+	
+}else{
+	$.messager.alert('提示','请先选择一行数据!','确定');
+}
+
+}
+function PageObj(totalCount, rows, current) {
+this.totalCount = totalCount;
+this.rows = rows;
+this.current = current;
+}
+PageObj.prototype.pages = function() {
+return this.totalCount % this.rows === 0 ? this.totalCount / this.rows
+		: parseInt(this.totalCount / this.rows) + 1;
+}
+
+function formatEntName(v,r,i){
+if(v){
+	return v;
+}else{
+	return '<a style="color:blue;text-decoration:underline;cursor: pointer;" onclick="openEnterpriseList('+r.id+')">分配企业</a>';
+}
+}
+
+function  formatDateTime(dd){
+if(!dd||dd=='undefined'){
+	return '';
+}
+var d=new Date(dd);
+return d.getFullYear()
+	+"-"+getTwoTime(d.getMonth()+1)
+	+"-"+getTwoTime(d.getDate())
+	+" "+getTwoTime(d.getHours())
+	+":"+getTwoTime(d.getMinutes())
+	+":"+getTwoTime(d.getSeconds());
+}
+
+function  formatDate(dd){
+if(!dd||dd=='undefined'){
+	return '';
+}
+var d=new Date(dd);
+return d.getFullYear()
+	+"-"+getTwoTime(d.getMonth()+1)
+	+"-"+getTwoTime(d.getDate());
+}
+
+function  getTwoTime(t){
+if(t<10){
+	return "0"+t;
+}
+return t;
+}
+
+$(function() {
+
+	$.ajax({
+		type : "get",
+		url : "/ordPaymentOrder/findCusEnterpriseList.api",
+		dataType : "json",
+		success : function(data) 
+		{
+
+			var status=data["executeStatus"];
+			if("0"==status){
+				var values=data["values"];
+				$("#cusEnterpriseBody").html(getOrderListHtml(values));
+		
+			}else{
+				if(data["errorCode"]=='login001'){
+					window.location.href = dum.appName+"/customer/loginUI.html";
+				}
+			}
+			
+		}
+	});
+	
+});
+</script>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>信息收集页-${@com.jxhc.utils.SysConfigUtils.config.getShortName()}</title>
+<link rel="stylesheet" href="${ctxPath}/css/info.css" />
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+</head>
+<body class="infoBody">
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<form action="${ctxPath}/registerFoots/infoTwo.html" method="post"
+		id="user_resache">
+		<!-- 注册地址 -->
+		<input name="companyAreaCode" value="${companyAreaCode}" type="hidden" />
+		<div class="info">
+			<div class="infoContent">
+				<div class="fl whetherDiv">
+					<table>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否需要提供地址？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedAddress"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+						<tr>
+
+							<td>
+								<p class="fz14 color50">是否需要商标注册？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedTrademarkReg"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否需要专利申请？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedAppPatent"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否有投融资需求？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedFinancing"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fl whetherDiv2">
+					<table>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否需要软件注册权？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedSrRights"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否申请高新技术企业？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedHantEnterprise"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否需要申请知识产权？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedAipRights"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+						<tr>
+							<td>
+								<p class="fz14 color50">是否有法律服务需求？</p>
+							</td>
+							<td><input name="cusCustomerIntention.isNeedLegalServices"
+								type="hidden" value='' />
+								<dl class="whether">
+									<dd value="0">是</dd>
+									<dd value="1">否</dd>
+								</dl></td>
+						</tr>
+					</table>
+				</div>
+				<p class="cb"></p>
+				<p class="botomBtn">
+					<a href="javascript:void(0)" class="returnBtn"
+						onclick="history.go(-2);">不想填，返回买服务</a> <input type="submit"
+						class="btnA" value="为了0元我配合" />
+				</p>
+			</div>
+		</div>
+	</form>
+	<script type="text/javascript" src="${ctxPath}/js/channel/info.js"></script>
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%>
+</body>
+</html>

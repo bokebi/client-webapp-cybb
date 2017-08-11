@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>登录</title>
+	<link rel="stylesheet" href="${ctxPath}/newCss/base.css">
+	<link rel="stylesheet" href="${ctxPath}/newCss/ui-dialog.css">
+	<link rel="stylesheet" href="${ctxPath}/newCss/header.css">
+	<link href="${ctxPath}/newCss/kfwpop.css" rel="stylesheet">
+	<script language=javascript src="${ctxPath}/js/plugin/jquery-1.9.1.js"></script>
+	<script language=javascript src="${ctxPath}/js/login/jumpLogin.js"></script>
+		<script language=javascript src="${ctxPath}/js/login/register.js"></script>
+<script language=javascript src="${ctxPath}/js/common/common.js"></script>
+	<!-- 登录框 -->
+	<style type="text/css">
+		.llMainReg .form-panel li{margin-top: 10px;}
+		.llMainReg{height: 496px;overflow-y: auto;width: 845px !important;}
+		.register-li-line{height:35px;line-height: 20px;}
+		.register-li div{left: 265px;}
+	</style>
+	</head>
+	<body>
+		<div id="denglu" class="ui-popup ui-popup-modal ui-popup-show ui-popup-focus"  style="position: absolute; outline: 0px; left: 500px; top: 200px; z-index: 1027;display: none;">
+			<div i="dialog" class="ui-dialog">
+				<div class="ui-dialog-arrow-a"></div>
+				<div class="ui-dialog-arrow-b"></div>
+				<form id="registerForm2"  method="post" action="javascript:void(0)">
+				<table class="ui-dialog-grid">
+					<tbody>
+						<tr>
+							<td i="header" class="ui-dialog-header">
+								<button i="close" class="ui-dialog-close" title="">×</button>
+								<div i="title" class="ui-dialog-title" id="title:alert">快速注册 </div>
+							</td>
+						</tr>
+						<tr>
+							<td i="body" class="ui-dialog-body" style="padding: 20px;">
+							<div i="content" class="ui-dialog-content" id="content:alert" style="width: 860px;">
+								<div class="loginLayout">
+									<div class="llMain">
+										<div class="group mlLe" style="text-align:left;margin-left:0px;padding-top: 20px;">
+											<ul class="relative" style="left:100px;">
+												<li class="register-li register-li-line">
+													<span>
+														<input type="text" id="customerMobile" name="customerMobile" class="translateX" />
+													</span>
+													<label for="reg_mobile" style="left: -90px;">手机号码</label>
+													<div class="register-li-2 tishi-div-2">重要，服务专员通过此号联系您</div>
+												</li>
+												<li class="register-li register-li-line">
+													<span>
+													<input type="text" class="reg-yzm translateX"  name="picCode" id="validateVcode" >
+													</span>
+													<label for="find_code" style="left: -90px;">验证码</label>
+													<img alt="验证码,点击图片刷新" src="" title="点击图片更换验证码" id="vcodeImg" onclick="loadPic();" />
+													<img src="${ctxPath}/newImages/refresh.png" alt="" onclick="loadPic();" class="reimg" >
+				
+													<div class="register-li-2 tishi-div-2">请输入图片上的验证码</div>
+												</li>
+												<li class="register-li register-li-line">
+													<span>
+													<input type="text" class="reg-dxyzm translateX"  name="messageCode" id="messageCode"/></span>
+													<label for="rdxyzm" style="left: -90px;">短信验证码</label>
+													<a href="javascript:void(0);" class="reg-click" onclick="getValidateLogo();" id="validateCode">点击获取</a>
+				
+													<div class="register-li-2 tishi-div-2">请输入手机收到的短信验证码</div>
+												</li>
+												<li class="register-li register-li-line">
+													<input type="password" id="loginPwd"  name="loginPwd"  />
+													<label style="left: -90px;display: block;">设置密码</label>
+													<div class="register-li-2 tishi-div-2">请设置一个6到18位的密码</div>
+												</li>
+												<li class="register-li register-li-line">
+														<input type="password" id="confirmPwd" name="confirmPwd" />
+													<label style="left: -90px;display: block;">确认密码</label>
+													<div class="register-li-2 tishi-div-2">请设置一个6到18位的密码</div>
+												</li>
+												<li class="register-li register-li-line">
+													<a href="javascript:void(0);" class="reg-now"  onclick="registerSubmitLogo();">立即注册</a>
+												</li>
+												<li class="error" style="color: red;font-size: 12px;"></li>
+												<li class="register-li-p">
+													<p>点击“立即注册”，表示您同意并愿意遵守<a href="${ctxPath}/customer/agreement.html" target="_blank" class="reg-xieyi">《创业爸爸服务协议》</a></p>
+												</li>
+											</ul>
+										</div>
+										<div class="group mlRi mlRibg1">
+											<p>已有创业爸爸账号？</p>
+											<p class="reg-login-p"><a href="${ctxPath}/customer/loginUI.html" class="reg-login" id="toLogin">直接登录 &gt;&gt;</a></p>
+										</div>
+									</div>
+								</div>
+							</div>
+							</td>
+						</tr>
+						<tr>
+							<td i="footer" class="ui-dialog-footer" style="display: none;">
+								<div i="statusbar" class="ui-dialog-statusbar" style="display: none;"></div>
+								<div i="button" class="ui-dialog-button"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+			</div>
+		</div>
+		<div id="dengluys" tabindex="0" style="z-index: 1026; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; overflow: hidden; user-select: none; opacity: 0.7; background: rgb(0, 0, 0);"></div>
+	</body>
+</html>

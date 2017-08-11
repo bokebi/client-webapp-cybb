@@ -1,0 +1,15 @@
+.reports{margin-top: 40px;}
+.reportsUl li{font-size: 14px; color:#505050; display: inline-block; width:100px; text-align: center;}
+.reportsTop{height: 35px; line-height: 35px; background: #fcfcfc;}
+.reportsUl .reportsHover{border-top:2px solid #6eaee5; background: #fff;}
+
+.contractDiv{margin: 20px;}
+.contractDiv p{font-size: 14px; color:#505050; line-height: 23px; margin-bottom: 5px;}
+.treaty{margin-top: 15px; margin-bottom: 15px;}
+.contractDiv .principle{margin-top: 30px; margin-bottom: 30px;}
+.contractDiv .effect{ margin-top: 15px; text-align: right;}
+.treatyTab{ width:80%; border:1px solid #ccc; border-collapse: collapse; margin: 0px auto;}
+.treatyTab tr td{ border: 1px solid #ccc; height: 20px; line-height: 20px; text-align: center; font-size: 14px; color: #505050;}
+
+
+

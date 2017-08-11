@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%if(!isEmpty(agreementSeo)){%>
+<title>${agreementSeo.title!}</title>
+<meta name="keywords" content="${agreementSeo.keywords!}" />
+<meta name="description" content="${agreementSeo.description!}" />
+<%}%>
+<%includeFileTemplate("/html/dumCommon.html"){%><%}%>
+<link type="image/x-icon" href="${ctxPath}/common/images/logo_icoi.ico" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="${ctxPath}/common/common.css" />
+<link rel="stylesheet" type="text/css" href="${ctxPath}/css/service/service.css" />
+<script type="text/javascript" src="${ctxPath}/js/invalidContextmenu.js"></script>
+<style type="text/css">
+.Contract_terms, .issue {
+	background: #FAFBFD;
+	padding-bottom: 5px; /* overflow:hidden; */
+}
+
+.Contract_terms_content {
+	width: 1200px;
+	margin: 15px auto;
+	background: #fff;
+	padding: 0px 20px 20px 20px;
+	font-size: 14px;
+}
+
+.Contract_terms_h3 {
+	padding: 20px 0px;
+	font-family: "宋体";
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.Contract_terms_content h4 {
+	margin: 10px 0px;
+	font-family: "宋体";
+}
+
+.Contract_terms_content p {
+    font-family: 微软雅黑;
+	letter-spacing: 2px;
+	line-height: 25px;
+	margin: 10px 0px;
+	text-indent: 30px;
+}
+</style>
+</head>
+
+<body>
+	<!--头部导航-->
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<div class="Contract_terms mTop">
+		<div class="Contract_terms_content">
+			${result.content}
+		</div>
+	</div>
+</body>
+<%includeFileTemplate("/html/footer_temp.html"){ %><%}%>
+</html>
+

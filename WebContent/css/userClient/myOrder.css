@@ -1,0 +1,36 @@
+.speakerNews{color:#ff8468; font-size: 14px; margin-top: -2px; margin-left: 20px;}
+.orderTop li{float: left; width:110px; text-align: center; }
+.orderTop li a{display:inline-block; block; font-size: 14px; color:#505050; }
+.orderTop li span{float: right; display: inline-block; border-right:1px solid #ccc; width:2px; height:18px; margin-bottom: 3px;}
+.orderTop{margin-top: 30px; margin-bottom:30px;}
+.orderHover{border-bottom: 2px solid #ff8f3d;}
+.orderTab{width:100%; color: #505050;}
+.orderTab tr th{font-size: 14px; font-weight: normal; background: #fcfcfc; 
+height: 34px; border: 1px solid #ccc; border-right: 0px; border-left:0px;}
+.orderTab tr .leftBorder{border-left:1px solid #ccc;}	
+.orderTab tr .rightBorder{border-right:1px solid #ccc;}	
+.orderTab tr .botBorder{border-bottom:1px solid #ccc;}	
+.orderTab tr td table{ width:100%; margin-top: 15px;  border:1px solid #ccc;}
+.orderTab tr td table tr td{border:0px; /* padding-top: 8px; padding-bottom: 8px;  */}
+.orderTab tr td table tr th{font-size: 12px; font-weight: normal; border: 0px; text-align: left;}
+.orderTab tr td table tr .tc{text-align: center;}
+.orderTab tr td table tr .tr{text-align: right;}
+.infobtn{width:100px; height: 28px; line-height: 29px; margin:0px auto; text-align: center; border: 2px solid #ed7371;
+background: #fcfcfc; color:#ed7371;}
+.contract:hover,.fwzOrder:hover{ color:#6eaee5;}
+.paymentBtn{width:84px; height: 28px; line-height: 28px; text-align: center; color:#fff;background:#ff8468;
+ margin: 0px auto;}
+.orderTab tr .stayPayment table{border: 1px solid #b2dbff;}
+.orderTab tr .stayPayment table tr th{background:#e5f6ff;}
+.orderTab tr .stayPayment table tr .leftBorder{border-left:1px solid #b2dbff;}
+.orderTab tr .stayPayment table tr .rightBorder{border-right:1px solid #b2dbff;}
+.list{text-decoration:line-through;}
+.batch{border:1px solid #ccc; width:90px; height: 20px; line-height:20px; text-align:center; border-radius:5px;cursor: pointer;}
+
+.orderTab .footTr td{padding-top: 20px;}
+.orderTab tr td table .orderTab1{ border: 0px;}
+.orderTab tr td table .botBorder{border-bottom:1px solid #ccc; margin-bottom: -1px;}
+.orderTab tr td table .orderTab1 tr td{padding: 0px; padding-bottom: 10px;}
+.orderTab tr td table .orderTab2{ border: 0px;}
+.orderTab tr td table .orderTab2 tr td{padding: 0px; padding-bottom: 10px;}
+.orderTab tr .stayPayment table  .botBorder{border-bottom:1px solid #b2dbff;margin-bottom: -1px;}

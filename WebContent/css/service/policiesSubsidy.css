@@ -1,0 +1,16 @@
+.titPolicies{border-bottom: 2px solid #ff8468;}
+.titPoliciesImg{ background: url(../../v2/images/yhzcBackImg.png) no-repeat; width: 130px; height: 30px; line-height: 30px; 
+margin-bottom: -1px; margin-left: -1px; font-weight: bold; font-size: 16px; color:#fff;  padding-left: 20px; }
+.policiesContent{ text-indent: 30px; line-height: 25px; font-size: 14px; margin-top: 10px; margin-bottom: 10px;letter-spacing: 1px; color:#505050;}
+.titPoliciesImg1{ background: url(../../v2/images/yhzcBackImg1.png) no-repeat; width: 167px; height: 30px; line-height: 33px; 
+margin-bottom: -1px; margin-left: -1px; font-weight: bold; font-size: 16px; color:#fff;  padding-left: 20px; }
+
+.policiesBackImg{ width: 60px; height: 60px; margin: 0px auto; background: url(../../v2/images/yhzcBackImg2.png) no-repeat;}
+.bllcTit{font-size: 16px; font-weight: bold; color: #8f8f8f; margin-top: 20px;}
+.bllcTab{ width: 100%; margin: 0px auto; margin-top: 20px; margin-bottom: 20px;}
+.bllcTab tr td{ text-align: center;}
+.bllcIcon1{ background-position: -21px -22px;}
+.bllcIcon2{background-position:-406px -39px; width: 64px; height: 17px; margin-top: 20px;}
+.bllcIcon3{ background-position:-114px -19px;}
+.bllcIcon4{ background-position:-202px -29px;}
+.bllcIcon5{ background-position:-315px -23px;}

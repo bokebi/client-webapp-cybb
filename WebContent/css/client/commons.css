@@ -1,0 +1,177 @@
+*{margin:0;padding:0;}
+body{font-size:12px;font-family: "微软雅黑";}
+.w_1200{width:1200px;margin:0 auto;}
+.w_1160{width:1160px;margin: 0 auto;}
+.fl{float:left;}
+.fr{float:right;}
+.tc{text-align: center;}
+li{list-style: none;}
+a{text-decoration: none;}
+.cb{clear: both;}
+a{color:#3c3c3c;}
+.fz14{font-size:14px;}
+.fz16{font-size:16px;}
+.fz18{font-size:18px;}
+.fz20{font-size:20px;}
+.none{display: none}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.ml10{margin-left:10px;}
+.mb5{margin-bottom: 5px;}
+.mb20{margin-bottom:20px;}
+.fw{font-weight: bold;}
+.fn{font-weight: normal;}
+.pr{position: relative;}
+
+/*顶部*/
+.top{height:30px;background-color: #fafafa;line-height: 30px;min-width: 1200px;font-size:12px;}
+.top .topright a{color:#666;line-height: 30px;display: inline-block;width:90px;}
+.top .topright .let:hover{color:#30bef3;}
+.topright span{background:url("../../images/dum_icon.png")no-repeat;vertical-align: middle;display: inline-block;margin-left: 5px;}
+.topright .topicon{background-position: -22px -10px;width:15px;height:20px;}
+.topright .pointerBottom{background-position: -46px -19px;width:12px;height:7px;}
+.topright .pointers img{position: absolute;right:-15px;top:30px;width:110px;height:110px;z-index: 9999;display: none;}
+
+.topUl{margin-bottom:0px;}
+.topUl .location{position: relative;}
+.topUl li{margin-right: 10px;}
+.top .w_95{width:97px;cursor: pointer;}
+.top span.icon{display: inline-block;width:15px;height:20px;vertical-align: middle;}
+.top .icon{background: url("../../images/dum_icon.png")no-repeat;}
+.topUl span{margin-right:5px;}
+.top .icon.icon_location{width:17px;height:25px;background-position:-120px -327px;margin-left:5px;}
+.top .w_95 .js_localcity{margin: 0;}
+.top .down_icon{background-position: -46px -13px;margin-left:5px;}
+.top .w_230{width:212px;padding:10px;margin-top:-1px;display: none;position: absolute;border:1px solid #CCCCCC;background: #FFFFFF;}
+.top .w_230 span{float:left;display: inline-block;text-align: center;height:22px;line-height: 22px;padding: 0 10px;margin: 5px 2px;cursor: pointer;}
+.top .w_230 a span:hover{background: #fafafa;color:#ff8261;}
+.top .location:hover .w_95{border:1px solid #CCCCCC;border-bottom:0;background: #FFFFFF;z-index: 9999;}
+
+
+/*顶部导航搜索*/
+
+.topNav{padding:15px 0;background: #fff;min-width: 1200px;font-size:12px;}
+.topNav .logoImg{width:100%;}
+img{vertical-align: middle;}
+.topcont{margin-left: 75px;margin-top:12px;}
+.topcont ul li{float: left;padding: 0px 8px;}
+.topcont ul li a{color:#666;}
+.topcont ul li a:hover{color:#30bef3;}
+.topSearch{margin-top:8px;}
+.searchTxt{width:280px;padding-left:10px;height: 23px;line-height: 23px;border:1px solid #30bef3;vertical-align: middle;}
+.search_ico{width:50px;height:25px;background:#30bef3;display: inline-block;text-align: center;margin-left: -4px;line-height: 23px;vertical-align: middle;}
+.search_ico img{vertical-align: baseline;margin-top:4px;}
+.topdh i{background: url("../../images/topdh.png")no-repeat;width:23px;height: 19px;display: inline-block;margin-right:8px;margin-top:12px;}
+.topdh p{font-size: 16px;color:#ff8261;font-weight:bold;}
+.clear{clear:both;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}
+* html .clearfix{height:1%}
+.vb{vertical-align: middle;}
+/* Hides from IE-mac \*/
+.clearfix{display:block}
+.nav {background: #3c3b3a;/* background-color: rgba(60, 59, 58, 0.9);filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#e63c3b3a', endColorstr='#e63c3b3a', GradientType=0)\9; */width: 100%;position: relative;z-index: 99;}
+.nav .dl{height:40px;line-height: 40px;}
+.nav .dl a{color:#FFFFFF;font-size:14px;}
+.nav .dl a:hover{color:#30bef3;}
+.nav_main>ul>li {float: left;position: relative;height: 40px;line-height: 40px;}
+.nav_main>ul>li>a {padding: 0 5px;margin-right: 9px;color: #fff;}
+.nav_main>ul>li>a.hover,
+.nav_main>ul>li>a:hover {border-bottom: 3px solid #52cbf8;}
+.nav .login_icon {display: inline-block;width: 33px;height: 33px;background-position: -37px -49px;vertical-align: middle;}
+.nav .register,.nav .login {padding: 0 10px;margin: 0;padding-right: 0px;}
+.nav .login {border-right: 1px solid #707070;padding-right: 10px;}
+.nav .nav_main .allservice_icon {display: inline-block;width: 13px;height: 6px;background-position: -79px -61px;position: absolute;right: 15px;bottom: 35px;}
+.nav li a:hover+.allservice_icon {background-position: -80px -49px;}
+.nav .nav_main img {position: absolute;top: 3px;right: 0px;}
+.nav .nav_level {width: 610px;padding: 10px 20px;position: absolute;top: 77px;left: -265px;z-index: 9999;background: rgba(0, 0, 0, .8);filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#cc000000, endColorstr=#cc000000);display: none;}
+.nav .nav_level li div {width: 511px;border-bottom: 1px solid #fff;}
+.nav .nav_level li div.lastnav {border: none;}
+.nav .nav_level li span {margin-right: 42px;}
+.nav .nav_level li a {padding-right: 14px;}
+.nav .nav_level li div a:last-child {padding: 0;}
+.nav .nav_level li a:hover {color: #52cbf8;}
+.navDiv {background: #fff;min-width: 1160px}
+.clearfix .quit {padding: 2px 10px 2px 10px;border-radius: 3px;background: #52cbf8;margin-left: 20px;}
+.nav .nav_level .white li a {position: relative;}
+.nav .nav_level .white li a img {position: absolute;right: -2px;top: -6px;}
+.iconDown {display: inline-block;width: 12px;height: 7px;background: url(../../images/dum_icon.png) no-repeat;background-position: -122px -311px;margin-right: 8px;}
+.nav_main1 ul li {padding: 0px 0;height: 40px;line-height: 40px;margin-left: 15px;}
+.nav_mainGz ul li {margin-left: 14px;}
+.nav_mainCq ul li {margin-left: 40px;}
+.nav_mainHz ul li {margin-left: 40px;}
+.nav_mainCd ul li {margin-left: 40px;}
+.nav_main1 ul .all_servicesLi {margin-left: 0px;margin-right: 70px;}
+.nav_main1 ul .all_servicesLi a {padding-bottom: 0px;}
+.nav_main1 ul li a {padding-bottom: 5px;font-size:14px;}
+.all_services {display: block;width: 142px;height: 40px;line-height: 40px;color: #fff;}
+.all_services span {vertical-align: middle;}
+.allIcon {display: inline-block;width: 18px;height: 12px;background: url(../../images/topIcon.png) -207px -8px no-repeat;margin-right: 12px;}
+.allBotton {display: inline-block;width: 13px;height: 7px;background: url(../../images/topIcon.png) -207px -43px no-repeat;margin-left: 12px;margin-top: 3px;}
+.allTop {display: inline-block;width: 13px;height: 8px;background: url(../../images/topIcon.png) -232px -10px no-repeat;margin-left: 12px;margin-top: 3px;}
+.nav_main1 ul li .childNavDl a:hover{background: 0; color:#30bef3;}
+.nav_main1 ul li .clildNavDiv dl dd a{padding-bottom: 0px;  padding-top: 0px; font-size: 13px;}
+.all_services span{vertical-align: middle;}
+.childNavDl dd .clildNavDiv dl dd{border-bottom: 0;}
+.childNavDl dd{color:#fff;}
+.NavContentLeft,.NavContentRight{display: inline-block; vertical-align: middle; }
+.childNav {height: 450px;position: absolute;z-index: 9999;}
+.childNavDl {width: 166px;height: 450px;background: url(../../images/childNav.png) repeat;}
+.nav_main1 .all_services {padding-left: 12px;padding-right: 12px;background: #30bef3;}
+.childNavDl dd {padding: 0 12px;border-bottom: 1px solid #8b8b8b;font-size: 14px;cursor: pointer;color: #fff;line-height: 40px;}
+.nav_main1 .all_services:hover {border: 0px;background: #30bef3;}
+.childNavDl dd span {display: inline-block;vertical-align: middle;}
+.mlmr {margin-left: 20px;margin-right: 20px;}
+.topCommon {background: url(../../images/topIcon.png) no-repeat;}
+.categoryCommon {margin-left: 5px;height:50px;line-height: 50px;}
+.topCommonRight {background-position: -234px -36px;width: 7px;height: 13px;float:right;margin-top:20px;}
+.gsSort {background-position: -6px -3px;width: 20px;height: 20px;}
+.csSort {background-position: -33px -7px;width: 20px;height: 15px;}
+.yxSort {background-position: -63px -7px;width: 20px;height: 15px;}
+.zccySort {background-position: -92px -5px;width: 20px;height: 18px;}
+.zcsqSort {background-position: -122px -6px;width: 20px;height: 17px;}
+.qyczSort {background-position: -151px -8px;width: 20px;height: 14px;}
+.qtSort {background-position: -182px -6px;width: 20px;height: 18px;}
+.flfwSort {background-position: -261px -5px;width: 16px;height: 20px;}
+.childNavDl .childNavHover {background: #fff;color: #5bcef8;border: 1px solid #5bcef8;border-right: 0px;}
+.childNavDl .childNavHover .topCommonRight {display: none;}
+.childNavDl .childNavHover .gsSort {background-position: -6px -33px;}
+.childNavDl .childNavHover .csSort {background-position: -34px -36px;}
+.childNavDl .childNavHover .yxSort {background-position: -63px -36px;}
+.childNavDl .childNavHover .zccySort {background-position: -90px -34px;}
+.childNavDl .childNavHover .zcsqSort {background-position: -118px -35px;}
+.childNavDl .childNavHover .qyczSort {background-position: -146px -37px;}
+.childNavDl .childNavHover .qtSort {background-position: -176px -35px;}
+.childNavDl .childNavHover .flfwSort {background-position: -271px -33px;}
+.clildNavDiv {width: 750px;background: #fff;height: 448px;padding: 0 12px;position: absolute; top:0px; left:166px; border: 1px solid #0d74bb; border-left: 0px;}
+
+.clildNavDivHover {border: 1px solid #5bcef8;border-left: 0px;}
+.NavContentLeft {float: left;width: 100px;text-align: center;color: #222;font-size: 14px;}
+.NavContentRight {width:535px;border-bottom: 1px solid #dfdfdf;}
+.NavContentRight a {display: inline-block;color: #666;font-size: 14px;margin-right: 29px;}
+.NavContentRight .zcgsColor {color: #ff8468;}
+.NavContentRight a:hover {color: #5bcef8;}
+.NavContentRight1 {margin-left: 40px;margin-right: 50px;width: 90%;}
+.pointersBotton {display: inline-block;width: 12px;height: 7px;background: url(../../images/dum_icon.png) no-repeat;background-position: -46px -19px;margin-left: 5px;}
+
+
+/*登录注册*/
+.login a{color:#fff;font-size:14px;line-height: 40px;padding:0 8px;}
+.login .register{border-right:1px solid #707070;}
+
+/*底部*/
+.footer {background-color: #505050;margin-top: 45px;min-width: 1200px;}
+.footer .cop {padding: 20px 170px 20px 160px;color:#fff;line-height: 2;font-size:12px;}
+.footer .fl {line-height: 32px;color:#fff;}
+.footer span.title {font-weight: bold;color:#fff;font-size:12px;}
+.footer p{margin:0px;font-size:12px;}
+.footer a {display: inline-block;padding: 0 15px 0 0;color:#fff;font-size:12px;}
+.footer ul {width: 450px;}
+.footer .contact {width: 280px;}
+.footer .contact_icon {background: url("../../images/dum_icon.png")no-repeat;background-position: -130px -5px;height: 31px;}
+.footer .contact_icon a {height: 28px;line-height: 28px;display: inline-block;padding: 0;margin-left: 30px;margin-bottom: 1px;margin-top: 2px;background-color: #505050;float: left;}
+.footer .w_74 {width: 58px;}
+.footer .w_58 {width: 57px;}
+.footer a.w_36 {margin-left: 2px;width: 34px;background: transparent;}
+.footer a:hover{color:#30bef3;}

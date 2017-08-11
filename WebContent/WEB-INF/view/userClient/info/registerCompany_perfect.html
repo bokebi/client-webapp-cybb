@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>注册公司完善信息</title> <%includeFileTemplate("/html/dumCommon.html"){
+%><%}%>
+<link rel="stylesheet" type="text/css"
+	href="${ctxPath}/css/userClient/nav_userClient.css" />
+<link type="text/css" rel="stylesheet"
+	href="${ctxPath}/css/userClient/info/perfectInfo.css">
+<link rel="stylesheet" href="${ctxPath}/css/common/baseArea.css" />
+<script type="text/javascript"
+	src="${ctxPath}/js/userClient/userClientIndex.js"></script>
+<script type="text/javascript" src="${ctxPath}/js/common/baseArea.js"></script>
+<script type="text/javascript"
+	src="${ctxPath}/js/userClient/registerCompany_perfect.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(".companyExamplesSpan").mouseover(function() {
+			$(".companyExamples").show();
+		});
+		$(".companyExamplesSpan").mouseleave(function() {
+			$(".companyExamples").hide();
+		});
+	})
+</script>
+</head>
+<body>
+	<%includeFileTemplate("/WEB-INF/view/login/jumpLogin.html"){ %><%}%>
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+	<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+	<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+		<div id="content">
+			<div class="clientRight pr">
+				<div class="baseMargin pr">
+					<%includeFileTemplate("perfectInfoCommon.html"){ %><%}%>
+					<h4 class="tc fz16 color50 titAccountion">注册公司完善信息</h4>
+					<form action="/perfect/saveRegister.do" method="post"
+						id="zcgsPerfect">
+						<input type="hidden" value="${ordServiceId}" name="ordService.id" id="ordServiceId" /> 
+						<input type="hidden"  name="ordServiceCompany.id" id="ordServiceCompanyId" /> 
+						<input type="hidden" name="cusCompany.customterId" value="${session.cusSession.id}" /> 
+					    <input type="hidden" name="cusCompany.companyNature" value="1" /> 
+						<input type="hidden" name="cusCompany.id" id="companyId" />
+						<input type="hidden" name="ordService.serviceProductId" id="serviceProductId" />
+						<input type="hidden" name="cusCompany.companyStatus" value="1" /> 
+						<input type="hidden" name="ordServiceCompany.serviceStatus" id="serviceStatus"  /> 
+						<input type="hidden" name="ordPerfectRegister.id" id="ordPerfectRegisterId" /> 
+						<input type="hidden" name="ordService.modelId" id="modelId" />
+
+						<div class="fcback">
+							<h5 class="fz14 color50">注册资本</h5> 人民币
+							<input type="text" class="math register_m border" name="cusCompany.registeredCapital" value="" id="js_registeredCapital" />万
+						</div>
+						<div class="fcback companyInfo pr">
+							<h5 class="fz14 color50">公司类型</h5>
+							<label for="limited" class="mb20"> 
+								<input id="limited" value="0" onclick="registerCompany.yhgsHtml();" checked name="cusCompany.companyType" type="radio">&nbsp;有限公司
+							</label> 
+							<label for="merged" class="mb20" style="margin-left: 50px;">
+								<input id="merged" value="1" onclick="registerCompany.yxhhgsHtml();" name="cusCompany.companyType" type="radio">&nbsp;有限合伙企业
+							</label>
+							<h5 class="fz14 color50 companyNameTit">
+								公司名称<span>（3种组合方式，<span class="companyExamplesSpan">查看举例说明</span>）</span>
+							</h5>
+							<div id="companyNameHtml"></div>
+							<!-- 举例 -->
+							<div class="companyExamples none">
+								<div class="companyExamplesDiv">
+									<p>例：</p>
+									<ul>
+										<li>组合1：深圳市 多啦啦 网络技术 有限公司</li>
+										<li>组合2：多啦啦 (深圳) 网络技术 有限公司</li>
+										<li>组合3：多啦啦 网络技术 (深圳) 有限公司</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="fcback corporation">
+							<table width="100%" id="jsrfr"></table>
+							<div id="shareholder"></div>
+						</div>
+						<div class="fcback companyMsg">
+							<!-- 公司行业及经营范围 -->
+
+						</div>
+						<div class="fcback contactInfo">
+							<table>
+								<tr>
+									<td>公司注册地址</td>
+									<td>
+										<div areaName="cusCompany.areaId" id="companyAreaId" class="areaSelectText fl"></div> 
+										<input name="cusCompany.companyAddress" id="companyAddress" value="" placeholder="详细地址" />
+								    </td>
+								</tr>
+								<tr>
+									<td>资料收发地址</td>
+									<td>
+										<input type="hidden" value=""  name="cusServiceContactWay.id"  id="cusServiceContactWayId"/>
+										<input type="hidden" name="cusServiceContactWay.contactPerson" value="${session.cusSession.customerName}"   />
+										<input type="hidden" name="cusServiceContactWay.contactMobile" value="${session.cusSession.customerMobile}"   />
+										<div areaName="cusServiceContactWay.areaId" id="contactAreaId" class="areaSelectText fl"></div> 
+										<input name="cusServiceContactWay.addressDetails" id="addressDetails" value="" placeholder="详细地址" />
+									</td>
+								</tr>
+								<tr>
+									<td>联系信息</td>
+									<td><p class="contactPerson">${session.cusSession.customerName}&nbsp;&nbsp;${session.cusSession.customerMobile}</p></td>
+								</tr>
+							</table>
+						</div>
+						<div class="tc">
+							<input type="button" class="defineTax" value="确定" />
+						</div>
+					</form>
+					<!-- 提示 -->
+					<div class="Infoprompt none">
+						<p class="fl fw mt10 ml10">提示</p>
+						<p class="fr close mt10 mr10"></p>
+						<div class="cb"></div>
+						<div class="InfopromptDiv">
+							<p>是否确认信息已完善？</p>
+							<p>
+								信息一旦提交至市场监督局，则无法修改，<br />请谨慎提交。
+							</p>
+							<div class="subSave tc">
+								<a href="javascript:void(0);" class="subSaveA1">已填好，提交</a> 
+								<a href="javascript:void(0);" class="subSaveA2">保存暂不提交</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

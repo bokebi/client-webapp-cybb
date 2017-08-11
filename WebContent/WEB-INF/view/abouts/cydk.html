@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<%if(!isEmpty(seoAboutusInfo)){%>
+	<title>${seoAboutusInfo.title!}</title>
+	<meta name="keywords" content="${seoAboutusInfo.keywords!}" />
+	<meta name="description" content="${seoAboutusInfo.description!}" />
+	<%}%>
+	<link type="image/x-icon" href="${ctxPath}/images/favicon.ico" rel="shortcut icon" />
+	<link rel="stylesheet" href="${ctxPath}/css/common/base.css" />
+	<link rel="stylesheet" href="${ctxPath}/css/common/common.css" />
+	<script language=javascript src="${ctxPath}/js/plugin/jquery-1.9.1.js"></script>
+	<!-- 新增superslide插件2017-03-28 -->
+	<script type="text/javascript" src="${ctxPath}/js/index/superslide.js"></script>
+	<script language=javascript src="${ctxPath}/js/common/common.js"></script>
+	<script type="text/javascript" src="${ctxPath}/js/datePicker/WdatePicker.js"></script>
+	<link rel="stylesheet" href="${ctxPath}/css/index.css" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/css/plugin/flexslider.css" type="text/css" />
+	<link rel="stylesheet" href="${ctxPath}/css/newservice/common.css" />
+<!-- 新增创业贷款单页样式2017-03-30 -->
+<link rel="stylesheet" href="${ctxPath}/css/cydk.css" />
+</head>
+<body>
+	<!--头部导航-->
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+
+	<!-- 主体内容部分 -->
+	<div class="pc-lp-banner">
+		<div class="marginAuto">
+		<form action="" id="queryCompanyNameForm">
+			<div class="pc-lp-banner-input">
+				<h3>立即申请借款</h3>
+				<ul class="lp-input-ul clearfix" style="    margin-top: 80px;">
+					<li><span> 借款金额: </span> 
+					<input type="text" placeholder="请输入您想申请的金额"  name="customerName" id="lp-amount"> 
+					<input type="hidden" name="companyName" value="申请贷款"/>
+					<b class="lp-input-yuan"> 元 </b></li>
+					<li><span> 借款期限: </span>
+						<div class="lp-input-month-cont">
+							<span class="lp-input-month-cont-curr" id="lp-input-span-month">
+								12个月 </span> <a href="javascript:void(0);"
+								class="lp-input-month-cont-down-a"> </a> <input type="hidden"
+								value="" id="lp-input-month">
+								<div class="lp-input-month-cont-ul">
+									<p data-m="12">12个月</p>
+									<p data-m="18">18个月</p>
+									<p data-m="24">24个月</p>
+									<p data-m="36">36个月</p>
+									<p data-m="48">48个月</p>
+								</div>
+						</div></li>
+					<li><span> 手机号: </span> <input type="text"  name="customerMobile"
+						placeholder="请输入您的手机号" id="lp-mobile"></li>
+				</ul>
+				<p class="lp-input-tips"></p>
+				<a href="javascript:void(0);" class="lp-input-subimt-btn"> </a>
+			</div>
+			</form>
+		</div>
+	</div>
+	<div class="pc-lp-banner2"></div>
+	<div class="pc-lp-banner3">
+		<div class="marginAuto">
+			<a href="javascript:;" id="pc-lp-banner3a"> 
+			<img src="${ctxPath}/images/cydkImg/pc-lp-btnImg.png" alt=""></a>
+			<p class="pc-lp-m-tips-a">
+			挑选贷款太复杂？轻松帮你推荐贷款， 
+			<a href="javascript:;">
+					点击挑选&gt;&gt; 
+			</a>
+			</p>
+		</div>
+	</div>
+	
+	<div class="pc-lp-calculator-main">
+		<div class="pc-lp-calculator-cont marginAuto">
+			<h3>
+				<img src="${ctxPath}/images/cydkImg/pc-lp-titile.png" alt="">
+			</h3>
+			<div class="pc-lp-calculator-s">
+				<div class="pc-lp-calculator-amount">
+					<span> 每月还款： </span> <b id="pcLpCalculator"> 1819.86</b>
+				</div>
+				<div class="pc-lp-calculator-items clearfix">
+					<div class="lp-price-left clearfix">
+						<div class="lp-price-left-top clearfix">
+							<span> 金 额 </span>
+							<p class="lp-prices">
+								<a href="javascript:void(0);" data-price="20000"
+									class="curr clearfix"> 2万 </a> <a href="javascript:void(0);"
+									data-price="30000"> 3万 </a> <a href="javascript:void(0);"
+									data-price="50000"> 5万 </a> <a href="javascript:void(0);"
+									data-price="80000"> 8万 </a> <a href="javascript:void(0);"
+									data-price="0"> 其它 </a> <input type="text" value="20000"
+									id="lpPrice" class="lpPrice" disabled>
+							</p>
+						</div>
+						<div class="lp-price-left-top clearfix">
+							<span> 借多久 </span>
+							<p class="lp-price-time">
+								<a href="javascript:void(0);" data-month="12"
+									class="curr clearfix"> 12个月 </a> <a href="javascript:void(0);"
+									data-month="18"> 18个月 </a> <a href="javascript:void(0);"
+									data-month="24"> 24个月 </a> <a href="javascript:void(0);"
+									data-month="36"> 36个月 </a> <a href="javascript:void(0);"
+									data-month="48"> 48个月 </a>
+							</p>
+						</div>
+						<a href="javascript:void(0);" class="lp-price-left-btn"
+							id="calbtn"> </a>
+					</div>
+				</div>
+			</div>
+			<a href="javascript:;" class="pc-lp-calculator-cont-a"> <img src="${ctxPath}/images/cydkImg/pc-lp-cc-btn.png" alt="" class="pc-lp-cc-btn"></a>
+		</div>
+	</div>
+	
+	<div class="pc-lp-banner4"></div>
+	
+	<div class="lp-d-main">
+		<div class="lp-d-cont">
+			<div class="title">
+				<h4>验证账户名</h4>
+				<span id="fixedClose"> </span>
+			</div>
+			<div class="content">
+				<div class="dialog_content">
+					<p class="dialog_content-tips">
+						为确认您的手机可用，校验码已发送到您的手机，10分钟内输入有效。</p>
+					<div class="lp-control_group">
+						手机号: <span> 123222222 </span>
+					</div>
+					<div class="lp-fixed-input">
+						<span> 验证码: </span> <input type="text" placeholder="请输入验证码"
+							id="fixCode"> <a href="javascript:;" id="fixCodeBtn">
+								重新获取验证码 </a> <b> 59秒后再次获取 </b> <i class="lp-fixed-tips"> </i>
+					</div>
+					<div class="lp-fixed-input-p">
+						<p>1. 网络通讯异常可能会造成短信丢失，请重新获取或稍后再试</p>
+						<p>2. 请核实手机是否已欠费停机，或者安装了某些软件屏蔽了系统短信</p>
+					</div>
+					<div class="lp-fixed-input-submit">
+						<a href="javascript:;" id="lp-fixed-submit"> 确定 </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+
+	<script type="text/javascript" src="/js/index/index.js"></script>
+	<script type="text/javascript" src="/js/index/khsy.js"></script>
+		<!-- 新增创业贷款js 2017-03-30 -->
+	<script type="text/javascript" src="/js/calculator.js"></script>
+	<script type="text/javascript" src="/js/calculation.js"></script>
+	<script type="text/javascript" src="/js/index.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".tab_nav li").mouseover(function() {
+				$(".tab_nav li").removeClass('focus');
+				$(this).addClass('focus');
+				var i = $(this).index();
+				$(".doubt_list > div").hide();
+				$($(".doubt_register")[i]).show();
+			});
+
+			$(".index-utility ul li a").mouseover(function() {
+				$(".index-utility ul li a").removeClass('active');
+				$(this).addClass('active');
+			});
+
+			//新增导航滚动固定2017-03-28
+			$(window).scroll(function() {
+				var scrollTop = $(document).scrollTop();
+				// document.title = scrollTop;
+				if (scrollTop >= 112) {
+					$(".navTop").addClass("fixednav");
+					$(".childNav").hide();
+				} else if (scrollTop < 112) {
+					$(".navTop").removeClass("fixednav");
+				}
+			});
+		})
+	</script>
+
+</body>
+</html>
+

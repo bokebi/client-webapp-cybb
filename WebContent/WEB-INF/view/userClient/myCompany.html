@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>我的订单</title>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/myCompany.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/page.css">
+<script type="text/javascript" src="${ctxPath}/js/userClient/myCompany.js"></script>
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<div class="w_1160 wrap clearfix">
+	<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+	<div id="content">
+	<div class="clientRight">
+		<div class="baseMargin ov">
+			<h4 class="infoTit fl"><span>我的公司</span></h4>
+			<div class="fl speakerNews"></div>
+			<div class="fr mr10">
+				<a title="添加公司"   href="${ctxPath}/myCompany/companyDetail.html">
+				 	<span  class="middle color68">添加公司</span>
+			 	</a>
+			 	<a href="javascript:void(0)">
+				 	<img src="${ctxPath}/images/img/kfIcon.png" class="middle mr5" />
+				 	<span class="middle color68">联系客服</span>
+			 	</a>
+			</div> 
+			<p class="cb"></p>
+			
+			<table class="orderTab" cellpadding="0" cellspacing="0">
+					<th width="10%">公司名称</th>
+					<th class="rightBorder" width="20%">操作</th>
+				<tbody id="myCompanyBoday">
+				
+				</tbody>
+				<tfoot>
+					<!-- table底部 -->
+					<tr class="footTr">
+						<td width="15%"></td>
+						<td width="15%" colspan="5" class="tr">
+							<ul class="PagingUl"> </ul>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+			
+		</div>
+	</div>
+</div>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+</body>
+</html>

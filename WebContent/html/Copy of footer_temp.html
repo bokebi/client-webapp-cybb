@@ -1,0 +1,113 @@
+
+	<footer>
+		<div class="footer-info1">
+			<div class="footer-info clearfix w_1200">
+					<div class="pull-left">
+						<i class="pull-left mr10 fi-icon1"></i>
+						<span class="pull-left">全程服务</span>
+						<em class="pull-left">售前咨询，下单24小时内响应，关键环节100%提醒</em>
+					</div>
+					<div class="pull-left">
+						<i class="pull-left mr10 fi-icon2"></i>
+						<span class="pull-left">品质保障</span>
+						<em class="pull-left">所有产品保证服务质量由专业人士进行操作</em>
+					</div>
+					<div class="pull-left">
+						<i class="pull-left mr10 fi-icon3"></i>
+						<span class="pull-left">多元产品</span>
+						<em class="pull-left">提供TMT/文创等20多项领域服务支持</em>
+					</div>
+					<div class="pull-left">
+						<i class="pull-left mr10 fi-icon4"></i>
+						<span class="pull-left">安全送到</span>
+						<em class="pull-left">办理完成后所有材料精心包装，快递直达</em>
+					</div>
+					<div class="pull-left">
+						<i class="pull-left mr10 fi-icon5"></i>
+						<span class="pull-left">信息保密</span>
+						<em class="pull-left">所有客户信息严格保密，保护客户信息免遭外泄</em>
+					</div>
+				</div>
+		</div>
+		<div class="container pb30 w_1200">
+			<div class="footer-nav pt30 clearfix">
+				<ul class="col-xs-8">
+					<li class="pull-left">
+						<span class="pb10">${sysCompanyResult.values.companyAbb}</span>
+						<a target="_blank" href="${ctxPath}/wz/all.html">最新动态</a>
+						<a target="_blank" href="${ctxPath}/aboutus.html">关于我们</a>
+						<a target="_blank" href="${ctxPath}/wz/more.html">知识库</a>
+					</li>
+					<li class="pull-left">
+						<span class="pb10">订单服务</span>
+						<a href="${ctxPath}/serviceProduct/modelList.html" target="_blank">全部服务</a>
+						<a  target="_blank" href="${ctxPath}/base/refund.html">退款说明</a>
+					</li>
+					<li class="pull-left">
+						<span class="pb10">特色服务</span>
+						<a target="_blank" href="${ctxPath}/aboutus.html">精英团队</a>
+					</li>
+					<li class="pull-left">
+						<span class="pb10">售后服务</span>
+						<a rel="nofollow" target="_blank" href="${ctxPath}/customer/agreement.html">售后服务政策</a>
+					</li>
+					<li class="pull-left">
+						<span class="pb10">热门产品</span>
+						<%if(!isEmpty(hotSkuList)){%>
+						<%for(sku in hotSkuList){%>
+							<%if(skuLP.index <=5){%>
+							<a target="_blank" href="${ctxPath}/productModel/sku_${sku.id}.html">${sku.name}</a>
+						<%}}}%>
+					</li>
+			 </ul>
+			 <div class="col-xs-4">
+			 	<div class="contact-way pull-right">
+			 		<div class="clearfix pb15">
+			 			<i class="pull-left mr10 c-icon1"></i>
+			 			<span class="pull-left italic"></span>
+			 			<em class="pull-left">24小时客服电话</em>
+			 		</div>
+			 		<div class="clearfix pb15">
+			 			<i class="pull-left mr10 c-icon2"></i>
+			 			<span class="pull-left italic">在线客服</span>
+			 			<em class="pull-left">服务时段 8:00-20:00</em>
+			 		</div>
+			 		<div class="clearfix pb15">
+			 			<i class="pull-left mr15 c-icon3"></i>
+			 			<span class="pull-left italic">商务合作</span>
+			 			<em class="pull-left">${sysCompanyResult.values.email}</em>
+			 		</div>
+			 	</div>
+			 	<span class="code pull-right clearfix"><span>关注${sysCompanyResult.values.companyAbb}</span>
+			 		<div class="codes"><img src="${ctxPath}/images/img/ewm.png"/></div>
+			 	</span>
+			 </div>
+		</div>
+	</div>
+	<div class="w_1200 foot_link">
+		<h5 class="fl mr20">
+			友情链接
+		</h5>
+		<p class="fl">
+			<%if(!isEmpty(friendshipLinkList)){%>
+			<%for(friendshipLink in friendshipLinkList){%>
+				<a class="pull-left pr30" target="_blank" title="${friendshipLink.linkName}" rel="nofollow" href="${friendshipLink.linkUrl}">${friendshipLink.linkName}</a>
+			<%}}%>
+		</p>
+		<div class="cb"></div>
+	</div>
+	
+	<div class="footer-bq tc">
+		<p>${sysCompanyResult.values.companyAbb} — 为创业者提供“星”级服务！</p>
+		<span class="pl10">
+			<%if(!isEmpty(recordnoexternalinfo)){%>			
+				${recordnoexternalinfo.word}
+			<%}%>
+		</span>
+	</div>
+		
+</footer>
+
+<%if(!isEmpty(baiduexternalinfo)){%>
+	${baiduexternalinfo.word}
+<%}%>

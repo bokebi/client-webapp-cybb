@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>购物车</title>
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+		<link rel="stylesheet" href="${ctxPath}/css/service/shoppingCart.css" />
+		<script type="text/javascript" src="${ctxPath}/js/product/shoppingCart.js"></script>
+	</head>
+	<body class="backFc">
+		<%includeFileTemplate("/WEB-INF/view/login/jumpLogin.html"){ %><%}%> 
+		<%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+		<div class="wrap w_1160">
+			<!--面包线-->
+			<div class="breadLines mt10">
+				<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+				<a href="${ctxPath}/ordCart/shoppingCart.html" class="lineTit">购物车</a>
+			</div>
+			<!-- 购物车没有商品的时候 -->
+			<%if(isEmpty(ordCart)||isEmpty(ordCart.ordCartItems)) {%>
+			<div class="tc shoppingNo ov">
+				<p class="shoppingIcon"><img src="${ctxPath}/images/img/shopping.png"/></p>
+				<p class="shoppingCartWriting">
+					<span>您还没有购买服务哦，赶紧去看看您需要的服务吧~<br/><a href="${ctxPath}/">去看看</a></span>
+					<img src="${ctxPath}/images/img/shopping1.png" class="middle"/>
+				</p>
+				<div class="cb"></div>
+			</div>
+			<div class="w_1160">
+				<div class="recommend">
+					<div class="recommendTit"><h4>为您推荐</h4></div>
+					<div class="recommendProduct">
+						<table>
+							<tr>
+								<%if(commendList!=null){%>
+									<%for(product in commendList){%>
+										<td>
+											<a href="${ctxPath}/productModel/sku_${product.id}.html" >
+												<div>
+													<%if(product.attachments!=null){%>
+											      	 	<img src="${product.attachments[0].fillFilePath}"/>
+													<%}%>
+												</div>
+												<h4>${product.name}</h4>
+												<p class="color68"><b>￥${product.marketValue}</b></p>
+											</a>
+											<p class="joinShoppingCat">
+												<%if(session!=null&&session.user!=null){%> 
+													<a href="javascript:void(0);"  onclick="$('#buyNowForm${product.id}').submit();">立即购买</a>
+												<%}else{%>		
+													<a href="${ctxPath}/customer/loginUI.html">立即购买</a>
+												<% }%>	
+											</p>
+											<form action="${ctxPath}/ordCart/buyNow.html" id="buyNowForm${product.id}" target="_bank">
+												<input type="hidden" name="skuId" id="skuId" class="modelId" value="${product.id!}"/>
+												<input type="hidden" name="type" id="type"  value="0"/>
+												<input type="hidden" name="count" id="count"  value="1"/>
+											</form>
+										</td>	
+									<%}%>
+								<%}%>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>		
+			<%}else{%>
+			<form action="${ctxPath}/ordCart/paymentConfirm.html"  id="cartForm"  method="post">
+				<table class="cartTab" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<th align="left" width="8%">
+							<p class="ml15 selected first">
+							<span class=" icon_uncheck middle mr5 allCheck" for="js_allCheck">
+							<input type="checkbox" id="js_allCheck" /><span>全选</span>
+							</span>
+							</p>
+							</th>
+							<th width="30%">服务名称</th>
+							<th width="10%">单价</th>
+							<th width="10%">数量</th>
+							<th width="10%">金额（元）</th>
+							<th width="22%">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<%for(item in ordCart.ordCartItems){var index = itemLP.index-1;%> 
+							<tr>
+								<td colspan="7">
+									<table cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="middleTop tdLeft" width="8%">
+												<p class="ml15 selected first">
+													 <input  type="checkbox"  id="js_allCheck_${index}"  name="ordCartItems[${index}].itemCode" value="${item.itemCode}" />
+												     <label class=" icon_uncheck middle mr5" for="js_allCheck_${index}"></label>
+												</p>
+											</td>
+											<td width="30%">
+														<div>
+															<p class="fl"><img src="${item.serviceProductSkuEntity.fillFilePath}" class="shoppingServiceIcon"/></p>
+															<p class="commodityGroup fl">
+																<span class="color68 fz12 commodityName">
+																	<b>${item.serviceProductSkuEntity.name}</b>
+																</span>
+																<%if(item.type=='1'){%>
+																	<%if(item.serviceProductSkuEntity.skuEntityList!=null){%>
+																		<%for(entity in item.serviceProductSkuEntity.skuEntityList){%>
+																		<br>
+																		<span class="">${entity.name!}</span>
+																		<%}%>
+																	<%}%>
+																<%}%>
+															</p>
+															<p class="cb"></p>
+														</div>
+											</td>
+											<td width="10%" class="td">
+												<span class="fz12 color50" ><b>￥<span class="itemOrderPrice">${item.serviceProductSkuEntity.price}</span></b></span><br>
+												<span class="fz12 originalPrice">￥<span class="itemOriginalPrice">${item.serviceProductSkuEntity.marketValue}</span><input type="hidden" class="js_oparice" value="${item.serviceProductSkuEntity.marketValue}" /></span>
+											</td>
+											<td width="10%">
+												<div class="ml15">
+													<input type="button" value="-" class="less fl btnCommon" />
+													<input type="text"   name="ordCartItems[${index}].skuCount" class="shoppingText fl" value="${item.skuCount}" maxlength = "2"  />
+													<input type="button" value="+" class="add btnCommon fl" />
+													<input type="hidden" name="ordCartItems[${index}].price"  class="sparices"  value="${item.serviceProductSkuEntity.price}">
+													<div class="cb"></div>
+												</div>
+											</td>
+											<td width="10%"><p class="color68"><b class="js_calculate">${item.price}</b></p></td>
+											<td width="22%"><p class="dele last"><a onclick="delItem('${item.itemCode}');" href="javascript:void(0);">删除</a></p></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						 <%}%>
+					</tbody>
+					
+					<tfoot>
+						<tr class="shoppingTd shoppingTdCommon">
+							<td width="8%" class="tdAlignLeft middleTop">
+							<p class="ml15 first">
+							<span class=" icon_uncheck middle mr5 allCheck">
+							<input type="checkbox" id="js_allCheck1" /><span>全选</span>
+							</span>
+							</p>
+							</td>
+							<td class="tdLeft" width="30%">
+								<div class="pr">
+									<!-- <a href="#" class="share">分享</a> -->
+									<a href="javascript:void(0)" class="ml15" id="delete">删除</a>
+									<div class="shareDiv">
+										<p class="fl"><img src="${ctxPath}/images/img/share.png" class="middleTop mr10"/></p>
+										<div class="jiathis_style fl" style="margin-top: -15px;">
+											<a class="jiathis_button_tsina"></a>
+											<a class="jiathis_button_weixin"></a>
+										</div>
+										<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+										<div class="cb"></div>
+									</div>
+								</div>
+							</td>
+							<td width="10%"><p>已选商品<b class="color68" id="js_num">0</b>件</p></td>
+							<td width="10%" class="lineHeightTd" colspan="2">
+								<p class="color50 fz14 TotalPrice">总价：<b class="color68" id="js_aprice">1000.00</b></p>
+								<p class="color8f fz12 TotalPrice">已节省：<span class="color50">-￥<b id="js_bprice">1100.00</b></span></p>
+							</td>
+							<td width="22%">
+								<span id="errorInfo"></span>
+								<span class="clearing">结算</span>
+								<span class="cb"></span>
+							</td>
+						</tr>
+					</tfoot>
+					
+				</table>
+			</form>
+			<%}%>
+		</div>
+		<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+	</body>
+</html>

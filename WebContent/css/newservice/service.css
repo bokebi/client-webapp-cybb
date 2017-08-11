@@ -1,0 +1,178 @@
+.serviceBanner img{ height:350px;}
+.addressUl li{  margin-top: 10px;}
+.addressUl li div h4{ text-align: right; width: 130px; margin-right: 20px;  color: #3c3c3c;vertical-align: middle;}
+.addressUl li div dl dd{ font-size: 14px; float: left; border: 1px solid #c8c8c8; width: 198px; height: 35px;  text-align: center; position: relative;
+line-height: 35px; text-align: center; margin-bottom: 10px; margin-right: 10px; cursor: pointer;}
+.addressUl li div dl dd b{ position: absolute; bottom: 0; right: 0; display: block; width: 14px; height: 14px;}
+.addressUl li div dl{ overflow: hidden;}
+.addressUl li div .ybnsr dd{ margin-bottom: 10px;}
+.property b{ background: url(../../../v2/images/commonImg.png) no-repeat; background-position:-429px -139px;}
+.addressUl li div dl .property{border: 1px solid #6fba2c; color: #6fba2c;}
+.addressUl li div .ybnsr2 .property{border: 1px solid #6fba2c; color: #6fba2c;}
+.addressUl li div .ybnsr2 dd{ margin-bottom: 0px;}
+
+/* 已选择的服务 */
+.addressUl li div .selectedService{ width:420px; height:139px; }
+.addressUl li div .selectedService dd{ font-size: 14px; float: left; border: 1px solid #6fba2c; width: 198px; height: 35px;  text-align: center; position: relative;
+line-height: 35px; text-align: center; margin-bottom: 10px; margin-right: 10px; cursor: inherit;}
+
+.collocationUl li{ font-size: 16px; float: left; width: 170px; height:170px; border: 1px solid #c8c8c8; margin-right: 20px; 
+margin-top: 20px; position: relative; cursor: pointer;}
+.collocationUl li:hover{border: 1px solid #6fba2c;}
+.collocationUl{overflow: hidden; width:1000px; margin: 0px auto; margin-top: 20px;}
+.collocationUl li b{bottom: 0; display: none; height: 14px; position: absolute; right: 0; width: 14px; background: url(../../../v2/images/commonImg.png) no-repeat;
+ background-position:-429px -139px;}
+ 
+.collocationUl li.property b{display: block;}
+.collocationUl li.property {border: 1px solid #6fba2c;}
+.collocationImg{ width: 65px; height:78px; margin: 0px auto; /* margin-top:20px; */ background: url(../../../v2/images/collocation.png) no-repeat;}
+.collocationUl li h4{ text-align: center; font-weight: normal; line-height: 22px; color: #646464; margin-top: 20px;}
+/* .collocationUl li label{ display: block;width: 100%; height:100%; cursor: pointer; padding-top: 20px; border: 1px solid #000;}  */
+.collocationUl li label {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    margin-left: -1px;
+    margin-top: -5px;
+    padding-left: 1px;
+    padding-right: 1px;
+    padding-top: 20px;
+    width: 100%;
+}
+.collocationImg1{background-position: -358px -10px;}
+.collocationImg2{background-position: -196px -15px;}
+.collocationImg3{background-position: -429px -11px;}
+.collocationImg4{background-position: -280px -18px;}
+.collocationImg5{background-position: -107px -17px;}
+.collocationImg6{background-position: -438px -112px;}
+.collocationImg7{background-position: -503px -15px;}
+
+/*注册公司*/
+.registerCompany_top{ /* padding-top: 50px; */ padding-bottom: 50px;}
+.line{ background: #00a5a8; width: 20px; height: 28px;}
+.serviceFees{ color:#3c3c3c ; font-size: 18px; margin-top: 69px; background: #FAFAFA; padding-top: 10px; padding-bottom: 10px;
+padding-left:79px;
+}
+#serviceFeesP{ color:#3c3c3c ;padding-left:58px;  font-size: 18px; background: #FAFAFA;padding-top: 10px; padding-bottom: 10px;margin-top: 90px; margin-bottom: 30px;}
+
+.serviceFees span{color:#6fba2c; font-weight: bold; margin-left: 20px;}
+.areaSelectText {margin-left: 150px; width: 410px; line-height: 35px; cursor: pointer;}
+
+/*立即购买*/
+.buyNow_ul li,.buyNow_ul1 li{ float: left;}
+.buyNow_ul .ljgm,.buyNow_ul1 .ljgm{margin-left: 45px;}
+.buyNow_ul1 li a{ font-size: 18px; color: #646464; display: block; width: 266px; height: 50px; line-height: 50px; text-align: center;
+ border: 1px solid #C8C8C8; position: relative; border-radius: 50px; behavior:url(../css/radius.htc);}
+.buyNow_ul li a{ font-size: 18px; color: #646464; display: block; width: 266px; height: 50px; line-height: 50px; text-align: center;
+ border: 1px solid #C8C8C8; position: relative; border-radius: 50px; behavior:url(../css/radius.htc);}
+.buyNow_ul li a:hover,.buyNow_ul1 li a:hover{ background: #6FBA2C; border: 1px solid #6FBA2C; color: #FFFFFF; position: relative; border-radius: 50px; behavior:url(../css/radius.htc);}
+.buyNow_ul { margin-top: 20px;}
+.buyNow_ul1 { margin-top: 20px; margin-left: 20px;}
+/*立即购买结束*/
+
+.registerCompany_center li{ float: left; text-align: center; font-size: 18px;}
+.registerCompany_center{ overflow: hidden;/*  padding-top: 100px; padding-bottom: 100px; */ width: 1200px; margin: 0px auto;}
+.registerCompany_center .registerCompany_center_li{width: 23%;}
+
+.pt60{ padding-top: 60px;}
+.pb60{ padding-bottom: 60px;}
+.registerCompany_center li div{ width: 80px; height: 80px; margin: 0px auto; margin-bottom: 20px;}
+.registerCompany_center li p b{display: inline-block; width: 18px; height: 17px; font-weight: normal; margin-left:5px; margin-right:5px; margin-top: 110px;}
+.registerCompany_center li p span{ vertical-align:middle;}
+.registerCompany_center li p{ color: #50a9b5; position: relative;}
+.commonImg{ background: url(../../../v2/images/commonImg.png) no-repeat;}
+.registerCompany_center .companyImg1{ background-position:-21px -106px;}
+.registerCompany_center .companySpanImg1{background-position: -381px -137px;}
+.registerCompany_center .companyImg2{background-position: -111px -106px;}
+.registerCompany_center .companyImg3{background-position: -201px -106px;}
+.registerCompany_center .companyImg4{background-position: -291px -106px;}
+
+.line1{width: 15px; height: 30px; background: #3c3c3c; display: inline-block; vertical-align: middle;}
+.submitInfo{ display: inline-block; font-size: 30px; font-weight: normal; vertical-align: middle; margin-left: 10px;}
+
+.sunbitInfoTab{ width: 100%; margin-top: 50px;}
+.sunbitInfoTab tr th{ text-align: center;}
+.sunbitInfoTab tr th h4{ font-size: 30px; font-weight: normal; color: #3ebcca;}
+.sunbitInfoTab tr th{border-bottom: 3px solid #a8e1e7; padding-bottom: 10px;}
+.sunbitInfoTab tr td{ padding-top: 10px; padding-bottom: 10px; font-size: 14px; width: 50%; border-bottom: 1px solid #A8E1E7; }
+.sunbitInfoTab tr td p{ color: #3c3c3c;}
+.tdBL{ border-left: 2px solid #A8E1E7;}
+.infoTabLeft{ margin-right: 150px;}
+.infoTabRight{ margin-left: 120px; margin-right: 70px; line-height: 30px;}
+.zcgsbanner img{ width: 100%; min-width: 1200px;}
+
+.accountingTab{ width:100%; margin-top: 50px;}
+.accountingTab tr th{ background: #3ebcca; height: 60px; line-height: 60px; color: #fff; font-size: 16px;}
+.accountingTab tr td{ padding-top: 20px; padding-bottom: 20px; text-align: center;}
+.accountingBorder{ background: #c5ebef; border-left: 3px solid #3ebcca; border-right: 3px solid #3ebcca; border-bottom: 1px solid #fff; color: #3c3c3c; font-size: 14px;}
+.accountingBorder1{ border-bottom: 2px solid #c5ebef; color: #646464; font-size: 14px;}
+
+
+
+.zcgsData li{ float: left; text-align: center;}
+.zcgsData{ overflow: hidden; width: 850px; margin: 0px auto; margin-top: 50px;}
+.zcgsData li div{ margin: 0px auto;}
+.zcgsData li p{ font-size: 16px; color: #646464; margin-top: 15px;}
+.zcgsData li .plus{ height: 17px; width: 17px; margin-top: 50px; margin-left: 30px; margin-right: 30px;}
+.zcgsData .zcgsDataImg1{ background-position: -16px -196px; width: 173px; height: 117px;}
+.zcgsData .plus{ background-position: -453px -138px;}
+.zcgsData .zcgsDataImg2{ background-position:-190px -196px; width: 116px; height: 117px;}
+.zcgsData .zcgsDataImg3{ background-position:-330px -196px; width: 116px; height: 117px;}
+.zcgsData .zcgsDataImg4{ background-position:-470px -196px; width: 116px; height: 117px;}
+
+.companyUl{ margin-top: 100px;}
+.companyUl li{ font-size: 20px; margin-top: 20px; margin-bottom: 20px; margin-left: 380px;}
+.companyUl li span{ color: #aaaaaa;}
+.companyUl .struggle,.companyUl .struggle span{ color: #55aaad;}
+.P_struggle{ width: 140px; height: 190px; position: absolute; top: 100px;left: 220px; background: url(../../../v2/images/commonImg.png) no-repeat; background-position: -587px -114px;}
+
+/*代理记账*/
+.registerCompany_center .accountingImg1{ background-position:-10px -13px;}
+.registerCompany_center .accountingImg2{ background-position:-100px -13px;}
+.registerCompany_center .accountingImg3{ background-position:-184px -13px;}
+.registerCompany_center .accountingImg4{ background-position:-268px -13px;}
+.registerCompany_center .accountingImg5{ background-position:-619px -13px;}
+
+.lightBlue{ background: #ebf8fa;}
+#accountingBody .registerCompany_center{ /* padding-top: 100px; padding-bottom: 100px; */ width: 1200px; margin: 0px auto;}
+#accountingBody .registerCompany_center .registerCompany_center_li{ float: left; text-align: center; font-size: 18px; width: 17%; }
+.accountingFoot{ margin-top: -10px; position: relative; z-index: 999;}
+
+
+/*进出口办理*/
+.registerCompany_center .jckblImg1{background-position:-439px -13px;}
+.registerCompany_center .jckblImg2{background-position:-528px -13px;}
+.registerCompany_center .jckblImg3{background-position:-798px -13px;}
+.registerCompany_center .jckblImg4{background-position:-707px -13px;}
+.registerCompany_center .jckbs5Img{background-position:-350px -13px;}
+/*进出口报税*/
+.less{ height: 34px;  width: 55px; background: 0; border: 1px solid #c8c8c8; outline: none; color: #969696; cursor: pointer;}
+.amount{height: 32px; border: 1px solid #c8c8c8; outline: none; text-align: center; width: 87px; border-left: 0px; border-right: 0px; margin-left: -4px;}
+.plus1{ height: 34px;  width: 55px; background: 0; border: 1px solid #c8c8c8; outline: none; color: #969696; cursor: pointer; margin-left: -4px;}
+.less:hover,.plus1:hover{background: #6fba2c; border: 1px solid #6fba2c; color: #FFFFFF;}
+
+/*公司名称变更*/
+.collocation{ border-top: 2px solid #C8C8C8; width: 400px; margin-left: 10px; margin-top: 15px;}
+#GsmcBg .addressUl li div dl .addressWt{ width: 240px;}
+#GsmcBg .addressUl li div dl .addressWt1{ width: 137px;}
+.nameChange{ margin: 0px auto;}
+.nameChangeTab{ width: 100%; border: 1px solid #3ebcca; border-collapse: collapse;}
+.nameChangeTab tr td{width:25%;}
+.nameChange h4{ color: #00a5a8; font-size: 20px; text-align: center; margin-bottom: 20px;}
+.nameChangeTab tr th{font-size: 18px; color: #fff; text-align: center;padding-top: 20px; padding-bottom: 20px; background: #3EBCCA;  font-weight: normal;}
+.nameChangeTab tr th span{color: #fff;}
+.nameChangeTab tr td{ padding-top: 10px; padding-bottom: 10px; border: 1px solid #3ebcca; font-size: 14px; text-align: center;}
+.registerCompany_center .gsmcbgImg2{background-position: -528px -13px;}
+.registerCompany_center .gsmcbgImg3{background-position: -798px -13px;}
+.registerCompany_center .gsmcbgImg4{background-position: -707px -13px;}
+
+
+/*补差*/
+.makText{ height: 35px; line-height: 35px; width: 414px; border: 1px solid #C8C8C8; padding-left: 5px; outline: none;}
+.makTextarea{ width: 409px; border: 1px solid #C8C8C8; height: 100px; padding: 5px; line-height: 22px;}
+.makeupContent{ display:none; border: 1px solid #6fba2c; width: 419px; position: absolute; top: 36px; height: 188px;overflow-y:auto; background: #FFFFFF; z-index: 999;}
+.makeupContent li{ margin-bottom: 5px; margin-top: 5px; padding-left: 5px; color: #646464; cursor: pointer; line-height: 30px; }
+.makeupContent li:hover{ background: #b7dc95; color: #FFFFFF;}
+
+ 
+

@@ -1,0 +1,37 @@
+.infoBody{ background: #480185}
+.info{background:url(../../../v2/images/info.png) no-repeat; height: 970px; width: 1200px; margin:0px auto;
+overflow: hidden;}
+.infoContent{width:950px; margin:0px auto;  padding-top: 400px;}
+.whether dd{ float: left; width: 100px; text-align:center; height: 30px; line-height:30px; cursor: pointer;
+border: 1px solid #8f8f8f; font-size:14px; margin-left: 25px;}
+.whether{ overflow: hidden;}
+.whetherDiv{ margin-left: 70px;}
+.whetherDiv table tr td,.whetherDiv1 table tr td{ padding-bottom: 20px; padding-top:20px;}
+.whetherDiv1{ margin-left: 50px;}
+.botomBtn input[type='submit'],.botomBtn a{ display: inline-block; width: 170px; height: 45px; line-height: 45px; text-align: center; color:#fff; 
+font-size: 14px; margin-left: 20px; margin-right: 20px;}
+.botomBtn input[type='submit']{border:none;}
+.returnBtn{ background: #e16e6e;}
+.btnA{ background: #480185; cursor: pointer;}
+.botomBtn{ text-align: center; margin-top: 50px;}
+.whether .whetherHover{ background: #e16e6e; border: 1px solid #e16e6e; color:#fff;}
+
+/* 信息收集2 */
+.infoBody1{ background: #00277e}
+.info1{background:url(../../../v2/images/info1.png) no-repeat; height: 2089px; width: 1200px; margin:0px auto;
+overflow: hidden; margin-top: 5px;}
+.survey{width:950px; margin:0px auto;  padding-top: 325px;}
+.secret{ color: #fff; font-size: 16px; margin-left: 384px;margin-top: 25px;  margin-bottom: 40px;}
+.options{ width:850px; margin-left:230px;}
+.options li h4{ font-weight: normal; font-size:16px; color: #505050;}
+.options li table{width:100%;margin-left: 20px;}
+.options li table tr td{ width: 25%; padding-top: 3px; padding-bottom: 3px;}
+.options li{margin-bottom: 17px;}
+.options li table tr td label{ font-size: 14px;}
+.options li table tr td label span{ margin-left: 5px;}
+.options .optionsLi{ margin-top: 195px;}
+.optionstxt{width:100px; height: 25px; line-height: 25px; border:1px solid #ddd;}
+.textareaOptions{ width: 800px; height: 110px; margin-top: 10px; border: 1px solid #ccc;}
+input.optionsEnd{ display: block; width:260px; height: 45px; line-height: 45px; text-align: center; background: #3a5ee6; font-size:14px; 
+color: #fff; margin: 0px auto; margin-top: 30px;border:none;}
+.options li .optionsTit{color: #3a5ee6;}

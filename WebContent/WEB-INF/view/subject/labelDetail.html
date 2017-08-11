@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- <link type="text/css" rel="stylesheet" href="${ctxPath}/old/css/newservice/common/common.css" /> -->
+	<link type="text/css" rel="stylesheet" href="${ctxPath}/css/newservice/css/service.css" />
+	<link type="">
+	<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+	<link type="text/css" rel="stylesheet" href="${ctxPath}/css/newservice/label.css">
+	<%if(!isEmpty(labelDetailSeo)){%>
+		<title>${labelDetailSeo.title!}</title>
+		<meta name="keywords" content="${labelDetailSeo.keywords!}" />
+		<meta name="description" content="${labelDetailSeo.description!}" />
+	<%}else{%>
+	<title>${result.labelName!}-${sysCompanyResult.values.companyAbb!}</title>
+	<meta name="keywords" content="工商财税咨讯,财税政策,财税专题,工商创业标签,深圳公司（工商）注册" />
+	<meta name="description" content="${result.labelDesc!}" />
+	<%}%>
+</head>
+<body>
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<div class="w_1200" style="min-height:584px;">
+		<div class="breadLines">
+			<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+			<a href="${ctxPath}/wz/tag.html">标签中心</a><span>></span>
+			<a class="lineTit"> ${result.labelName!}</a>
+		</div>
+		<div class="w_716" style="margin-bottom: 50px;">
+			<p class="labelTilte f24 center">${result.labelName!}</p>
+			<div class="articles">
+				<p class="description">
+					<center>${result.labelDesc!}</center>
+				</p>
+			</div>
+			
+			<%if(!isEmpty(result.articles)){ for(item in result.articles){ %>
+			<div class="articles">
+				<p class="atriclesTitle f18"><a target="_blank" href="${ctxPath}/wz/${item.id}.html">${item.articleTitle!}</a></p>
+				<p class="description"><span>【描述】</span>
+				${item.articleDesc!}<a target="_blank" href="${ctxPath}/wz/${item.id}.html">【查看详情】</a>
+				</p>
+				
+			</div>
+			<%}}%>
+		</div>
+	</div>
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+</body>
+</html>

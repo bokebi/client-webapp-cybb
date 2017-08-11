@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<title>${typeName!}-问题库_问题汇总-${sysCompanyResult.values.companyAbb!}</title>
+<meta name="keywords" content="	${typeName!}-问题库,问题汇总" />
+<link rel="stylesheet" href="${ctxPath}/css/question/main.css" />
+</head>
+<body class="bgc-gray ask-page">
+	<!--头部-->
+
+   <!--头部导航-->
+   <%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+  <script type="text/javascript">
+	  $(function(){
+		  $('.quit').attr({"href":"${ctxPath}/cus/loginOut.html?quiturl=/ask/${typeCode}-${type}/"});
+		  
+	  });
+  </script>
+
+	<ol class="breadcrumb">
+		<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/ask/">问答库</a><span> > </span>
+			<a href="${ctxPath}/ask/wtk/${typeCode!}/yjj.html">${typeName!}</a><span> > </span>
+			
+			<%if(!isEmpty(type) && type == 'yjj'){%>
+				已解决
+			<%}else if(!isEmpty(type) && type == 'gxs'){%>
+				高分悬赏
+			<%}else if(!isEmpty(type) && type == 'djj'){%>
+				待解决
+			<%}else if(!isEmpty(type) && type == 'lhd'){%>
+				零回答
+			<%}%>
+	</ol>
+
+	<div class="model-ask-list">
+		<!-- 类型列表 -->
+		<input type="hidden" id="typeCode" name="typeCode" value="${typeCode!}" />
+		<input type="hidden" id="type" name="type" value="${type!}" />
+		<ul class="ask-type">
+			<li>
+				<%if(!isEmpty(typeCode) && typeCode == 'all'){%>
+					<a href="${ctxPath}/ask/wtk/all/${type!}.html">所有问题</a>
+				<%}else{%>
+					<a href="${ctxPath}/ask/wtk/all/${type!}.html" style="color: black;">所有问题</a>
+				<%}%>
+			</li>
+			<%if(!isEmpty(questiontypelist)){for(item in questiontypelist){%>
+				<li>
+					<%if(!isEmpty(typeCode) && typeCode == strutil.toLowerCase(item.typeCode)){%>
+						<a href="${ctxPath}/ask/wtk/${strutil.toLowerCase(item.typeCode)}/${type!}.html">${item.typeName}</a>
+					<%}else{%>
+						<a href="${ctxPath}/ask/wtk/${strutil.toLowerCase(item.typeCode)}/${type!}.html" style="color: black;">${item.typeName}</a>
+					<%}%>
+				</li>
+			<%}}%>
+		</ul>
+		<!-- 类型列表 end -->
+
+		<!-- 状态列表 -->
+		<ul class="ask-state">
+			<li><a href="${ctxPath}/ask/wtk/${typeCode!}/yjj.html" <%if(!isEmpty(type) && type == 'yjj'){%>class="current"<%}%>>已解决</a></li>
+			<li><a href="${ctxPath}/ask/wtk/${typeCode!}/gxs.html" <%if(!isEmpty(type) && type == 'gxs'){%>class="current"<%}%>>高悬赏</a></li>
+			<li><a href="${ctxPath}/ask/wtk/${typeCode!}/djj.html" <%if(!isEmpty(type) && type == 'djj'){%>class="current"<%}%>>待解决</a></li>
+			<li><a href="${ctxPath}/ask/wtk/${typeCode!}/lhd.html" <%if(!isEmpty(type) && type == 'lhd'){%>class="current"<%}%>>零回答</a></li>
+		</ul>
+		<!-- 状态列表 end -->
+
+		<div class="search-box">
+			<input type="text" style="height: 20px;" class="serach" id="likeSearch" value="<%if(!isEmpty(likeContent)){%>${likeContent}<%}%>" placeholder="按关键词检索">
+			<button class="btn btn-success" onclick="likeSearch()">搜索</button>
+		</div>
+
+		<!-- 列表 -->
+		<ul class="ask-list">
+			<%if(!isEmpty(solveQuestion) && !isEmpty(solveQuestion.data)){%>
+				<%for(item in solveQuestion.data){%>
+					<li>
+						<%if(!isEmpty(item.areaName)){%>
+							[${item.areaName!}]
+						<%}%>
+						<%if(!isEmpty(item.price) && item.price > 0){%>
+							<span class="points"> <span
+								class="answers-icon icon-points2"></span> <span>${item.price!}</span>
+							</span> 
+						<%}%>
+						<a href="${ctxPath}/ask/${item.id}.html" class="ask">
+							 <%if(!isEmpty(item.majorQuestion) && strutil.length(item.majorQuestion) > 60){%>
+								${strutil.subStringTo (item.majorQuestion,0,60)}...
+							<%}else{%>
+								${item.majorQuestion!}
+							<%}%>
+						</a> <span class="ask-type">
+						<%if(!isEmpty(item.typeName)){%>
+							[<a href="${ctxPath}/ask/wtk/${strutil.toLowerCase(item.typeCode)}/yjj.html">${item.typeName!}</a>]
+						<%}%></span>
+						<span class="time"> <span class="answer-number">回答数：
+						<%if(!isEmpty(item.qestionanswereCount)){%>
+							${item.qestionanswereCount!}
+						<%}else{%>
+							0
+						<%}%>
+						
+						</span>
+							| ${item.formatCreateDate}
+					</span></li>
+				<%}%>
+			<%}else{%><li><font color="#ccc">没有相关问题</span></li><%}%>
+			<%if(!isEmpty(solveQuestion)){%>
+			<div class="paging solvePageCode" style="padding-top: 10px;">
+			</div>
+			<%}%>
+			<input type="hidden" id="solveTotalPages" name="solveTotalPages" value="${solveQuestion.solveTotalPages!}"/>
+			<input type="hidden" id="currentPage" name="currentPage" value="${solveQuestion.currentPage!}"/>
+		</ul>
+		<!-- 列表 end -->
+	</div>
+
+	<%includeFileTemplate("/html/footer_temp.html"){ %><%}%>
+	<script type="text/javascript" src="${ctxPath}/js/question/jquery.page.js" ></script>
+	<script type="text/javascript" src="${ctxPath}/js/question/problemHouse.js"></script>
+</body>
+</html>

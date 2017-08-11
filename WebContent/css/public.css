@@ -1,0 +1,54 @@
+/* reset.css */
+body { color: #333; padding:0; margin: 0; font-family: "Microsoft Yahei", Arial; font-size: 14px; -webkit-tap-highlight-color:transparent;}
+ul, form, p, h1, h2, h3, h4, h5, h6, div, input, text, textarea, dl, dt, dd { padding: 0; margin: 0; }
+ul, ol { list-style: none; }
+a { color: #333; text-decoration: none; -webkit-tap-highlight-color:transparent;}
+a:hover { text-decoration: none; }
+i,em { font-style: normal;}
+table {border-collapse: collapse; border-spacing: 0; }
+caption,th,td {font-weight: normal; vertical-align: middle; }
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {display: block }
+
+input, select, textarea { font-family: "Microsoft YaHei", Verdana, Tahoma; background-color: #FFF; overflow:hidden; 
+-webkit-tap-highlight-color:rgba(0,0,0,0);}
+
+input:focus, textarea:focus { outline: 0 }
+input[type="button"], input[type="submit"], input[type="reset"] input[type="text"] { -webkit-appearance: none;  }
+
+img {  border: none; max-width: 100%; height: auto; width: auto\9;  }
+.fl { float: left; }
+.fr { float: right; }
+.clearfix{ zoom: 1; }
+.clearfix:after{ clear: both; display: block; content: ""; visibility: hidden; height: 0; }
+.pr ,.posr{ position: relative;}
+.pa ,.posa{ position: absolute;}
+.bdn{ border: none!important;}
+
+/*溢出省略号*/
+.ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ellipsis2 { overflow : hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+.w_1200 {width: 1200px; margin: 0 auto; }
+
+/*头部*/
+.index-navbar {transition: background-color .5s ease 0s; width: 100%; z-index: 1000; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

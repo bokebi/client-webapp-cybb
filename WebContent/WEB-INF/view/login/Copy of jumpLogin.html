@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>登录</title>
+		<link rel="stylesheet" href="${ctxPath}/css/login/login.css" />
+		<script language=javascript src="${ctxPath}/js/login/jumpLogin.js"></script>
+	</head>
+	<body>
+	<form action="" id="loginForm">
+		<div class="jumpLogin1 pr" style="display:none;">
+			<div class="jumpLogin"></div>
+				<div class="jump" style="height: 300px;">
+					<div class="jumpTop">
+						<!-- <p class="dymLogo fl"><img src="${ctxPath}/images/img/dymLogo1.png"/></p> -->
+						<p class="clos1 fr" ><img src="${ctxPath}/images/img/clos1.png"/></p>
+						<div class="cb"></div>
+					</div>
+					<div class="jump1">
+						<div class="login1">
+							<div class="fl loginBox">
+								<p class="nubLogin">
+									<span><img src="${ctxPath}/images/img/name.png" /></span>
+									<input type="text" name="loginName" class="text" placeholder="请输入手机号码" />
+								</p>
+								<p class="nubLogin">
+									<span><img src="${ctxPath}/images/img/pas.png" /></span>
+									<input type="password" name="loginPwd" class="text" placeholder="请输入密码" />
+								</p>
+							</div>
+							<div class="fl loginBtn" onclick="jumpLogin();" >登录</div>
+							<p class="cb"></p>
+						</div>
+						<div class="password ov">
+							<p class="fl"><label><input type="checkbox" name="" class="middle mr5"/>记住密码</label></p>
+							<a href="${ctxPath}/customer/forgetPwd.html" class="colorF8 fr">忘记密码？</a>
+						</div>
+						<div style="height: 38px;" class="error">
+							
+						</div>
+						
+						<!-- <div class="fr sJversion">手机版更方便<img src="${ctxPath}/images/img/sjEwm.png" class="ml10"/>
+							
+						</div>
+						<p class="cb"></p> -->
+						<!-- <p class="loginLine"></p> -->
+						<div class="straightway"><img src="${ctxPath}/images/img/left.png" class="middle mr10"/><span class="middle">还没有帐号，</span><a href="${ctxPath}/customer/registerUI.html" class="colorF8 middle">立即注册</a></div>
+							
+					</div>	
+				</div>
+				
+				
+			</div>	
+		</form>
+	</body>
+</html>

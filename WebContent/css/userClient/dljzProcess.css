@@ -1,0 +1,75 @@
+.processTop a{ display: inline-block; margin-left: 10px;}
+.viewReport{width:90px; height: 28px; line-height: 28px; background: #ff8468; color: #fff; text-align: center;}
+.cutover{color: #6eaee5;}
+.cutover:hover{font-weight: bold;}
+.titProcess{height: 35px; line-height: 35px; font-size: 14px; color:#505050; background: #fcfcfc; padding-left: 10px;}
+.serviceTab{width:100%; margin-top: 15px; margin-bottom: 15px;}
+.serviceTab tr td{padding-top: 5px; padding-bottom: 5px; color:#505050;}
+.fee{display: inline-block; background: #ff8468; color:#fff; height: 25px; line-height:25px; padding-left: 8px; 
+padding-right:8px; margin-left: 10px;}
+
+/* 圆形统计 */
+.circliful {
+	position: relative;
+}
+.circle-text, .circle-info, .circle-text-half, .circle-info-half {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	display: inline-block;
+}
+.circle-info, .circle-info-half {
+	color: #999;
+}
+.circliful .fa {
+	margin: -10px 3px 0 3px;
+	position: relative;
+	bottom: 4px;
+}
+
+.assetsUl li{ display: inline-block;}
+.assetsUl{text-align: center;}
+.assetsUl li .WidthDiv{width:170px; height: 150px;}
+
+/*  */
+.statisticsTab{width:100%; margin-top:20px;}
+.statisticsTab tr td{text-align: center;}
+.statisticsTab tr td div{font-size: 15px; font-weight: bold;}
+.statisticsTab tr td div div{color:#8f8f8f;}
+.statisticsTab tr td div p{ margin-top: 5px;}
+.total{color: #5e7ed7;font-size: 15px; font-weight: bold; margin-top: 5px;}
+.zzs{color:#16c6cc;font-size: 15px; font-weight: bold; margin-top: 5px;}
+.qysds{color:#f4bf4d;font-size: 15px; font-weight: bold; margin-top: 5px;}
+.zzfjs{color:#e2747d;font-size: 15px; font-weight: bold; margin-top: 5px;}
+.grsds{color:#6eaee5;font-size: 15px; font-weight: bold; margin-top: 5px;}
+.statisticsConfirm{width:140px; height:35px; line-height:35px; text-align: center; color:#fff; background: #6eaee5;font-size: 14px;
+cursor: pointer; margin: 0px auto; margin-top: 50px; margin-bottom: 50px;}
+.processTime h4,.processTime div{display: inline-block;}
+.processTime h4{float: left; padding-left: 10px;}
+.processTime{text-align: center; overflow: hidden; background: #fcfcfc;color: #505050; font-size: 14px; height: 35px;
+line-height: 35px;}
+.processTime div input{width:180px; height: 26px; line-height: 26px; border:1px solid #ccc; margin-top: -3px;}
+.processTime div input:focus{ border: 1px solid #ff8468;}
+.processTime div a{display: inline-block; padding-left: 5px; padding-right: 5px; height: 26px; line-height: 26px; background: #6eaee5;
+color:#fff; border-radius:5px; margin-left: 5px;}
+
+.processTab{width:100%;}
+.processTab tr td{ text-align: center;}
+.point{margin-bottom: 50px;}
+.evaluate{border:1px solid #ccc; width:700px; height: 100px; padding: 5px; line-height: 22px;}
+.size{position: absolute;bottom: 5px; right: 120px; color:#505050;}
+.statisticsConfirm1{width:100px; height:32px; line-height:32px; text-align: center; color:#fff; background: #6eaee5;font-size: 14px;
+cursor: pointer; margin: 0px auto; margin-top: 30px; margin-bottom: 30px;}
+.taxknowledge li h4{font-weight: normal; margin-bottom: 10px;}
+.taxknowledge li{color:#505050; margin-bottom: 15px;}
+.close{width:12px; height: 12px; background: url(../../v2/images/dum_icon.png) no-repeat -80px -145px;cursor: pointer;}
+.commentPromptDiv1{position: fixed; width: 100%; height: 100%; background: #000; top: 0px; filter:alpha(opacity=50); -moz-opacity:0.5;
+opacity:0.5; z-index: 9999; left: 0;}
+.commentPromptDiv2{width:340px; height: 115px; background: #fcfcfc;  position: fixed; z-index: 9999;left:50%; top:50%;
+margin-left: -170px; margin-top: -57px;}
+.commentPromptDiv p{display: inline-block;}
+.savePrompt_span{display: inline-block;background:url(../../v2/images/dum_icon.png) no-repeat  -184px -364px; height:30px; width: 36px;}
+.commentPromptDiv tl{text-align: left;}
+
+
+

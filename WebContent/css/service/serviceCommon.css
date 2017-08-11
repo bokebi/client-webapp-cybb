@@ -1,0 +1,237 @@
+.borderTop{ border-top: 1px solid #DDDDDD;}
+.close-li{position:absolute;right:0;top:0;}
+.waring .close-li .icon{display:inline-block;width:15px;height:15px;cursor:pointer;background-position:-184px -329px;margin-top:10px;margin-right:10px;}
+/**/
+.banner img{width: 500px; height: 340px;}
+.serviceLeft{ margin-left: 50px; width:605px;}
+.titH3{ font-size: 24px; font-weight: bold;}
+.public dd{ display: inline-block; height: 20px; line-height: 20px; background: #ff8468; color: #FFFFFF; padding-left: 15px; padding-right: 10px; margin-right: 10px;}
+.public{margin-top: 5px; margin-left: 50px;}
+.zcArea{ color: #8f8f8f; margin-right: 10px; margin-top: 7px;}
+.become{ background: #E7F9FE; width: 605px; height: 50px; margin-top: 15px; margin-bottom: 15px;}
+.zcgsBody .become{ margin-top: 30px; margin-bottom: 30px;}
+.serviceFees{ font-size: 16px; margin-top: 5px; margin-left: 20px;}
+.serviceFees b{ font-size: 26px; color: #ff8f3d;}
+.serviceFees span{ font-size: 22px; color: #ff8f3d; font-weight: bold;}
+.serviceFees font{ font-size: 12px; color: #ff8f3d;}
+.clinch{ margin-top: 5px; color: #8F8F8F;line-height: 20px; margin-right: 20px;}
+.clinch span{ color: #ff8f3d;}
+
+.buyCart{ margin-top: 10px;}
+.buyCart dd{ display: inline-block;}
+.buyCart dd a{ display: inline-block; width: 200px; height: 40px; line-height: 40px; text-align: center; margin-right: 30px; font-size: 14px; color: #FFFFFF;}
+.buyNow{ background: #ff8f3d;}
+.addCart{ background: #117ec3;}
+.addCart1{ background: #12c2f4;}
+
+/*搭配*/
+.collocation{ border: 1px solid #DDDDDD; margin-top: 50px; margin-bottom: 30px;}
+.collocationDiv{ background: #FAFAFA; height: 40px; line-height: 40px;}
+.collocationDiv p{ width: 105px; border-top: 2px solid #117ec3;  background: #FFFFFF; text-align: center; height: 38px;}
+
+.collocationService{ margin:20px 50px 30px 50px;}
+.collocationService tr td{width: 100px; height: 100px; text-align: center;}
+.serviceIocn{ height: 100px;}
+.serviceIocn h4{ font-size: 12px; font-weight: normal; margin-top: 5px;}
+.lowest{ font-size: 14px; margin-bottom: 10px;}
+.lowestPrice{ font-size: 20px; font-weight: bold; color: #FF8261;}
+.lowestBuy{ height: 30px; line-height: 30px;}
+.lowestBuy a{ display: block; background: #FF8261; color: #FFFFFF; margin-top: 10px;}
+
+/*centerLeft*/
+.centerLeft{ width: 240px;}
+.centerRight{ width: 905px;  margin-left: 10px;}
+.related{height: 40px; background: #f6f6f6; font-size: 16px; color: #505050; text-align: center; line-height: 40px;margin-bottom: 15px;}
+.searchTxt{ width: 130px; border: 1px solid #cccccc; height:25px; line-height: 25px; vertical-align: middle; border-right: 0;}
+.searchDiv span{ display: inline-block; height: 27px; width: 25px; background: #12C2F4; vertical-align: middle;text-align: center; float: left; cursor: pointer;}
+.searchDiv span img{ margin-top: 8px;}
+.searchDiv{ width: 161px; margin: 0px auto; margin-top: 10px; margin-bottom: 10px;}
+.inquire{ background: url(../../images/zcgsImg1.png) no-repeat; width: 203px; height: 299px;}
+.inquireDiv{ width: 185px; margin: 0px auto; margin-top: 150px;}
+.inquireTxt{ width: 175px; padding-left: 5px; border: 1px solid #DDDDDD; height: 30px; line-height: 30px; outline: none;}
+.inquireSub{ width: 100px; height: 25px;/*  line-height: 25px; */ text-align: center; background: #505050; border: 1px solid #505050; color: #FFFFFF; margin: 0px auto;
+font-size: 14px; margin-top: 15px; cursor: pointer;}
+.inquireSubP{ width: 100px; margin: 0px auto;}
+.zcDetail{ width: 185px; margin: 0px auto; text-align: center; font-size: 14px; margin-top: 10px; color: #FFFFFF; font-weight: bold; letter-spacing: 1px;}
+.zcDetail span{color: #fff600;}
+.zcgsImg{ width: 205px;}
+.relatedArticle{ width: 180px;margin: 0px auto; margin-top: 10px; margin-bottom: 10px;}
+.relatedArticle li{ margin-top: 5px; margin-bottom: 5px;}
+.relatedArticle li a{ display: block; width:180px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.relatedArticle li a:hover{ color:#52cbf8;}
+
+.productList{
+	margin: 10px 15px;
+}
+.productList dl dt{font-size: 16px; color:#505050; cursor: pointer;}
+.productList dl dt span{display: inline-block; width:15px; height: 15px; background: url(../../images/newImg/add.png)no-repeat;
+background-position: 0 0px; margin-right: 5px; vertical-align: middle;}
+.productList dl dd a{color: #969696;}
+.productList dl dd div{margin-left: 20px; line-height: 30px;}
+.productList dl{margin-bottom: 20px;}
+.productList dl dt .productrDtHover{ background: url(../../images/newImg/add.png)no-repeat; background-position: 0 -24px;}
+/*centerRight*/
+.centerRight{ border: 1px solid #DDDDDD;}
+.processSize{ font-size: 56px; color: #12C2F4; font-weight: bold; text-align: center; margin-top: 10px; margin-bottom: 10px;}
+.processSize1{ margin-bottom: 55px;}
+.processUl{ width: 100%;}
+.processUl tr td{ text-align: center;}
+.processUl{ overflow: hidden;}
+.processIcon{ width: 90px; height: 90px; background: url(../../images/icon.png) no-repeat;}
+.readyData{background-position:-12px 0px;}
+.readyData1{background-position:-104px 7px;}
+.readyData2{background-position:-198px 9px;}
+.readyData3{background-position:-280px 6px;}
+.readyData4{background-position:-371px 9px;}
+.readyData5{background-position:-455px 9px}
+.serialNumber{width: 23px; height: 23px; color: #cccccc; border-radius: 50%; border:2px solid #CCCCCC; text-align: center; line-height: 23px; margin: 0px auto;}
+.lineLi{ border-top:2px solid #CCCCCC; width: 131px; margin-top: 150px; margin-left: -32px;}
+.marginLeft{ margin-left: -35px; cursor: pointer;}
+.DataInfo{ margin-top: 10px; margin-bottom: 10px; font-size: 14px; height: 45px; padding-top: 5px;}
+.DataInfoHover{ color: #ff8261; font-weight: bold;}
+.serialNumberHover{ border: 2px solid #FF8261; background: #FF8261; color: #FFFFFF;}
+
+/* .serviceArea li{ overflow: hidden;} */
+.taxesType dd{ display: inline-block; width: 90px; height: 22px; line-height: 22px; border: 1px solid #CCCCCC; text-align: center; margin-right: 10px; margin-top: 10px; margin-bottom: 5px;
+cursor: pointer;}
+.areaMarignTop{ margin-top: 13px;}
+.serviceArea .texesTypeHover{ color: #ff8f3d; border: 1px solid #ff8f3d;}
+.taxesType dd label{ display: block; cursor: pointer;}
+.checkBoxType dd{ display: inline-block; width: 90px; height: 22px; line-height: 22px; border: 1px solid #CCCCCC; text-align: center; margin-right: 10px; margin-top: 10px; margin-bottom: 5px; cursor: pointer;}
+.checkBoxType dd label{ display: block; cursor: pointer;font-size: 13px}
+
+/* 服务详情TIT */
+.contentDetailsList li{float: left; width:130px; text-align: center; cursor: pointer;}
+.contentDetailsList{overflow: hidden; height: 40px; line-height: 40px; background: #f6f6f6;}
+.contentDetailsList .hoverDetailsList{background: #fff;border-top: 2px solid #117ec3;}
+.contentDetailsDiv{margin: 10px 20px;}
+.contentDetailsDiv img{width:100%}
+/*服务详情*/
+.contentDetailsDiv1 dl dd{margin-bottom: 10px; color:#646464;}
+.contentDetailsDiv1 dl dd p{line-height:25px; margin-bottom: 10px;}
+.attributeDl {
+    width: 550px;
+}
+
+/*服务保障*/
+.ensureTab{ width: 100%;}
+.ensureIcon{width: 70px; height: 70px; margin: 0px auto; background: url(../../images/icon.png) no-repeat; margin-bottom: 35px;}
+.ensure1{ background-position:-20px -87px;}
+.ensure2{ background-position:-107px -79px;}
+.ensure3{ background-position:-210px -77px;}
+.ensure4{ background-position:-288px -76px;}
+.ensureTab tr td{ text-align: center;}
+.ensureDetail{ margin-top: 10px; margin-bottom: 5px; color: #8f8f8f; line-height: 20px;}
+.explanationEnsure{ color: #FF8261; font-size: 14px; text-align: center; background: #fcfcfc; height: 90px; line-height: 90px; margin:20px 0px 20px 0px;}
+
+/*常见问题*/
+.problem li h4 span{ margin-right: 15px; display: inline-block; width: 24px; height: 24px; line-height: 24px; background: #12c2f4; border-radius: 50%; 
+font-size: 16px; color: #FFFFFF; text-align: center;}
+.problem li h4{ font-size: 20px; margin-bottom: 20px;}
+.problem li p span{ margin-right: 15px; display: inline-block; width: 24px; height: 24px; background: #FF8261;  border-radius: 50%;
+font-size: 16px; color: #FFFFFF; text-align: center; float: left;}
+.problem li p font{ float: left; width: 800px;}
+.problem li p{ font-size: 16px; color: #505050; margin-bottom: 20px; overflow: hidden;}
+.problem li{ margin-bottom: 50px;}
+.doubt{ border: 1px solid #CCCCCC; background: #fdfdfd;}
+.doubtDiv{ width: 630px; margin: 0px auto; padding-top: 30px; padding-bottom: 30px;}
+.descriptionDoubt span{ display: inline-block; width: 20px; height: 20px; background: #12C2F4; text-align: center; line-height: 20px; color: #FFFFFF; 
+font-size: 16px; border-radius: 50%;}
+.descriptionDoubt{ font-size: 16px; color: #909090;}
+.expert{ margin-top: 3px;}
+.expert span font{ color: #12C2F4;}
+.doubtTxt{ border: 2px solid #00AADA; height: 40px; line-height: 40px; padding-left: 5px; width: 625px; outline: none; }
+.doubBox{ margin-top: 20px; margin-bottom: 20px;}
+.doubBox span{ position: absolute; right: 10px; top: 25px;}
+.supplement{ color: #909090;}
+.textarea{width: 615px; height: 80px; padding: 10px; outline: none;}
+.subProblem{width: 90px; height: 40px; line-height: 40px; border: 1px solid #12C2F4; background: #12C2F4; text-align: center; color: #FFFFFF; outline: none;font-size: 14px;cursor: pointer; margin-right: -9px; margin-top: 10px;}
+
+/*已选服务类型*/
+.selectType dd{ display: inline-block; width: 120px; height: 28px; line-height: 28px;  color: #FF8261;border: 1px solid #FF8261; text-align: center; 
+margin-right: 10px; margin-top: 10px; margin-bottom: 5px; cursor: pointer;}
+.selectType{ width: 405px; float: left;}
+
+/*切换1*/
+#practiceDiv{ border-top: 0px; border-right: 0;}
+/*.tab1{border-top:#ccc solid 1px;border-bottom:#cccccc solid 1px;}*/
+.menu{ font-size:14px; height:35px; background: #FAFAFA;}
+.menu li{float:left;width:120px;text-align:center;line-height:35px;height:35px;cursor:pointer; }
+.menu li.off{background:#fff;color:#000;font-weight:bold; border-bottom:none; border-top: 2px solid #12C2F4;margin-top:-1px;height:34px;line-height:34px;}
+.menudiv{ overflow:hidden; margin-left:30px; margin-right: 30px; margin-bottom: 10px; margin-top: 30px;}
+/*.menudiv div{line-height:28px;}*/
+.con_one_1_ul li{ display:block; float:left; overflow:hidden; margin-right:20px;}
+.con_one_1_ul{ overflow:hidden;}
+.manner{margin-top:20px; margin-bottom:20px;}
+/*未选中地址和其他必选项提交时的警告信息*/
+.serviceArea.waring{width: 490px;}
+.serviceArea{padding:5px 15px 10px 15px;margin-left: -15px;width:488px;}
+.serviceArea .marginCommon{margin-top: 10px;  font-size: 14px;}
+.serviceArea .marginCommon span{display: inline-block;color:#646464;}
+.serviceArea .marginCommon .marginCommonSpan{color:#ff8468; border: 1px solid #ff8468; height: 30px;
+line-height: 30px; min-width: 170px; text-align: center; position: relative;}
+.serviceArea .marginCommon .marginCommonSpan b{display: block; width:16px; height: 16px; background: url(../../images/selectserver.png) no-repeat;
+position: absolute; bottom: 0px; right: 0px;}
+.serviceItemsName{width: 85px; text-align: right;}
+/*切换2*/
+
+/*全部服务 */
+.wholeService{ background:#fff; overflow:hidden; margin-bottom: 30px;}
+.wholeService li{ float: left;}
+.wholeService li a{ display: block; padding:21.5px 15px;   color: #505050;}
+.wholeService li .wholeService{ overflow: hidden;}
+.wholeService li .wholeServiceHover{ background: #12c2f4; color: #fff; margin-right: 5px;}
+.wholeService li a:hover{ background: #12c2f4; color: #fff;}
+.wholeServiceDl dd{width:247px; min-height:310px; border: 1px solid #dadada; float: left; margin-bottom: 40px;}
+.wholeServiceDl{ overflow: hidden;}
+.wholeServiceDl dd:hover{border: 1px solid #12c2f4;}
+.wholeImg img{ width:247px; height: 145px;}
+.wholePrice{ margin:10px 10px 15px 10px;}
+.wholePrice h4{font-size: 16px;}
+.writingWhole{ font-size: 13px; color: #505050;  margin-top: 5px;}
+.writingWhole1{ font-size: 12px; color: #505050;}
+.writingWhole1 b{ font-size:18px; color:#ff5224;}
+.writingWhole1 font{ font-size:14px; color:#ff5224; margin-left: 5px;}
+.twowholeServiceDl{ margin-left: 20px; margin-right: 19px;}
+.wholeImg .wholeMargin{ width:363px; height: 243px; margin: 1px;}
+
+.serviceList li{padding-top: 15px;}
+.serviceNameLeft,.serviceNameRight{display: inline-block;}
+.serviceNameLeft{width: 150px; margin-right:20px; text-align: right; font-size: 16px; color:#222; vertical-align:top;}
+.serviceList{margin: 5px 0 25px 20px;}
+.serviceNameRight{width: 940px; border-bottom: 1px solid #ddd; vertical-align: middle;}
+.serviceNameRight a{color:#666; margin-right: 20px; padding-bottom:15px; display: inline-block;}
+.serviceNameRight a:hover{color:#12c2f4;}
+
+
+
+/* 服务详情New */
+.presentDetails li{overflow: hidden; margin-bottom: 15px;}
+.titPresentSpan{display: inline-block;  background: url(../../images/serviceDetailsIcon.png) no-repeat; width:35px; height: 25px;
+margin-right: 5px;}
+.titPresent{font-size: 16px; color:#505050;}
+.titPresentIcon1{background-position:-91px -234px;}
+.titPresentIcon2{background-position:-143px -234px;}
+.titPresentIcon3{background-position:-214px -233px;}
+.titPresentIcon4{background-position:-267px -233px;}
+.presentDetails{margin:40px;}
+.presentDetails_left{margin-top:50px;}
+.present_introduction{width:375px; margin-top:10px;}
+.present_introduction p{font-size: 14px; color:#999999; line-height: 23px;}
+.borderTop .Cooperation{margin-top: 30px;}
+.presentDetailsIcon{width: 192px; height: 192px; background: url(../../images/serviceDetailsIcon.png) no-repeat; }
+.presentDetailsIcon1{background-position:-18px -8px;}
+.presentDetailsIcon2{background-position:-272px -8px;}
+.presentDetailsIcon3{background-position:-526px -8px;}
+.presentDetailsIcon4{background-position:-780px -8px;}
+
+
+
+
+
+
+
+
+
+
+

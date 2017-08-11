@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<%if(!isEmpty(registerUISeo)){%>
+	<title>${registerUISeo.title!}-${sysCompanyResult.values.companyAbb!}</title>
+	<meta name="keywords" content="${registerUISeo.keywords!}" />
+	<meta name="description" content="${registerUISeo.description!}" />
+<%}%>
+	<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+	<link rel="stylesheet" href="${ctxPath}/css/register_user.css" />
+	<script language=javascript src="${ctxPath}/js/login/register.js"></script>
+</head>
+<body>
+	<!--头部-->
+		<div class="loinTop">
+			<div class="w_1160">
+				<h1 class="fl mt10"><a href="${ctxPath}/"><img src="${ctxPath}/images/newImg/logo.jpg" /></a></h1>
+				<p class="leftLine fl"></p>
+				<p class="fl loginWriting">互联网+财税平台，全面实现信息化</p>
+				<div class="cb"></div>
+			</div>
+		</div>
+
+		<!-- 注册 -->
+		<div class="register_userDiv">
+			<div class="register_user" style="margin-top: 30px;">
+				<!-- <div class="msg clearfix"><span class="fl fz20">快速注册</span><span class="fz14 fr">已有账号，<a href="${ctxPath}/cus/loginUI.html" class="blue">马上登录</a></span></div> -->
+				<form id="registerForm"  method="post" action="javascript:void(0)">
+					<div class="fl LeftForgetPwd">
+					<div class="msg forgetPwdBotton mb20 pb15"><span class="fz20 ml15">快速注册</span></div>
+						<ul>
+							<li>
+								<span class="itme_name fz16">手机号码</span>
+								<input type="text" verifiy="phone" name="customerMobile" id="customerMobile" class="fz14 math" placeholder="您的手机号码">
+								<span class="tips error_customerMobile"><span class="icon"></span>请填写正确的手机号码</span>
+							</li>
+							<li>
+								<span class="itme_name fz16">创建密码</span>
+								<input type="password" id="loginPwd"  name="loginPwd"  class="fz14" placeholder="7到16位英文和数字的组合">
+								<span class="tips error_customerPwd"><span class="icon"></span>密码为7到16位英文和数字的组合</span>
+							</li>
+							<li>
+								<span class="itme_name fz16">确认密码</span>
+								<span class="contents pr">
+									<input type="password" id="confirmPwd" name="confirmPwd"  class="fz14" placeholder="请确认您的密码">
+									<span class="p_absolute"><label class="level1 none"></label><label class="level2 none"></label><label class="level3 none"></label></span>
+								</span>
+								<span class="tips error_repeatPwd"> </span>
+							</li>
+							<li>
+								<span class="itme_name fz16">图形验证码</span>
+								<span class="contents">
+									<input type="text" name="picCode" id="validateVcode"  class="fz14 yzm">
+									<img alt="验证码,点击图片刷新" src="" title="点击图片更换验证码" id="vcodeImg" onclick="loadPic();" />
+									<a href="javascript:void(0)" onclick="loadPic();" class="blue">看不清楚？换一张</a>
+								</span>
+								<span class="tips error_vcode"><span class="icon"></span>请填写图形验证码</span>
+							</li>
+							<li>
+								<span class="itme_name fz16">短信验证码</span>
+								<span class="contents pword">
+									<input type="text" name="messageCode" id="messageCode" class="fz14 yzm">
+									<a href="javascript:void(0)"  onclick="getValidateCode();" id="validateCode" class="btn_vcode fz14">获取验证码</a>
+								</span>
+								<span class="tips error_msgCode"><span class="icon"></span>请填写短信验证码</span>
+							</li>
+							<li>
+								<span class="itme_name fz14">
+									<input type="checkbox" class="middle protocolBox"/>
+									<a href="${ctxPath}/customer/agreement.html" target="_bank" class="blue">关于《创业爸爸服务协议》</a>
+								</span>
+								<span class="contents"><input class="submit" type="submit" value="同意《创业爸爸服务协议》并注册"></span>
+							</li>
+						</ul>
+					</div>
+				</form>
+				<div class="fr RightForgetPwdDiv" style="height: 566px;">
+					<div class="RightForgetPwd" style="margin-top: 250px;">
+						<p>已有账号</p>
+						<div><a href="${ctxPath}/customer/loginUI.html" class="blue">马上登录</a></div>
+					</div>
+				</div>
+				<p class="cb"></p>
+			</div>
+		</div>
+		<!--底部-->
+		<div class="loginBottom">
+			<div class="loginFoot">
+				<a href="${ctxPath}/serviceProduct/modelList.html" target="_blank">全部服务</a><span>|</span>
+				<a href="${ctxPath}/" target="_blank">${sysCompanyResult.values.companyAbb} — 为创业者提供“星”级服务！</a><span>|</span>
+				<a href="${ctxPath}/aboutus.html" target="_blank">联系我们</a><span>|</span>
+				<a href="${ctxPath}/customer/agreement.html" target="_blank">法律声明</a>
+				<span class="tel"><b>客服电话：</b>${sysCompanyResult.values.phone}</span>
+			</div>
+			<p class="mt20">
+			<%if(!isEmpty(recordnoexternalinfo)){%>			
+				${recordnoexternalinfo.word}
+			<%}%></p>
+		</div>
+</body>
+</html>

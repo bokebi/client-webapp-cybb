@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>公司资料</title>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/companyData.css">
+<link rel="stylesheet" type="text/css" href="${ctxPath}/css/userClient/nav_userClient.css" />
+<script type="text/javascript" src="${ctxPath}/js/userClient/userClientIndex.js"></script>
+</head>
+<body>
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+		<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%>
+		</div>
+<div id="content">
+	<div class="clientRight fl">
+		<div class="baseMargin">
+			<h4 class="infoTit"><span>公司资料</span></h4>
+			<table class="processTab" cellpadding="0" cellspacing="0">
+				<tr>
+					<th width="20%">公司名称</th>
+					<th width="20%">公司性质</th>
+					<th width="20%">购买服务</th>
+					<th width="20%">服务周期</th>
+					<th width="20%">操作</th>
+				</tr>
+				<%if(!isEmpty(companyList)){%>
+					<%for(item in companyList){%>
+						<tr>
+							<td>
+								<div class="companyName">${item.enterpriseName!}</div>
+							</td>
+							<td>
+								<div>${item.nature!}</div>
+							</td>
+							<td><div>
+							<%if(!isEmpty(item.serviceName)){%>
+								${item.serviceName!}
+							<%}else{%>
+								- -
+							<%}%>
+							</div></td>
+							<td>
+							<%if(!isEmpty(item.attributeTitle)){%>
+								<div>${item.attributeTitle!}</div></td>
+							<%}else{%>
+								<div><br/></div></td>
+							<%}%>
+							<td>
+								<%if(!isEmpty(item.attributeValue)){%>
+									<a href="${ctxPath}/cusReport/viewReport.html?companyId=${item.enterpriseId}"><div class="operate">查看报表</div></a>
+								<%}else{%>
+									<a href="javaScript:void();"><div class="operate1">暂无</div></a>
+								<%}%>
+							</td>
+						</tr>
+					<%}%>
+				<%}else{%>
+					<tr>
+						<td colspan="4" style="border:0px; background: #fff;">暂无信息</td>
+					</tr>
+				<%}%>
+			</table>
+		</div>
+	</div>
+</div>	
+	</div>
+</body>
+</html>

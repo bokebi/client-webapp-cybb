@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>支付</title>
+<link type="image/x-icon" href="${ctxPath}/image/logo_icoi.ico" rel="shortcut icon" />
+<link rel="stylesheet" type="text/css" href="${ctxPath}/css/pay/pay.css"/>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%> 
+<script type="text/javascript" src="${ctxPath}/js/payment/choPayOpt.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+ $(".expansion").click(function(){
+  	$(".bank_More").slideToggle(700);
+  });
+	
+});
+</script>
+</head>
+
+<body>
+	
+	<link rel="stylesheet" href="${ctxPath}/css/common/base.css" />
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+<!--内容-->
+<div class="w_1200" id="mT105">
+	<div class="pay_Order">
+    	<div class="fl">
+        	<img src="${ctxPath}/images/pay/pay.png" />
+        </div>
+        <div class="fl pay_Order_right">
+        	<table class="orderTab1 botBorder">
+        		<tr></tr>
+        	</table>
+        	<p class="pay_xq">
+            	您的订单已成功提交，请尽快完成支付，<br />支付完成后，我们的专业人员会与您联系，并提供服务。
+            </p>
+            <p class="order_number">
+            	服务信息：<span>${order.serviceDesc}</span>
+            </p>
+            <p class="order_number">
+            	订单编号：<span>${order.paymentCode}</span>
+            </p>
+            <p class="pay_price fl">
+               	应付总价：<span>${order.payPrice}</span>元
+             </p>
+             <p class="cb"></p>
+        </div>
+    </div>
+</div>
+
+<form action="" id="payfrom" method="post" class="w_1160">
+	<input type="hidden" value="${order.orderId}"  id="ordPaymentOrderId" name="id" />
+</form>
+<!--支付平台-->
+<div class="Online_banking">
+	<div class="w_1200">
+    	支付平台
+    </div>
+</div>
+<div class="w_1200">
+	<ul class="bank_ul">
+    	<li>
+         <input id="Radio21" type="radio" checked   name="paymentType"  value="4" />
+         <label id="Label21" for="Radio21" class=" mr100"><img src="${ctxPath}/images/pay/wxzf.png"  class="bank"/></label>
+        </li>
+       <!--  <li> 
+         <input id="Radio22" type="radio" name="paymentType" value="3" />
+         <label id="Label22" for="Radio22" class=" mr100"><img src="${ctxPath}/images/pay/cft.png"  class="bank"/></label>
+        </li>  -->
+        <li>
+         <input id="Radio23" type="radio" requestUrl="/ordPaymentOrder/goAlipayPayment.html"  name="paymentType" value="2" onclick="loadPaytype(this)"/>
+         <label id="Label23" for="Radio23" class=" mr100"><img src="${ctxPath}/images/pay/zfb.png"  class="bank"/></label>
+        </li>
+	</ul>
+</div>
+
+<div class="w_1200">
+	<form action="https://mapi.alipay.com/gateway.do" id="loadPayForm" style="display:none;">
+	</form>
+     <p class="pr"><a href="javascript:void(0);" onclick="payNext();" class="pay_Next" >下一步</a><span style="color: red; position:absolute;left: 250px; top:13px;" id="error_span" class="error_span"></span></p>
+</div>
+
+<%includeFileTemplate("/html/footer_temp.html"){ %><%}%>
+</body>
+</html>

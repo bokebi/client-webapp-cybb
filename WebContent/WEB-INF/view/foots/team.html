@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>精英团队-${@com.jxhc.utils.SysConfigUtils.config.getShortName()}</title>
+		<link rel="stylesheet" href="${ctxPath}/css/common/base.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/common/common.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/DtopCommon.css" />
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+	</head>
+	<body>
+		 <%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+		<div class="w_1160">
+			<!--面包线-->
+			<div class="breadLines mt20">
+				<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+				<a class="lineTit">精英团队</a>
+			</div>
+			
+			<div>
+				<p><img src="${ctxPath}/images/newImg/jytd.jpg"/></p>
+				<div class="jytd-title-ch tac">扁平化的管理让每个成员的想法都有实现的可能，并最终趋于完美</div>
+				<div class="jytd-title-en tac mt10">We make every idea possible,and make everything perfect.</div>
+				<ul class="teamUl">
+					<li><img src="${ctxPath}/images/img/aboutImg7.png"/></li>
+					<li class="ml4"><img src="${ctxPath}/images/img/aboutImg8.png"/></li>
+					<li class="ml4"><img src="${ctxPath}/images/img/aboutImg9.png"/></li>
+					<li><img src="${ctxPath}/images/img/aboutImg10.png"/></li>
+					<li class="ml4"><img src="${ctxPath}/images/img/aboutImg11.png"/></li>
+					<li class="ml4"><img src="${ctxPath}/images/img/aboutImg12.png"/></li>
+				</ul>
+			</div>
+		</div>
+		 <%includeFileTemplate("/html/footer_temp.html"){ %><%}%>	
+	</body>
+</html>

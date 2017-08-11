@@ -1,0 +1,73 @@
+html{background-color:#fcfcfc;}
+.breadLines{margin:26px 0 23px 0;}
+table{width: 100%;}
+.cartTab{border-top: 2px solid #cccccc;}
+.cartTab tr th{ padding-top: 10px; padding-bottom: 10px; color: #505050;}
+.cartTab tr td{ text-align: center; font-size: 12px;}
+.cartTab tr .tdAlignLeft{ text-align: left;}
+.btnCommon{width: 20px; height: 24px; line-height: 5px; background: 0px; border: 1px solid #CCCCCC; color: #646464; outline: none; cursor: pointer;}
+.btnCommon:hover{border:1px solid #ff8468; color: #ff8468;}
+.shoppingText{ width: 40px; height: 22px; line-height: 22px; border: 1px solid #8f8f8f; text-align: center; outline: none;}
+.shoppingText:hover{ border:1px solid #ff8468;}
+/* .less{border-right: 0; margin-left: 5px;} */
+/* .add{border-left:0px;} */
+.shoppingTdCommon td{ height: 50px; line-height: 50px;}
+.clearing{ width: 140px; height: 50px; line-height: 50px; background: #FF8468; font-size: 16px; color: #FFFFFF; cursor: pointer; float: right;}
+.shareDiv{ border: 2px solid #DDDDDD; position: absolute; height: 22px; padding: 5px; border-radius: 3px; left: -36px; display: none;}
+.jiathis_style .button, .jiathis_style .jiathis_txt{margin-top:18px; margin-right: 5px;}
+.cartTab .icon{display:inline-block;width:14px;height:14px;}
+.cartTab .icon_uncheck{background-position:-38px -327px;}
+.cartTab .icon_check{background-position:-38px -305px;}
+.cartTab .icon.allCheck{width:auto;line-height:14px;cursor:pointer;}
+.cartTab .icon.allCheck span{margin-left:16px; background: #f9f9f9;}
+.commodityName span{padding:1px 5px 1px 5px; background: #ff0000; color:#fffc01; border-radius:3px; margin-left: 5px;}
+.commodityQuality{ border:1px solid #ff8261; padding:1px 20px 1px 20px; color:#ff8261;}
+.cartTab tbody td .commodityGroup{line-height: 28px; text-align: left; margin-left: 25px;}
+.originalPrice{text-decoration:line-through; color:#8f8f8f;}
+.dele a{ padding-right: 20px;}
+.cartTab tbody td .commodityGroup1{line-height: 34px; text-align: left; margin-left: 25px;}
+/*new  */
+.cartTab tbody td table{ width:100%; margin-bottom: 20px; border: 1px solid #cccccc; }
+.cartTab tbody td table tr td{ padding-top: 5px; padding-bottom: 5px; background: #fff; }
+.cartTab tbody td table tr .tdLeft{ text-align: left;}
+.cartTab tr .tdLeft{ text-align: left;}
+.cartTab tr .lineHeightTd{ line-height: 20px; text-align: left; padding-left: 30px;}
+.cartTab .shoppingTdCommon{ background: #fff;}
+.cartTab tbody td table tr td div img{ margin-top: 5px; margin-bottom: 5px;}
+/* 购物车为空的时候 */
+.shoppingIcon{ display: inline-block;}
+.shoppingCartWriting{ display: inline-block; font-size: 16px;}
+.shoppingCartWriting span{ font-size: 14px;}
+.shoppingCartWriting span a{ color: #12c2f4;}
+.shoppingNo .shoppingCartWriting{ text-align: left; vertical-align: top; margin-left: 10px; margin-top: 10px;}
+.shoppingNo{ margin-top:100px; margin-bottom: 100px;}
+.recommend{border:1px solid #cccccc; background: #fff;}
+.recommendTit{ background: #fafafa; height: 40px;}
+.recommendTit h4{ width:100px; background: #fff; height: 40px; line-height:40px;text-align: center; font-size: 14px; color: #ff8468;
+border-top: 2px solid #12c2f4;}
+.recommendProduct{ margin-left: 80px; margin-right: 60px;}
+.plusSpan{display: inline-block; width:19px; height: 18px; background: url(../../v2/images/dum_icon.png) no-repeat -116px -275px;
+margin-left:10px; margin-right:10px;}
+.hot{ display: inline-block; width:32px; height: 16px; line-height: 16px; background: #ff0000; text-align: center;border-radius:3px;
+color:#fffc01; font-weight: normal; margin-left: 5px;}
+.recommendProduct table{ width: 100%;}
+.recommendProduct table tr td{ text-align: center; padding-top: 15px; padding-bottom: 10px; width:18%;}
+.recommendProduct table tr td h4{ margin-top: 10px; margin-bottom:5px; color:#505050; }
+.joinShoppingCat{ height: 22px; width:86px; line-height: 22px; background: #fafafa; border:1px solid #ccc; border-radius:5px; margin: 0px auto;
+text-align: center; color:#505050; cursor: pointer; margin-top: 10px; margin-bottom: 10px;}
+.recommendProduct table tr td img{width:100px; height: 100px;}
+.TotalPrice{ width:180px;}
+/* 开发票 */
+.openInvoice{ border:1px solid #ccc; width:540px; margin-top: 15px;}
+.invoiceName{ padding: 10px;}
+.invoiceClose{background: url(../../v2/images/dum_icon.png) no-repeat; background-position: -80px -145px; width:12px; height:12px;
+margin-top: 7px; cursor: pointer;}
+.invoiceContent{ width: 420px; margin: 0px auto;}
+.invoiceTxt{ width:335px; height: 30px; line-height: 30px; padding-left: 5px; border:1px solid #ccc;}
+.lookUp span{ margin-right: 15px;}
+.invoiceTxt:focus{ border: 1px solid #ff8261;}
+.invoiceContent1{ margin-left: 75px;}
+.invoiceInfo a{ display: block; width:100px; height: 25px; line-height: 25px; background: #e9e9e9; text-align: center; font-size: 12px;
+color:#505050; border:1px solid #ccc; border-radius:3px; margin-top: 20px; margin-bottom: 15px;}
+.invoicePrompt{ line-height: 22px; letter-spacing: 1px;}
+.shoppingServiceIcon{width:100px; height: 100px;}

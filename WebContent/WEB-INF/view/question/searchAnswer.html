@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>搜索答案-${sysCompanyResult.values.companyAbb!}</title>
+		<%includeFileTemplate("/html/dumAnswers/anwserCommon.html"){ %><%}%> 
+		<link rel="stylesheet" href="${ctxPath}/css/dumAnswers/problem.css" />
+		<script type="text/javascript" src="${ctxPath}/js/dumAnswers/jquery.page.js"></script>
+		<script type="text/javascript" src="${ctxPath}/js/dumAnswers/searchAnswer.js"></script>
+	</head>
+	<body class="bgc-gray ask-page">
+		<!--头部-->
+		<%includeFileTemplate("/html/dumAnswers/top.html"){ %><%}%> 
+		<div class="w_1160">
+			<!--面包线-->
+			<div class="breadLines mt20">
+				<img src="${ctxPath}/images/img/home.png" class="middle mr10"/>
+				<a href="${ctxPath}/">首页</a><span>></span>
+				<a href="${ctxPath}/ask/">问答库</a>
+				<%if(!isEmpty(searchValue)){%>
+					<span>></span><span class="lineTit"> ${searchValue}</span>
+				<%}%>
+			</div>
+			
+			<div class="answerLeft fl">
+				<ul class="answerLeftUl">
+					<%if(!isEmpty(searchResult)){%>
+						<%for(item in searchResult){%>
+							<li>
+								<a href="${ctxPath}/ask/${item.id}.html" target="_blank"><h4 class="answerTit">${item.majorQuestion}</h4></a>
+								<%if(!isEmpty(item.answers)){%>
+										<%for(answer in item.answers){%>
+											<%if(answerLP.first){%>
+												<p class="answerDetail">
+													答：${answer.questionAnswer!}
+												</p>
+												<p class="mt5 answetrTime">
+													<span>${searchValue}</span>-${item.answers.~size}个回答 - ${answer.createDate,dateFormat='yyyy-MM-dd HH:mm:ss'}
+												</p>
+											<%}%>
+									 <%}%>
+								<%}%>
+							</li>
+						<%}%>
+					<%}else{%>
+						<li>
+							<h4 class="answerTit">没查询到结果!</h4>
+						</li>
+					<%}%>
+				</ul>
+				<!-- 分页导航 -->
+				<%if(!isEmpty(searchResult)){%>
+					<div class="paging tcdPageCode"></div>
+				<%}%>
+				<input type="hidden" id="pageCount" name="pageCount" value="${searchPages}" />
+				<input type="hidden" id="paramValue" name="paramValue" value="${searchValue}" />
+			</div>
+			<div class="answerRight fr">
+				<h4>相关搜索</h4>
+				<ul>
+					<%if(!isEmpty(correlationSet)){%>
+						<%for(item in correlationSet){%>
+							<li>
+								<a href="${ctxPath}/ask/search.html?searchValue=${item}" rel="nofollow"><span></span>${item}</a>
+							</li>
+						<%}%>
+					<%}%>
+				</ul>
+			</div>
+			<p class="cb"></p>
+		</div>			
+	</body>
+	<%includeFileTemplate("/html/cd/footer_temp.html"){ %><%}%>  
+</html>

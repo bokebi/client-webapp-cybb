@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>服务进程</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/zcgsProcess.css">
+<script type="text/javascript" src="${ctxPath}/js/userClient/processIndex.js"></script> 
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+<div class="w_1160 wrap clearfix">
+	<div id="nav_left" class="nav_left border_right">
+		<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%>
+	</div>
+	<div id="content">
+	<input type="hidden" value="${serviceCompany.id}" id="serviceCompanyId" />
+	<div class="clientRight">
+		<div class="baseMargin">
+			<p class="fz16 color50 fl"></p>
+			<div class="fr processTop">
+				<a href="${ctxPath}/ordServiceCompany/index.html?leftNav=myProcess" class="fz14 cutover">切换公司</a>
+			</div>
+			<p class="cb"></p>
+			<h4 class="titProcess mt20">服务信息</h4>
+			<table class="mt20 mb20 serviceTab">
+				<tr>
+					<td>公司名称：<span>${serviceCompany.comapny.companyName}</span></td>
+					<td>公司性质：<span>${serviceCompany.comapny.companyNature=='0'?'一般纳税人':'小规模纳税人'}</span></td>
+				</tr>
+				<tr>
+					<td>购买的服务：<span>${serviceCompany.product.productName}</span></td>
+					<td>服务期限：<span>${serviceCompany.periodUnit}${serviceCompany.unitName}</span>
+					<%if(serviceCompany.product.productCode=='JZBS'){%>
+						|<a href="javascript:void(0);" onclick="renewals.loadModel(${serviceCompany.productId},${serviceCompany.id});" >续费</a>
+					<%}%>
+					</td>
+				</tr>
+			</table> 
+			
+			<div class="mt20 processTime mb20">
+				<h4>服务进程</h4>
+			</div>
+			<ul class="process-ul">
+				<%for(node in nodeList){%>
+				<li class="item">
+					<p class="processServiceImg"></p>
+					<p class="processServiceName">${node.nodeName}</p>
+		    </li>
+				<li><p class="point"><img src="${ctxPath}/images/img/point.png"></p></li>
+				<%}%>
+				<li>
+					<p class="processServiceImg"><img src="${ctxPath}/images/img/dljzWc.png"/></p>
+					<p class="processServiceName">完成</p>
+				</li>
+			</ul>
+			<table class="processTab" id="processTab">
+			</table>
+			<form id="sysServiceEvaluate" >
+				
+			</form>
+			<h4 class="titProcess mt20 mb20">税务知识</h4>
+			<ul onmouseover="" class="taxknowledge">
+				<li>
+					<h4>问：小规模纳税人可以开增值税专用发票吗？</h4>
+					<p>答：可以的。</p>
+				</li>
+			</ul>
+			
+			<!-- 评价提示 -->
+			<div class="commentPrompt none">
+				<div class="commentPromptDiv2"></div>
+				<div class="commentPromptDiv2">
+					<p class="fl fw mt10 ml10">提示</p>
+					<p class="fr close mt10 mr10" onclick="$('.commentPrompt').hide(); window.location.reload()"></p>
+					<div class="cb"></div>
+					<div class="commentPromptDiv tc mt20">
+						<p class="savePrompt_span middle"></p>
+						<p class="tl color50 fz14 ml10">
+							评价成功!
+						</p>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+</div>
+</div>
+<%includeFileTemplate("renewals.html"){ %><%}%>
+</body>
+</html>

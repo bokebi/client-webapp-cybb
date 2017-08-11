@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link type="image/x-icon" href="${ctxPath}/images/img/logo_icoi.ico" rel="shortcut icon" />
+<title>支付</title>
+<link rel="stylesheet" type="text/css"  href="${ctxPath}/css/pay.css" />
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%> 
+<link rel="stylesheet" href="${ctxPath}/css/common/base.css" />
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<script type="text/javascript">
+var flag = ""; 
+$(document).ready(function(){
+    flag = setInterval(queryOrderState, 3000);
+});
+function queryOrderState(){
+	dum.common.ajax({
+		url  :"/ordPaymentOrder/cusPaymentInfo.api?paymentCode=${values.paymentCode}",
+		dataType:'json',
+        success: function(result) {
+        	var status=result.executeStatus;
+        	var values=result["values"];
+			if('0'==status&&values["paymentStatus"]=='0'){
+				//直接跳到成功页
+                window.self.location="${ctxPath}/ordPaymentOrder/paySuccess.html?paymentCode=${values.paymentCode}";
+			}
+        }
+    });
+}
+</script>
+</head>
+<body>
+<div class="payWx">
+	<div class="w_1160 payWx1" style=" margin-bottom: 10px;">
+		<h3>微信支付</h3>
+		<ul class="PayWxUl">
+			<li class="single_prompt">您的订单已成功提交，请尽快完成支付，支付完成后，我们的专业人员会与您联系，并提供服务 </li>
+			<li style="color: #666;">订单编号：${values.paymentCode}</li>
+			<li class="cope" style="border: 0px; padding-bottom: 20px;color: #666;">应付总价：<span style="color: #ff8261;">${values.paymentAmount}</span>元</li>
+		</ul>
+		<div class="PayEwm1">
+			<div class="fl" style="margin-left:30px; margin-top: 60px;">
+				<p class="PayEwm"><img src="${values.wechatImg}"  width="235" height="235" /></p>
+				<p><img src="${ctxPath}/images/pay/weixinPay.png" /></p>
+			</div>
+			<p class="fl phone_bg">
+				<img src="${ctxPath}/images/pay/phone-bg.png" />
+			</p>
+			<div class="cb"></div>
+			
+		</div>
+	</div>
+</div>
+</body>
+</html>

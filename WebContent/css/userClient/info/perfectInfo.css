@@ -1,0 +1,81 @@
+.clientRight{width:957px;}
+.baseMargin{margin:0;padding:40px;}
+.contactCustomer{color:#ff8468;}
+.returnOrder{display: inline-block; width:80px; height: 28px; line-height:28px; text-align: center; background: #fcfcfc;
+border:1px solid #ccc; color:#505050; font-size: 14px; margin-left: 20px;}
+.returnOrder:hover{background: #ff8468; color: #fff; border:1px solid #ff8468;}
+.titAccountion{margin-top: 40px; margin-bottom: 40px;}
+.taxAccountiongTab{width:100%;}
+.taxAccountiongTab tr{background: #fcfcfc;}
+.taxAccountiongTab tr td{border-bottom: 20px solid #fff;}
+.infoTxt{width:175px; height: 26px; line-height:26px; padding-left:5px; border:1px solid #ccc;}
+.infoTxt1{width:255px; height: 26px; line-height:26px; padding-left:5px; border:1px solid #ccc;}
+.infoTxt2{width:205px; height: 26px; line-height:26px; padding-left:5px; border:1px solid #ccc;}
+.infoTxt3{width:75px; height: 26px; line-height:26px; padding-left:5px; border:1px solid #ccc;}
+.infoTxt4{width:115px; height: 26px; line-height:26px; padding-left:5px; border:1px solid #ccc;}
+.infoTxt5{width:40px; height: 26px; line-height:26px; border:1px solid #ccc;}
+.infoTextarea{min-height: 120px;width: 720px; line-height: 22px; padding: 3px;}
+.infoSelect{width: 212px; height: 26px;}
+.taxAccountiongTab tr td table tr td{border: 0;padding-bottom: 20px;}
+.taxAccountiongTab tr td table{width:100%;padding:20px;}
+.taxName{display: inline-block; width:126px;}
+.taxAccountiongTab1{width: 100%;background: #fcfcfc; padding: 15px;}
+.taxAccountiongTab1 tr td{ padding-bottom: 5px;padding-top: 5px;}
+.passwordTax{margin-left: 157px;}
+.defineTax{width:160px; height: 35px; line-height: 35px; text-align: center; background: #6eaee5; color: #fff;border:none;
+cursor: pointer; margin: 0px auto; margin-top: 60px; margin-bottom: 20px; font-size: 14px; font-weight: bold;}
+
+
+.fcback{background-color:#fcfcfc;padding:20px;}
+.fcback h5{margin-bottom:20px;}
+.fcback label.mb20{display:inline-block;}
+.fcback label.mb20 input[type="radio"]{vertical-align: middle;}
+.fcback input.register_m{width:76px;height:24px;line-height:24px;margin:0 20px;padding:3px;}
+.fcback input{padding-left:3px;height:24px;border:1px solid #ccc;}
+.fcback select,.fcback option{padding-left:3px;height:24px;}
+.fcback select{vertical-align:top;height:26px;}
+.companyName{width:148px;}
+.postfix{width:118px;}
+.corporation h5{margin:0;}
+.corporation td,.companyInfo td,.companyMsg td,.contactInfo td{padding-bottom:20px;}
+.fcback .money{width:78px;}
+.fcback .relname{width:178px;}
+.fcback .idNumber{width:198px;}
+.fcback .address{width:532px;}
+.companyMsg select{width:180px;}
+.companyMsg select,.companyMsg textarea,.contactInfo .areaSelectText,.contactInfo p.contactPerson{margin-left:25px;}
+.companyMsg textarea{width:746px;height:198px;padding:5px;}
+.companyMsg td{vertical-align:top;}
+.contactInfo input{height:26px;margin-left:10px;width:362px;}
+.companyInfo input,.companyInfo select,.companyInfo button{margin-left:5px;}
+
+.gsbg .fcback table h5{margin:20px 0;}
+.gsbg .address{margin-top:10px; margin-bottom:10px; width:490px;}
+.gsbg .address1{margin-top:10px; margin-bottom:10px; width:539px;}
+.gsbg .gd tbody td{padding-bottom:20px;}
+.fcback1{border-bottom: 15px solid #fff;}
+.fcback2{border-top: 15px solid #fff;}
+/* 提示 */
+.Infoprompt{width:340px; height: 190px; background: #fcfcfc; position: fixed; top: 50%; left:50%; margin-top: -95px;
+ margin-left: -170px;}
+.close{width:12px; height: 12px; background: url(../../../v2/images/dum_icon.png) no-repeat -80px -145px;cursor: pointer;}
+.InfopromptDiv{margin: 25px;}
+.InfopromptDiv p{font-size: 14px; color: #505050; text-align: center; line-height: 22px; margin-bottom: 5px;}
+
+.subSave a{display: inline-block; width:100px; height: 26px; line-height:26px; text-align: center; color: #fff; margin-left: 10px; margin-right: 10px;}
+.subSaveA1{background: #ff8468;}
+.subSaveA2{background: #6eaee5;}
+.subSave{margin-top: 25px;}
+
+.reportsUl li{font-size: 15px; color:#505050; display: inline-block;  margin-right:35px; text-align: center; cursor: pointer;}
+.reportsUl .reportsHover{border-bottom:2px solid #6eaee5; font-weight: bold;}
+.reportsUl{height: 35px; line-height: 35px; margin-top: 35px; padding-left: 10px; margin-bottom: 20px;}
+
+.companyExamples{width:295px; height: 125px; border:1px solid #ccc; background: #fff; position: absolute; left: 283px; top: 107px;}
+.companyNameTit span{font-weight: normal;}
+.companyNameTit span>span{color:#ff8468;cursor: pointer;}
+.companyExamplesDiv{margin: 10px 15px; color:#505050;}
+.companyExamplesDiv ul{margin-top: 10px;}
+.companyExamplesDiv ul li{ margin-bottom: 10px;}
+
+.mask{ width: 100%; height: 100%; position: absolute; top:0px;}

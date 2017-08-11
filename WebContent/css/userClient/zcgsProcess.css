@@ -1,0 +1,110 @@
+.processTop a{ display: inline-block; margin-left: 10px;}
+.viewReport{width:90px; height: 28px; line-height: 28px; background: #ff8468; color: #fff; text-align: center;}
+.cutover{color: #6eaee5;}
+.cutover:hover{font-weight: bold;}
+.titProcess{height: 35px; line-height: 35px; font-size: 14px; color:#505050; background: #fcfcfc; padding-left: 10px;}
+.serviceTab{width:100%; margin-top: 15px; margin-bottom: 15px;}
+.serviceTab tr td{padding-top: 5px; padding-bottom: 5px; color:#505050;}
+.fee{display: inline-block; background: #ff8468; color:#fff; height: 25px; line-height:25px; padding-left: 8px; 
+padding-right:8px; margin-left: 10px;}
+
+/*  */
+.statisticsTab{width:100%; margin-top:20px;}
+.statisticsTab tr td{text-align: center;}
+.statisticsTab tr td div{font-size: 15px; font-weight: bold;}
+.statisticsTab tr td div div{color:#8f8f8f;}
+.statisticsTab tr td div p{ margin-top: 5px;}
+.total{color: #5e7ed7;}
+.zzs{color:#16c6cc;}
+.qysds{color:#f4bf4d;}
+.zzfjs{color:#e2747d;}
+.grsds{color:#6eaee5;}
+.statisticsConfirm{width:140px; height:35px; line-height:35px; text-align: center; color:#fff; background: #6eaee5;font-size: 14px;
+cursor: pointer; margin: 0px auto; margin-top: 50px; margin-bottom: 50px;}
+.processTime h4,.processTime div{display: inline-block;}
+.processTime h4{float: left; padding-left: 10px;}
+.processTime{text-align: center; overflow: hidden; background: #fcfcfc;color: #505050; font-size: 14px; height: 35px;
+line-height: 35px;}
+.processTime div input{width:180px; height: 26px; line-height: 26px; border:1px solid #ccc; margin-top: -3px;}
+.processTime div input:focus{ border: 1px solid #ff8468;}
+.processTime div a{display: inline-block; padding-left: 5px; padding-right: 5px; height: 26px; line-height: 26px; background: #6eaee5;
+color:#fff; border-radius:5px; margin-left: 5px;}
+
+.processTab,.processTab1{width:100%; margin-bottom: 20px;}
+.processTab1 tr td{ text-align: center;}
+.processTab tr td{padding-bottom: 25px;}
+.processServiceName{color:#6eaee5; font-weight:bold; font-size: 15px; margin-top: 5px;}
+.processServiceImg img{width:81px; height: 81px;}
+.point{margin-bottom: 13px;}
+.evaluate{border:1px solid #ccc; width:700px; height: 100px; padding: 5px; line-height: 22px;}
+.size{position: absolute;bottom: 5px; right: 120px; color:#505050;}
+.statisticsConfirm1{width:100px; height:32px; line-height:32px; text-align: center; color:#fff; background: #6eaee5;font-size: 14px;
+cursor: pointer; margin: 0px auto; margin-top: 30px; margin-bottom: 30px;}
+.taxknowledge li h4{font-weight: normal; margin-bottom: 10px;}
+.taxknowledge li{color:#505050; margin-bottom: 15px;}
+.close{width:12px; height: 12px; background: url(../../v2/images/dum_icon.png) no-repeat -80px -145px;cursor: pointer;}
+.commentPromptDiv1{position: fixed; width: 100%; height: 100%; background: #000; top: 0px; filter:alpha(opacity=50); -moz-opacity:0.5;
+opacity:0.5; z-index: 9999; left: 0;}
+.commentPromptDiv2{width:340px; height: 115px; background: #fcfcfc;  position: fixed; z-index: 9999;left:50%; top:50%;
+margin-left: -170px; margin-top: -57px;}
+.commentPromptDiv p{display: inline-block;}
+.savePrompt_span{display: inline-block;background:url(../../v2/images/dum_icon.png) no-repeat  -184px -364px; height:30px; width: 36px;}
+.commentPromptDiv tl{text-align: left;}
+.picDiv{
+	position:  absolute;
+	top:50%;
+	left:50%;
+	z-index: 100;
+	background-color: #c0c0c0;
+	height: 300px;
+	width:  700px;
+	display: none;
+	margin-top: -150px;
+	margin-left: -350px;	
+}
+.picDiv img{width: 700px; height: 100%;}
+.imgClose{background: #ff8261;
+    color: fff;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 20px; cursor: pointer;}
+/*  */
+.radius{position: relative; margin-right: 5px;}
+.radius,.radius span{display: inline-block;}
+.radius .radius1{ width:9px; height: 9px; background: #ccc; border-radius:50%;}
+.radius .radius2{ width:9px; height: 9px; background: #FF8468; border-radius:50%;}
+/* .radius .lineSpan{border-left: 1px solid #ccc; height: 20px; position: absolute; left: 4px; top: 14px;} */
+.processTab tr .middleTop{height: 26px;}
+
+
+/* @itiwll */
+.process-ul {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+.process-ul li {
+	width:100px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  white-space: normal;
+}
+.process-ul .point{
+	padding-top: 40px;
+}
+
+
+/*  */
+.processindexIcon{width:30px; vertical-align: middle; margin-left: 10px; cursor: pointer;}
+.IconShow1{background: #000; width:100%; height: 100%; position: fixed;  top:0;
+filter:alpha(opacity=50); -moz-opacity:0.5; opacity:0.5; z-index: 99;}
+.IconShow{ border: 7px solid #fff; width:975px; height: 488px; position: fixed; left: 50%; top: 50%; z-index: 999;
+margin-left: -487px; margin-top: -244px;}
+.IconClose{ cursor: pointer;position: absolute; right: -20px; top: -20px;}
+.processindexIcon1{width:100%; height: 100%;}
+

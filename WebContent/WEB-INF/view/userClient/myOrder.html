@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>我的订单</title>
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/myOrder.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/page.css">
+<script type="text/javascript" src="${ctxPath}/js/userClient/myOrder.js"></script>
+</head>
+<body>
+<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+<%includeFileTemplate("/html/userClientCommon.html"){ %><%}%>
+<div class="w_1160 wrap clearfix">
+	<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%></div>
+	<div id="content">
+	<div class="clientRight">
+		<div class="baseMargin ov">
+			<h4 class="infoTit fl"><span>我的订单</span></h4>
+			<div class="fl speakerNews"></div>
+			 <div class="fr mr10">
+			 <%if(!isEmpty(qqexternalinfo)&&!isEmpty(qqexternalinfo.word)){%>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=${qqexternalinfo.word!}&site=qq&menu=yes" style="color: white;text-align: center;margin-left: 16px;">
+			<%}else{%>
+				<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=(check-your-QQ-in-the-background)&site=qq&menu=yes" style="color: white;text-align: center;margin-left: 16px;">
+			<%}%>
+			 	<img src="${ctxPath}/images/img/kfIcon.png" class="middle mr5" />
+			 	<span class="middle color68">联系客服</span></a></div> 
+			<p class="cb"></p>
+			
+			<ul class="orderTop ov">
+				<li class="orderHover"  paymentStatus=''><a href="javascript:void(0);">所有订单</a><span></span></li>
+				<li  paymentStatus='2'><a href="javascript:void(0);">待付款</a><span></span></li>
+				<li  paymentStatus='0'><a href="javascript:void(0);">已付款</a><span></span></li>
+			</ul>
+			<!-- 订单list -->
+			<table class="orderTab" cellpadding="0" cellspacing="0">
+				<tr>
+					<th width="15%" class="leftBorder">服务</th>
+					<th width="15%" >单价</th>
+					<th width="15%" >数量</th>
+					<th width="10%" >优惠券价</th>
+					<th width="10%" >应付总价</th>
+					<th width="10%" >实付总价</th>
+					<th width="15%" >订单状态</th>
+					<th class="rightBorder" width="15%"></th>
+				</tr>
+				<tbody id="orderBoday">
+				
+				</tbody>
+				<tfoot>
+					<!-- table底部 -->
+					<tr class="footTr">
+						<!-- <td width="15%">&nbsp;<p class="batch">批量完善信息</p></td> -->
+						<td width="15%"><a href="${ctxPath}/base/refund.html" target="_blank" class="color8f">退款说明</a></td>
+						<td width="15%" colspan="5" class="tr">
+							<ul class="PagingUl">
+<!-- 								<li><a href="javascript:void();">上一页></a></li>
+								<li class="PagingUlHover"><a href="javascript:void();">1	</a></li>
+								<li><a href="javascript:void();">2</a></li>
+								<li><a href="javascript:void();">3</a></li>
+								<li><a href="javascript:void();">4</a></li>
+								<li><a href="javascript:void();">5</a></li>
+								<li><a href="javascript:void();">6</a></li>
+								<li><a href="javascript:void();">下一页></a></li>
+ -->							</ul>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+			
+		</div>
+	</div>
+</div>	
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+</body>
+</html>

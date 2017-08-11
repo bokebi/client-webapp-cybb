@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%if(!isEmpty(seoinfo)){%>
+<title>${seoinfo.title!}</title>
+<meta name="keywords" content="${seoinfo.keywords!}" />
+<meta name="description" content="${seoinfo.description!}" />
+<%}%> <%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link rel="stylesheet" href="${ctxPath}/css/index.css" type="text/css" />
+<link rel="stylesheet" href="${ctxPath}/css/public.css" type="text/css" />
+<script type="text/javascript" src="${ctxPath}/js/plugin/jquery.SuperSlide.2.1.1.js"></script>
+<meta name="baidu-site-verification" content="LtQpgizRsn" />
+<style>
+.choiceness-box{width:1180px!important}.choiceness-ul{padding-top:20px;font-size:0;letter-spacing:-4px;word-spacing:-4px}.choiceness-ul>li{display:inline-block;vertical-align:middle;margin-left:10px;font-size:14px;letter-spacing:normal;word-spacing:normal}.choiceness-ul>li.choiceness-title{margin:0;background:url(${ctxPath}/images/newImg/choiceness_bg.jpg)}.choiceness-title{position:relative;width:210px;color:#fff;min-height:180px;background-color:#5b97f2;background-image:url(images/newImg/choiceness_bg.jpg);background-position:center bottom;background-repeat:no-repeat}.choiceness-title>h3{margin:20px 18px 10px;font-size:32px;font-weight:700;color:#fff}.choiceness-title>p{margin:0 18px;font-size:14px;color:#fff}.choiceness-title>i{position:absolute;top:50%;margin-top:-7px;right:0;display:block;width:0;height:0;border-top:7px transparent solid;border-bottom:7px transparent solid;border-right:7px #fff solid}.choiceness-list{width:313px}.choiceness-list:hover{box-shadow:0 0 14px 3px rgba(0,0,0,.1)}.choiceness-list>a{display:block;padding:40px 20px 0 30px;min-height:140px;background:#ebfcfd}.choiceness-list h3{font-size:18px;color:#000;margin-bottom:5px}.choiceness-list p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.choiceness-list p>span{font-size:15px;color:#004b92}.choiceness-price{padding:10px 0}.choiceness-price>big,.choiceness-price>del,.choiceness-price>i{display:inline-block;vertical-align:middle}.choiceness-price>big{font-size:20px;color:#fa4f4f}.choiceness-price>del{color:#999;margin-left:5px}.choiceness-price>i{line-height:28px;border:1px #fa4f4f solid;border-radius:15px;padding:0 12px;color:#fa4f4f;margin-left:10px;cursor:pointer}.choiceness-list:hover .choiceness-price>i{background:#ea3d02;color:#fff;display:inline-block}.choiceness-list.bgebf1fd>a{background:#ebf1fd}.choiceness-list.bgebf7fd>a{background:#ebf7fd}.index-title{text-align:center}.index-title>h2{font-size:23px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-title>p{color:#999}.start-business{width:1180px;margin:0 auto;padding:0}.start-business-main{margin-top:10px}.business-left{width:210px;float:left;position:relative}.business-left>img{max-width:100%}.business-category{position:absolute;left:0;right:0;bottom:17px;margin:0 17px;overflow:hidden}.business-category>a{display:block;float:left;width:82px;text-align:center;margin:3px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:26px}.business-category>a:hover{background:url(../newImages/transparent20.png)}.business-right{float:left;width:970px;border-top:1px #AC000D solid}.category-ul3{padding:9px 0 10px;overflow:hidden}.category-ul3>li{display:block;float:left;margin-left:10px}.category-ul3 a{display:block;width:313px;height:210px;position:relative;overflow:hidden}.category-ul3 img{width:100%;height:100%;-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);transform:scale(1);-webkit-transition:all .6s;-moz-transition:all .6s;-ms-transition:all .6s;transition:all .6s}.category-ul3-txt{position:absolute;top:45px;left:30px;right:20px}.category-ul3-txt>h3{font-size:22px;color:#004B92;font-weight:700;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.category-ul3-txt>p{color:#999;margin-bottom:5px}.category-ul3-txt>.price{font-size:20px;color:#fa4f4f}.category-ul3 a:hover img{position:relative;z-index:1;-webkit-transform:scale(1.1);-moz-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}.category-ul3 a:hover .category-ul3-txt{z-index:2}.category-ul3 a:hover .category-ul3-txt>h3{color:#333}.category-ulmore{border-top:1px #eee solid;border-left:1px #eee solid;font-size:0;margin-left:10px;letter-spacing:-4px;word-spacing:-4px}.category-ulmore>li{display:inline-block;vertical-align:middle;width:318.5px;font-size:14px;border-bottom:1px #eee solid;border-right:1px #eee solid;letter-spacing:normal;word-spacing:normal}.category-ulmore>li a{position:relative;display:block;padding:20px 30px;color:#999;min-height:128px;overflow:hidden}.category-h4{font-size:16px;font-weight:400;color:#333;margin-bottom:5px;position:relative;z-index:99}.category-ulmore>li p>sup{position:relative;top:5px}.category-ulmore>li .price{font-size:12px;color:#aaa;z-index:1;position:absolute}.category-ulmore>li .price>label{color:#fa4f4f}.category-ulmore>li .price big{font-size:20px}.category-bg{position:absolute;right:-5px;bottom:0;-webkit-transition:right .3s;-moz-transition:right .3s;transition:right .3s}.category-ulmore>li:hover{box-shadow:0 0 14px 3px rgba(0,0,0,.05)}.category-ulmore>li:hover .category-h4{color:#004b92;font-weight:700}.category-ulmore>li:hover .category-bg{right:0}.lunbo{background:0 0;height:460px}.popularService{font-weight:400;font-size:30px;color:#ce0104;padding:50px 0 15px 0;text-align:center}.popularService span{display:inline-block;width:70px}.popularServiceBottom{text-align:center;margin:0 auto;margin-bottom:20px}.new_banner{width:985px;position:relative;margin:0 auto}.new_banner ul li{width:20%;text-align:center;float:left;margin:40px 24px}.new_banner ul li .khIcon img{width:120px;height:120px;border-radius:50%;border:1px solid #9d282a}.new_banner ul li h4{color:#666;font-size:17px}.new_banner ul li h4 span{font-size:14px;font-weight:400}.new_banner ul li h4 .s1{display:inline-block;width:40px}.new_banner ul li h4 .zyicon{vertical-align:middle}.djzx{width:150px;height:35px;line-height:35px;display:inline-block;background:#f4a100;text-align:center;margin:0 auto;color:#fff;border:1px solid #f4a100;font-size:18px}.djzx img{vertical-align:middle;margin-right:10px}.gwText{font-size:15px;color:#999;height:100px}.index-title{text-align:center}.index-title>h2{font-size:24px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-title>p{color:#999}.w1180{width:1180px;height:auto;margin:0 auto}.index-information{width:100%;min-width:1180px;height:auto;padding:0 0 50px;overflow:hidden}.index-information .information{border-top:1px solid #e6e6e6;width:100%;min-width:1180px;height:auto;margin-top:30px}.index-information .w1180 div strong{display:block;color:#333;font-size:18px;height:60px;line-height:60px;font-weight:400}.index-information .fl{width:340px}.index-information .new-link{overflow:hidden;height:430px;width:380px}.index-information .new-link .first{width:380px;height:200px;overflow:hidden;position:relative}.index-information .new-link .first>a{display:block}.index-information .new-link .first img{width:340px;height:200px}.index-information .new-link .first p{display:none;position:absolute;left:0;bottom:0;height:40px;line-height:40px;color:#fff;text-align:center;width:100%}.index-information .new-link .first p:hover{text-decoration:underline}.index-information .new-link ul{border:1px solid #e6e6e6;overflow:hidden;padding-left:20px;padding-top:14px;width:317px;height:214px}.index-information .new-link ul li{display:block;overflow:hidden;height:40px;line-height:40px;font-size:15px}.index-information .new-link ul li>a{display:block}.index-information .new-link ul li span{width:85px;display:inline-block;color:#004b92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-information .new-link ul li p{width:215px;display:inline-block;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-information .new-link ul li p:hover{text-decoration:underline;color:#004b92}.index-information .fr{width:800px}.index-information .w1180 .fr>strong{height:52px}.index-information .fr ul{overflow:hidden;height:440px}.index-information .fr li{padding:9px 0;border-bottom:1px solid #e6e6e6;display:block;height:130px;overflow:hidden}.index-information .fr li:hover{background:#f8f8f8}.index-information .fr li:hover .txt strong{color:#004b92}.index-information .fr li .img-box{width:260px;height:130px;float:left;overflow:hidden;margin-right:20px}.index-information .fr li .img-box a{display:block}.index-information .fr li .img-box img{width:260px;height:130px}.index-information .fr li .txt{float:left;width:490px}.index-information .fr li .txt strong{display:block;font-size:18px;font-weight:700;color:#666;height:50px;line-height:50px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-information .fr li .txt p{height:60px;display:block;display:-webkit-box;overflow:hidden;white-space:normal!important;text-overflow:ellipsis;word-wrap:break-word;-webkit-line-clamp:3;-webkit-box-orient:vertical}.message-side{overflow:hidden}.message-title{overflow:hidden;padding:17px 0;margin-left:-15px}.message-title>a{display:block;float:left;color:#999;font-size:18px;line-height:18px;font-weight:400;padding:0 15px;border-left:1px #999 solid}.message-title>a.active{color:#333}.message-side-box{height:440px}.mark{top:0;left:0;right:0;bottom:0;background-color:#000;opacity:.5;filter:alpha(opacity=50);z-index:9999}.fixed{position:fixed}.prop1{z-index:99999;width:530px;height:400px;left:50%;margin-left:-270px;top:50%;margin-top:-200px;background-color:#fff}.prop1 .title{background-color:#f4a100;font-weight:700;height:70px}.tc{text-align:center}.white{color:#fff}.fz22{font-size:22px}.prop1 p.fz16{margin:30px 0}.fz16{font-size:16px}.prop1 p.fz14{margin-bottom:15px;text-align:center}.fz14{font-size:14px}.prop1 p span,.prop1 p.fz14 span{display:inline-block;width:80px;text-align:left}.prop1 p.fz14 input{width:300px;height:36px;padding:0 10px;line-height:36px;border:1px solid #c8cad4;background-color:#f0f7ff;border-radius:4px}.red{color:#dc0f3a}.prop1 .btn_sb{font-size:13px;width:320px;height:36px;line-height:36px;border-radius:4px;padding:0;border:0;font-weight:700;text-align:center;color:#fff;background-color:#f4a100;display:inline-block;margin-right:10px}.btn_sb:hover{color:#fff}.pp_bb{font-size:16px;color:#f4a100;font-weight:700}.choiceness-ul{padding-top:20px;font-size:0}.choiceness-ul>li.choiceness-title{margin:0}.choiceness-ul>li{display:inline-block;vertical-align:middle;margin-left:10px;font-size:14px}.choiceness-title{position:relative;width:210px;color:#fff;min-height:180px;background-color:#5b97f2;background-image:url(/newImages/choiceness_bg.jpg);background-position:center bottom;background-repeat:no-repeat}.choiceness-title>h3{margin:20px 18px 0;font-size:32px;font-weight:700;color:#fff}.choiceness-title>p{margin:15px 18px;font-size:14px;color:#fff}.choiceness-title>i{position:absolute;top:50%;margin-top:-7px;right:0;display:block;width:0;height:0;border-top:7px transparent solid;border-bottom:7px transparent solid;border-right:7px #fff solid}.choiceness-list{width:313px}.choiceness-list>a{display:block;padding:40px 20px 0 30px;min-height:140px;background:#ebf7fd}.choiceness-list h3{font-size:18px;color:#000;margin-bottom:5px}.choiceness-list p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.choiceness-price{padding:10px 0}.choiceness-price>big{font-size:20px;color:#fa4f4f}.choiceness-price>del{color:#999;margin-left:5px}.choiceness-price>i{line-height:28px;border:1px #fa4f4f solid;border-radius:15px;padding:0 12px;color:#fa4f4f;margin-left:10px;cursor:pointer}.choiceness-list.bgebf7fd>a{background:#ebf7fd}.mark{top:0;left:0;right:0;bottom:0;background-color:#000;opacity:.5;filter:alpha(opacity=50);z-index:999;display:none}.prop{z-index:999;background-color:transparent;position:relative}.prop .poa{position:absolute;top:-100px;left:20px;text-align:center;width:100%}.prop .poa p{display:inline-block}.prop input{font-size:16px;width:470px;height:53px;line-height:32px;border:1px solid transparent;background-color:#fcfcfc;text-indent:20px}.prop .btn_sb{background-color:#ff8468;display:inline-block;width:180px;height:32px;line-height:32px;text-align:center;margin-top:10px}.prop .btn_sb:hover{color:#fff}.hmcx1{border:2px solid #e89900;width:790px;margin:0 auto;height:55px;border-radius:25px;background:#f4a100}.hmcx2 .hmcx3{line-height:55px;padding:0 30px;background-color:#ddd;border-radius:25px 0 0 25px;font-size:16px;cursor:pointer;background-image:url(/newImages/bottom-01.png);background-repeat:no-repeat;background-position:90% 50%;width:64px}.hmcx2 .hmcx4{position:absolute;top:55px;left:23px;font-size:16px;width:100px;line-height:30px;border:1px solid #e89900;padding:5px 0;background:#fff;border-top:2px solid #e89900}.hmcx2 .hmcx4 span{display:block;cursor:pointer}.ksxc1{font-size:16px;line-height:53px;height:53px;color:#fff;width:130px;cursor:pointer}.hmcx4 span:hover{background:#e89900;color:#fff}
+</style>
+
+</head>
+<body class="bodyIndex" style='overflow: scroll; overflow-x: hidden'>
+
+	<%includeFileTemplate("/html/nav_temp.html"){ %><%}%>
+	<div id="full-screen-slider" class="posr">
+		<ul id="slides">
+			<%if(!isEmpty(bannerlist)){ %> <%for(item in bannerlist){%>
+			<li><a href="${item.bannerUrl!}"> <img
+					src="${item.attachment.fillFilePath!}" alt="${item.bannerName!}">
+			</a></li> <%}%> <%}%>
+		</ul>
+
+		<div class="prop w_1160" style="z-index: 901;">
+			<div class="poa">
+				<div class="hmcx1 clearfix">
+					<div class="fl hmcx2 pr">
+						<div class="hmcx3">公司查询</div>
+						<div class=" hmcx4 none">
+							<span>商标查询</span> <span>公司查询</span>
+						</div>
+					</div>
+					<input style="width: 530px;" class="fl inquire_btn" type="text"
+						name="" id="" placeholder="请输入要查询公司的名称：例如，深圳创业爸爸科技有限公司" />
+					<div class="fl ksxc1">查询能否注册</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="propBox none">
+			<div class="fixed mark"></div>
+			<div class="prop1 fixed">
+				<form action="" id="queryCompanyNameForm">
+					<div class="title fz22 white tc" style="padding-top: 20px;">
+						企业名免费查询
+						<p class="fz16 tc" style="margin: 0; font-weight: normal;">专业顾问人工查询，30分钟内精准回复</p>
+						<span class="close"> <img
+							style="float: right; margin: -60px 10px 0 0; cursor: pointer;"
+							src="/images/newImg/close.png">
+						</span>
+					</div>
+					<input type="hidden" name="sourceType" id="sourceType" value="1"
+						maxlength="50">
+					<p class="fz14 tc" style="margin: 30px 0;">
+						今日已有<b class="pp_bb">318</b>人获取查询结果，总查询人数已达<b class="pp_bb">63002</b>人
+					</p>
+					<p class="fz14">
+						<span>企业名称</span><input type="text" name="companyName"
+							id="companyName" maxlength="50"
+							placeholder="请输入要查询公司的名称：例如，榆林市企动空间互联网科技有限公司">
+						<laebl class="red">*</laebl>
+					</p>
+					<p class="fz14">
+						<span>联系电话</span><input class="math" verifiy="phone" type="text"
+							name="customerMobile" id="customerMobile"
+							placeholder="方便接收查询结果，仅官方可见">
+						<laebl class="red">*</laebl>
+					</p>
+					<p class="fz14">
+						<span>联系人</span><input type="text" name="customerName"
+							id="customerName" placeholder="如：吴先生">
+						<laebl class="red">*</laebl>
+					</p>
+					<p class="tc">
+						<span></span> <a href="javascript:void(0)"
+							class="btn_sb white fz16 queryCompanyBtn">提交查询</a>
+					</p>
+				</form>
+			</div>
+		</div>
+
+
+		<!-- 免费查询您想注册的公司名称 end -->
+
+		<!--核名成功框-->
+		<div class="propBox1 none">
+			<div class="fixed mark"></div>
+			<div class="prop1 fixed">
+				<div class="title fz22 white tc"
+					style="height: 50px; line-height: 36px; padding: 0 50px;">
+					提交成功 <span class="close"> <img
+						style="float: right; margin: 15px 15px 0 0; cursor: pointer;"
+						src="/images/newImg/close.png">
+					</span>
+				</div>
+				<div
+					style="text-align: center; font-size: 20px; color: red; line-height: 50px;">
+					<img src="/images/newImg/logo.jpg"
+						style="display: block; margin: 30px auto;" alt="榆林市企动空间互联网科技有限公司" />
+					提交成功，我们将在10分钟内答复您查询结果，请您注意接听来电
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 新增内容 -->
+	<div class="shop w_1200 clearfix">
+		<div class="shop_ad fl">
+			<a href="javascript:;"><img src = "${ctxPath}/images/shop_lpic.jpg"></a>
+		</div>
+		<div class="shop_rpic fl">
+			<div class="picScroll-left">
+				<div class="hd">
+					<a class="next">></a>
+					<a class="prev"><</a>
+				</div>
+				<div class="bd">
+					<ul class="picList">
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic1.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic2.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic3.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic4.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic5.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic6.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic7.jpg" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+								<a href="javascript:;"><img src="${ctxPath}/images/shop_pic8.jpg" /></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+
+	<!-- 新增精选套餐2017-03-28 -->
+	<div class="w_1200 choiceness-box">
+		<ul class="choiceness-ul">
+			<li class="choiceness-title">
+				<h3></h3>
+				<p></p> <i></i>
+			</li> <%if(!isEmpty(comboList)){for(comboInfo in comboList){%>
+			<li
+				class="choiceness-list <%if (comboInfoLP.index > 1 ){%>bgebf7fd<%}%>">
+				<a href="${ctxPath}/productCombo/${comboInfo.id}.html"
+				target="_blank">
+					<h3>${comboInfo.name}</h3>
+					<p>${comboInfo.remark}</p>
+					<div class="choiceness-price">
+						<big class="gsh">${comboInfo.price}</big>
+						<del class="gsh">${comboInfo.marketValue}</del>
+						<i>立即抢购</i>
+					</div>
+			</a>
+			</li> <%}}%>
+		</ul>
+	</div>
+
+	<!-- 创业模块 -->
+	<div class="start-business">
+		<h2 class="popular-services-h2">
+			开启创业之<span>路· 助</span>力企业发展
+		</h2>
+		<div class="start-business-main">
+			<div class="business-left">
+				<img src="${ctxPath}/images/newImg/business_bg.jpg">
+				<div class="business-category">
+					<%if(!isEmpty(serviceCategorySku)){var b = 0;for(item in
+					serviceCategorySku){%> <%if(!isEmpty(item.productSKUVos)){for (sku
+					in item.productSKUVos){b++;if(b<=15){%> <a
+						href=" ${ctxPath}/productModel/sku_${sku.id}.html" target="_blank">${sku.name}</a>
+					<%}}}%> <%}}%>
+				</div>
+			</div>
+			<div class="business-right">
+				<ul class="category-ulmore">
+					<%if(!isEmpty(serviceCategorySku)){var a = 0;for(item in
+					serviceCategorySku){%> <%if(!isEmpty(item.productSKUVos)){for (sku
+					in item.productSKUVos){a++;if(a<=9){%>
+					<li><a href="${ctxPath}/productModel/sku_${sku.id}.html"
+						target="_blank">
+							<h4 class="category-h4">${sku.name}</h4>
+							<p>${sku.name}</p>
+							<div class="price">
+								<label>￥<big>${sku.price}</big></label>起
+							</div> <img src="${ctxPath}/images/cy_${a}.jpg" class="category-bg" />
+					</a></li> <%}}}%> <%}}%>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+
+	<!-- 提交查询窗 -->
+	<div class="propBox none">
+		<div class="fixed mark"></div>
+		<div class="prop fixed">
+			<form action="" id="queryCompanyNameForm">
+				<div class="title fz22 white tc">
+					免费查询您想注册的公司名称 <span class="close"><img
+						src="${ctxPath}/images/newImg/close.png" /></span>
+				</div>
+				<input type="hidden" name="sourceType" id="sourceType" value="1"
+					maxlength="50">
+				<p class="fz16 tc">免费人工查询，提交后工商人员会与您联系告知查询结果</p>
+				<p class="fz14">
+					<span>公司名称：</span><input type="text" name="companyName"
+						id="companyName" maxlength="50">
+					<laebl class="red">*</laebl>
+				</p>
+				<p class="fz14">
+					<span>联系电话：</span><input class="math" verifiy="phone" type="text"
+						name="customerMobile" id="customerMobile">
+					<laebl class="red">*</laebl>
+				</p>
+				<p class="fz14">
+					<span>贵姓：</span><input type="text" name="customerName"
+						id="customerName">
+					<laebl class="red">*</laebl>
+				</p>
+				<p class="tc">
+					<span></span> <a href="javascript:void(0)"
+						class="btn_sb white fz16 queryCompanyBtn">提交查询</a>
+				</p>
+			</form>
+		</div>
+	</div>
+
+	<!--创业问答资讯布局修改2017-04-05 -->
+	<div class="index-information" style="margin-top: 45px;">
+		<div class="index-title">
+			<h2>前沿创业资讯</h2>
+			<p>追踪创业热点资讯，网罗最新工商信息</p>
+		</div>
+		<div class="information">
+			<div class="w1180">
+				<div class="fl">
+					<strong>创业问答</strong>
+					<div class="new-link">
+						<div class="first">
+							<a href="http://www.chuangyebaba.com/ask/index.html"> <img
+								src="http://www.chuangyebaba.com/images/newImg/logoIndex.jpg"
+								data-bd-imgshare-binded="1" alt="深圳工商注册公司"  title="深圳注册公司">
+								<p></p>
+							</a>
+						</div>
+						<ul>
+							<%if(!isEmpty(newlist)){ for(item in newlist){%>
+							<li><a href="${ctxPath}/ask/${item.id}.html">
+									<p><%if(!isEmpty(item.majorQuestion) &&
+										strutil.length(item.majorQuestion) > 17){%>
+										${strutil.subStringTo (item.majorQuestion!,0,12)}...
+										<%}else{%> ${item.majorQuestion} <%}%></p> <span>
+										<%if(!isEmpty(item.createdateFmt) &&
+										strutil.length(item.createdateFmt) > 10){%>
+										${strutil.subStringTo (item.createdateFmt!,0,10)} <%}else{%>
+										${item.createdateFmt!} <%}%> </span>
+
+							</a></li> <%}}%>
+						</ul>
+					</div>
+				</div>
+
+				<div class="fr message-side">
+					<div class="message-title" style="float: left;">
+						<%for(items in articlebytypes!){if(itemsLP.index <=10){%>
+						<%if(!isEmpty(items.articlelist)){%> <a href="javascript:void(0);"<%if
+							(itemsLP.index ==1){%> class='active' <%}%>>${items.categoryName}</a>
+						<%}%> <%}}%>
+					</div>
+					<div class="dd">
+						<a
+							style="float: left; display: inline-block; margin: 14px 0 0 0; font-size: 16px; color: #ff8f3d;"
+							href="/wz/all.html">查看更多</a>
+					</div>
+					<div class="tempWrap"
+						style="overflow: hidden; position: relative; width: 770px">
+						<div class="message-side-box"
+							style="width: 5390px; left: -2310px; position: relative; overflow: hidden; padding: 0px; margin: 0px;">
+							<%var ss = 0; for(items2 in articlebytypes!){if(items2LP.index
+							<=10){ss++;if(!isEmpty(items2.articlelist)){%>
+							<ul style="float: left; width: 770px;">
+								<%for(item2 in items2.articlelist){if(!isEmpty(item2)){%>
+								<li>
+									<div class="img-box">
+										<a href="${ctxPath}/wz/${item2.id}.html">
+											<%if(!isEmpty(item2.attachment)){%> <img
+											src="${item2.attachment.fillFilePath}"
+											alt="${item2.articleTitle}" data-bd-imgshare-binded="1">
+											<%}%>
+										</a>
+									</div>
+									<div class="txt">
+										<a href="${ctxPath}/wz/${item2.id}.html"> <strong>
+												<%if(!isEmpty(item2.articleTitle) &&
+												strutil.length(item2.articleTitle) > 18){%>
+												${strutil.subStringTo (item2.articleTitle!,0,16)}...
+												<%}else{%> ${item2.articleTitle} <%}%> </strong>
+										</a>
+										<p><%if(!isEmpty(item2.articleDesc) &&
+											strutil.length(item2.articleDesc) > 25){%>
+											${strutil.subStringTo (item2.articleDesc!,0,25)}...
+											<%}else{%> ${item2.articleDesc} <%}%></p>
+									</div>
+								</li> <%}}}%>
+							</ul>
+							<%}}%>
+						</div>
+					</div>
+					<div class="cb"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 新增收费标准5-31 -->
+	<div class="charges_bg">
+		<h3 class="charges_bt">行业最权威代理记账收费标准</h3>
+		<div class="charges w_1200 clearfix">
+			<ul>
+				<li><span class="charges_icon charges_icon1"></span>
+					<p>
+						专业会计人员<br />为您解读工商财税政策
+					</p></li>
+				<li><span class="charges_icon charges_icon2"></span>
+					<p>
+						一般纳税人、小规模代理记账<br />细化标准，有的放矢
+					</p></li>
+				<li><span class="charges_icon charges_icon3"></span>
+					<p>
+						综合权衡公司规模和业务量<br />提供代理记账行业最透明收费标准<br />一年、两年可自由选取
+					</p></li>
+				<li><span class="charges_icon charges_icon4"></span>
+					<p>
+						互联网+财税领域标杆企业<br />有效提高效率、减少人员流动损失<br />给客户安全有效的价值
+					</p></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 客户声音 -->
+	<div class="lunbo">
+		<div class="w_1200">
+			<h2 class="popular-services-h2">
+				专<span>业顾</span>问
+			</h2>
+		</div>
+		<div class="new_banner">
+			<ul>
+				<li>
+					<div class="khIcon">
+						<img src="${ctxPath}/images/gw1.jpg">
+					</div>
+					<div class="gwContent">
+						<h4>
+							财税顾问 <span class="s1">湾湾</span> <img
+								src="${ctxPath}/images/newImg/zyIcon1.png" class="zyicon"><br>
+							<span class="s2" style="display: none;">资讯电话：0755-29009779</span>
+						</h4>
+					</div>
+					<div class="gwText" style="font-size: 10px;">创业爸爸资深财税顾问专家，八年代理记账行业经验，精通各类企业财务、税务、纳税筹划，为客户量身打造公司财务报税体系</div>
+					<div class="djzx">
+						<span><img src="${ctxPath}/images/newImg/djzxIcon.png"></span><a
+							target="_blank"
+							href="http://p.qiao.baidu.com/cps/chat?siteId=10599828&userId=23640933"
+							rel="nofollow">点击咨询</a>
+					</div>
+				</li>
+				<li>
+					<div class="khIcon">
+						<img src="${ctxPath}/images/gw2.jpg">
+					</div>
+					<div class="gwContent">
+						<h4>
+							工商顾问 <span class="s1">静静</span> <img
+								src="${ctxPath}/images/newImg/zyIcon1.png" class="zyicon"><br>
+							<span class="s2" style="display: none;">资讯电话：0755-29009779</span>
+						</h4>
+					</div>
+					<div class="gwText" style="font-size: 10px;">工商注册专家，精通各类企业（集团公司、合伙企业，股份公司）注册、工商变更流程和费用等疑难</div>
+					<div class="djzx">
+						<span><img src="${ctxPath}/images/newImg/djzxIcon.png"></span><a
+							target="_blank"
+							href="http://p.qiao.baidu.com/cps/chat?siteId=10599828&userId=23640933"
+							rel="nofollow">点击咨询</a>
+					</div>
+				</li>
+				<li>
+					<div class="khIcon">
+						<img src="${ctxPath}/images/gw3.jpg">
+					</div>
+					<div class="gwContent">
+						<h4>
+							营销顾问 <span class="s1">达达</span> <img
+								src="${ctxPath}/images/newImg/zyIcon1.png" class="zyicon"><br>
+							<span class="s2" style="display: none;">资讯电话：0755-29009779</span>
+						</h4>
+					</div>
+					<div class="gwText" style="font-size: 10px;">精通全网营销、微信运营、网站策划、SEO、SEM、品牌策划、网络营销人员招聘输送
+					</div>
+					<div class="djzx">
+						<span><img src="${ctxPath}/images/newImg/djzxIcon.png"></span><a
+							target="_blank"
+							href="http://p.qiao.baidu.com/cps/chat?siteId=10599828&userId=23640933"
+							rel="nofollow">点击咨询</a>
+					</div>
+				</li>
+				<li>
+					<div class="khIcon">
+						<img src="${ctxPath}/images//gw4.jpg">
+					</div>
+					<div class="gwContent">
+						<h4>
+							综合顾问 <span class="s1">飘飘 </span> <img
+								src="${ctxPath}/images/newImg/zyIcon1.png" class="zyicon"><br>
+							<span class="s2" style="display: none;">资讯电话：0755-29009779</span>
+						</h4>
+					</div>
+					<div class="gwText" style="font-size: 10px;">擅长工商、财税、营销、知识产权、私募基金、各类资质、人事社保等业务的综合咨询</div>
+					<div class="djzx">
+						<span><img src="${ctxPath}/images/newImg/djzxIcon.png"></span><a
+							target="_blank"
+							href="http://p.qiao.baidu.com/cps/chat?siteId=10599828&userId=23640933"
+							rel="nofollow">点击咨询</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 合作伙伴 -->
+	<div class="corporate-client">
+		<div class="client-center">
+			<h2>
+				合<span>作伙</span>伴
+			</h2>
+			<ul>
+				<li><img src="${ctxPath}/images/newImg/cli-1.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-2.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-3.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-4.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-5.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-6.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-7.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-8.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-9.jpg" alt="" /></li>
+				<li><img src="${ctxPath}/images/newImg/cli-10.jpg" alt="" /></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="foot-1">
+		<div class="foot-1-center">
+			<ul>
+				<li><img src="${ctxPath}/images/newImg/foot-1-1.png" alt="" />
+					<b>全程服务</b>
+					<p>售前咨询，下单24小时内响应，关键环节100%提醒</p></li>
+				<li><img src="${ctxPath}/images/newImg/foot-1-2.png" alt="" />
+					<b>品质保障</b>
+					<p>工商注册代办流程由专业人士把关、代理记账收费标准透明，全程服务无忧</p></li>
+				<li><img src="${ctxPath}/images/newImg/foot-1-3.png" alt="" />
+					<b>多元产品</b>
+					<p>提供TMT/文创等20多项领域服务支持</p></li>
+				<li><img src="${ctxPath}/images/newImg/foot-1-5.png" alt="" />
+					<b>安全送到</b>
+					<p>办理完成后所有材料精心包装，快递直达</p></li>
+				<li><img src="${ctxPath}/images/newImg/foot-1-4.png" alt="" />
+					<b>信息保密</b>
+					<p>所有客户信息严格保密，保护客户信息免遭外泄</p></li>
+			</ul>
+		</div>
+	</div>
+	<div class="foot-inf">
+		<div class="foot-inf-center">
+			<ul class="left-ul">
+				<li><b>${sysCompanyResult.values.companyAbb!}</b> <a
+					target="_blank" href="${ctxPath}/wz/all.html"><span>最新动态</span></a>
+					<a target="_blank" href="${ctxPath}/aboutus.html" rel="nofollow"><span>关于我们</span></a>
+					<a target="_blank" href="${ctxPath}/wz/more.html"><span>创业头条</span></a>
+					<a target="_blank"
+					href="http://www.chuangyebaba.com/ask/index.html"><span>创业问答</span></a>
+				</li>
+				<li><b>订单服务</b> <a target="_blank" href="javascript:void(0);"
+					rel="nofollow"><span>退款说明</span></a></li>
+				<li><b>特色服务</b> <a target="_blank"
+					href="http://www.chuangyebaba.com/productModel/sku_370.html"><span>深圳工商注册</span></a>
+					<a target="_blank"
+					href="http://www.chuangyebaba.com/productModel/sku_1554.html"><span>代理记账</span></a>
+					<a target="_blank"
+					href="http://www.chuangyebaba.com/productModel/sku_159.html"><span>个体工商户注册</span></a>
+					<a target="_blank"
+					href="http://www.chuangyebaba.com/productModel/sku_1681.html"><span>餐饮许可证备案</span></a>
+					<a target="_blank"
+					href="http://www.chuangyebaba.com/productModel/sku_1568.html"><span>私募基金备案</span></a>
+
+				</li>
+				<li><b>服务帮助</b> <a target="_blank"
+					href="http://www.chuangyebaba.com/serviceProduct/modelList.html"><span>全部服务</span></a>
+					<a target="_blank"
+					href="http://www.chuangyebaba.com/customer/agreement.html"
+					rel="nofollow"><span>服务协议</span></a> <a target="_blank"
+					href="http://www.chuangyebaba.com/base/refund.html" rel="nofollow"><span>服务承诺</span></a>
+					<a target="_blank" href="http://www.chuangyebaba.com/fws.html"
+					rel="nofollow"><span>加盟入口</span></a> <a target="_blank"
+					href="http://www.chuangyebaba.com/wz/tag.html"><span>TAG标签</span></a>
+
+				</li>
+			</ul>
+			<ul class="right-ul">
+				<li><img src="${ctxPath}/images/newImg/foot-3-img-1.png" alt="" />
+					<p>
+						<!--  ${sysCompanyResult.values.phone!} -->
+						<span>13923889756</span> <s>24小时客服电话</s>
+					</p></li>
+				<li><img src="${ctxPath}/images/newImg/foot-3-img-2.png" alt="" />
+					<p>
+						<span>在线客服</span> <s>服务时段 8:00-20:00</s>
+					</p></li>
+				<li><img src="${ctxPath}/images/newImg/foot-3-img-3.png" alt="" />
+					<p>
+						<span>商务合作</span> <s>${sysCompanyResult.values.email!}</s>
+					</p></li>
+			</ul>
+			<div class="center-div">
+				<span>“${sysCompanyResult.values.companyAbb!} ”</span> <img
+					src="${ctxPath}/images/newImg/ewm_cybb.png" alt="" />
+			</div>
+		</div>
+	</div>
+	<div style="background: #3d3d3d;">
+		<div class="w_1200 ov linke"
+			style="border-top: 1px solid #fff; padding: 20px 0px;">
+			<b class="fl">友情链接</b>
+			<div class="fl">
+				<%if(!isEmpty(friendshipLinkList)){%> <%for(friendshipLink in
+				friendshipLinkList){%> <a class="pull-left pr30" target="_blank"
+					title="${friendshipLink.linkName}" href="${friendshipLink.linkUrl}">${friendshipLink.linkName}</a>
+				<%}}%>
+			</div>
+		</div>
+	</div>
+	<div class="foot-3">
+		<%if(!isEmpty(recordnoexternalinfo)){%>
+			${recordnoexternalinfo.word} 
+		<%}%>
+	</div>
+	<%if(!isEmpty(baiduexternalinfo)){%> ${baiduexternalinfo.word} <%}%>
+
+	<script type="text/javascript" src="${ctxPath}/js/channel/banner.js"></script>
+	<script type="text/javascript" src="${ctxPath}/js/index/index.js"></script>
+	<script type="text/javascript" src="${ctxPath}/js/index/superslide.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//首页导航默认显示出来
+			$(".childNav").show();
+			$(".childNavDl").show();
+			$(".clildNavDiv").hide();
+			$(".title .close").click(function() {
+				$(".propBox").hide();
+				$("input[name=nuclearText]").val("");
+			});
+
+			// 创业资讯选项卡切换2017-04-05
+			$(".message-side").slide({
+				titCell : ".message-title a",
+				mainCell : ".message-side-box",
+				trigger : "mouseover",
+				autoPlay : true,
+				autoPage : false,
+				delayTime : 800,
+				titOnClassName : "active",
+				effect : "left"
+			});
+		})
+		$("#login-btn").removeAttr("disabled").css({
+			"backgroundColor" : "#ffc107",
+			"cursor" : "pointer"
+		});
+	
+
+		//上部banner处提交查询公司7-14
+		$(".queryCompanyBtn").click(function() {
+			var that = this;
+			if (dum.verifiy('queryCompanyNameForm')) {
+			} else {
+				return false;
+			}
+			dum.common.ajax({
+				type : "post",
+				url : "/customer/checkname.api",
+				data : $('#queryCompanyNameForm').serialize() + "&sourceId=1",
+				dataType : "json",
+				success : function(data) {
+					if (data.executeStatus == '0') {
+						$(".propBox").hide();
+						$("#queryName").val("");
+						$('#queryCompanyNameForm')[0].reset();
+						$(".propBox1").show();
+
+					}
+				}
+			});
+		});
+
+		// 修改公司核名7-14
+		$(function() {
+			$('.ksxc1').click(function() {
+				var hmTxt = $(".inquire_btn").val();
+				var hmTxt2 = $(".inquire_btn2").val();
+				if (!hmTxt) {
+					hmTxt = hmTxt2;
+				}
+				$("#companyName").val(hmTxt);
+				$('.propBox').show();
+			})
+			$('.close').click(function() {
+				$('.propBox').hide();
+				$(".inquire_btn").val('')
+				$('.propBox1').hide();
+			})
+			$('.hmcx2').mouseover(function() {
+				$('.hmcx4').show();
+			}).mouseleave(function() {
+				$('.hmcx4').hide();
+			});
+			$(".hmcx4>span").click(function() {
+				$('.hmcx3').html($(this).text());
+				$('.hmcx4').hide();
+			})
+		})
+		
+		//新增分公司切换展示
+		jQuery(".picScroll-left").slide({
+			titCell:".hd ul",
+			mainCell:".bd ul",
+			autoPage:true,
+			effect:"leftLoop",
+			autoPlay:true,
+			vis:4,
+			trigger:"click"
+		});
+	</script>
+</body>
+</html>

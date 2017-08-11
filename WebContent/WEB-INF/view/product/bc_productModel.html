@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>${productModel.serviceProduct.productName!}</title>
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+		<link rel="stylesheet" href="${ctxPath}/css/service/serviceCommon.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/service/accounting.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/plugin/flexslider.css" type="text/css" />
+		<script type="text/javascript" src="${ctxPath}/js/plugin/jquery.flexslider-min.js"></script>
+		<script type="text/javascript" src="${ctxPath}/js/channel/index.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/plugin/tab.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/plugin/tz_fly.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/plugin/requestAnimationFrame.js"></script>
+		<script type="text/javascript" src="${ctxPath}/js/channel/changeService.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".menu-nav-dl dt a").click(function(){
+					$(".menu-nav-dl dt a").removeClass('current');
+					$(this).addClass('current');
+					var i = $(this).parent().index();
+					$(".centerRight > div").hide();
+					$($(".menuNavDiv")[i]).show();
+				});
+			})
+		</script>
+		</head>
+	<body  class="productModelBody"> 
+		<%includeFileTemplate("/WEB-INF/view/login/jumpLogin.html"){ %><%}%> 
+		<%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+		
+		<div class="w_1160">
+			<!--面包线-->
+			<div class="breadLines">
+				<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+				<a href="javascript:void(0);" class="lineTit">${productModel.serviceProduct.productName!}</a>
+			</div>
+			<div>
+				<div class="fl banner"><!-- <img src="${ctxPath}/images/img/dljzBanner.jpg" id="dljzBanner_id"/> -->
+					<!--banner轮换-->
+					<!-- <div class="flexslider"> 
+				      <ul class="slides"> 
+								 <li>
+						        	<a href="javascript:void(0);">
+						        	</a>
+						        </li> 
+				      </ul> 
+					</div>  -->
+					<!--banner轮换 end-->
+				</div>
+				<div class="fl serviceLeft">
+					<h3 class="titH3 fl">${productModel.modelName!}</h3>
+					<dl class="fl public">
+						<%if(productModel.labels!=null){%>
+							<%for(label in productModel.labels){%>
+								<dd>${label.labelName}</dd>
+							<%}%>
+						<%}%>
+					</dl>
+					<p class="cb"></p>
+					<div class="fz14 mt20 mb20">${productModel.productTilte!}</div>
+					<!--选择公司地址-->
+					<form action="${ctxPath}/payment/buyNow.html" id="buyNowForm"  method="post" autocomplete="off">
+						<input type="hidden" name="orderItemList[0].modelId" class="modelId" value="${productModel.id!}"/>
+						<input type="hidden" name="orderItemList[0].serviceProductModel.productSell"   value="${productModel.productSell!}"/>
+						<table class="makeupTab">
+							<tr>
+								<td class="middleTop"><span class="zcArea ml5">补差需求</span></td>
+								<td><textarea class="middle demand" name="orderItemList[0].remark" placeholder="请先联系客服再在此处写好您的具体补差服务要求以及金额。" id="notes_id"></textarea></td>
+							</tr>
+							<tr>
+								<td><span class="zcArea ml5">补差金额</span></td>
+								<td><input type="text"   value="1" class="text1" placeholder="请先联系客服再在此处写好您的具体补差服务要求以及金额。" /><input type="hidden" value='1' id="modelCount" name="orderItemList[0].modelCount" value="1"  /></td>
+							</tr>
+						</table>
+					</form>
+					<div class="become">
+						<p class="serviceFees ml10 fl">
+							补差费用 :<span>￥</span>
+							<b id="ordPrice">
+								${productModel.productSell!}
+							</b>
+						</p>
+						<p class="fr clinch mr10">
+							已成交<br /><span id="dljzCount">5286</span>
+						</p>
+						<div class="cb"></div>
+					</div>
+					<dl class="buyCart">
+						<dd><a href="javascript:void(0);" class="buyNow" onclick="buyNowFun();">立即购买</a></dd>
+					</dl>					
+
+				</div>
+				<p class="cb"></p>
+			</div>
+			<div class="collocation">
+				<div class="collocationDiv fz14 fw"><p>内容描述</p></div>
+				<div class="collocationService fz14 color50">${productModel.productContext!}</div>
+			</div> 
+			<!--相关搜索，服务详情-->
+			<div class="centerLeft fl">
+				<div class="border">
+					<p class="related fw">快速导航</p>
+					<div class="menu-nav-div">
+						<dl class="menu-nav-dl">
+						      <dt><a href="javascript:void(0);" class="current">前海服务</a></dt> 
+						      <dt><a href="javascript:void(0);">公司注册</a></dt> 
+						      <dt><a href="javascript:void(0);">融资租赁公司</a></dt> 
+						      <dt><a href="javascript:void(0);">资产管理公司</a></dt> 
+						      <dt><a href="javascript:void(0);">保理/互联网金融公司</a></dt> 
+						      <dt><a href="javascript:void(0);">跨境贷款</a></dt> 
+						      <dt><a href="javascript:void(0);">专项资金申请</a></dt> 
+						      <dt><a href="javascript:void(0);">高层次人才认定</a></dt> 
+						</dl>
+					</div>
+				</div>
+			</div>
+			
+			<div class="centerRight fl">
+			     <div class="menuNavDiv">
+			     	<h4 class="aboutTitle">前海服务</h4>
+			     	<ul class="list-imgbox  list-service">
+	                 		<li>
+	                 			<div class="item"><i class="icon-sa ico"></i></div>
+	                 			<div class="item-r pa">
+	                 			    <h2 class="subtitle">税收优惠</h2>
+	                 			    <p>  按照前海优惠产业目录享受企业所得税按照15%征收，比区外企业优惠10%。</p>
+								</div>
+	                 		</li>
+	                 		<li>
+	                 			<div class="item"><i class="icon-sb ico"></i></div>
+	                 			<div class="item-r pb">
+	                 				<h2 class="subtitle">融资成本</h2>
+	                 				<p>享受香港跨境贷款，利率平均
+										比国内贷款利率低2%-3%，备案
+										金额预期2014年底达500亿元；
+										此外，前海企业赴港发债政策也
+										已得到国家主管部门的支持。</p>
+	                 			</div>
+	                 		</li>
+	                 		<li>
+	                 			<div class="item"><i class="icon-sc ico"></i></div>
+	                 			<div class="item-r pc">
+	                 				<h2 class="subtitle">地理位置</h2>
+	                 				<p>位于穗深港黄金发展中轴上，
+									紧邻深港两大国际机场，建设有
+									12条城市轨道，深港e通道13分
+									钟到达香港机场。</p>
+	                 			</div>
+	                 		</li>
+	                 		<li>
+	                 			<div class="item"><i class="icon-sd ico"></i></div>
+	                 			<div class="item-r pd">
+	                 				<h2 class="subtitle">人才补贴</h2>
+	                 				<p>符合前海高层次人才认定，可
+										申请个人所得税优惠、人才公寓
+										以及人才补贴。</p>
+	                 			</div>
+	                 		</li>
+	                 	</ul>
+	                 	<h2 class="big-title f_b">前海立方提供的前海一站式服务：</h2>
+	                 	<ul class="list-dot-a">
+	                 		<li>前海企业注册咨询：融资租赁公司注册、互联网金融公司注册、内资/外资一般企业注册</li>
+	                 		<li>前海高层次人才认定及优惠政策咨询</li>
+	                 		<li>前海投融资项目咨询</li>
+	                 		<li>前海专项资金项目申报咨询</li>
+	                 		<li>专业服务咨询：人力资源管理咨询（招聘、培训、企业文化等）、企业运营管理咨询、财务管理咨询、法律及政策咨询、新三板上市咨询等</li>
+	                 	</ul>
+	                 	<p class="tc"><img src="${ctxPath}/images/img/servicea.jpg"/></p>
+			     </div>
+			      <div class="menuNavDiv none">
+			       		<h4 class="aboutTitle">前海及自贸区公司注册</h4>
+			       		<h4 class="register-title">我能否注册到前海？<br>我进前海有什么优惠政策可以享受？<br>咨询到的中介，信息繁杂，报价不一，又着急想赶紧落实清楚，怎么办？<br></h4>
+			       		<dl class="list-ask">
+	                 	 	<dt><strong>前海立方答复：</strong></dt>
+	                 	 	<dd>注册公司不是件小事，如果您确实需要了解以上，或者相关问题，请致电给我们，我们有专业的。<br>
+       咨询团队和注册团队！1200多家服务办理成功经验，官方授权身份，为您保驾护航！ <br>
+      联系电话：27605666-858    18576770084 陈经理
+     					 <p class="tc"><img width="700" alt="" src="${ctxPath}/images/img/zhuce.png"></p>
+	                 	 	</dd>
+	                 	 	<dt>问：什么类型的企业，可以进驻前海？</dt>
+	                 	 	<dd>答：前海目前主要发展4大产业，分别是现代金融业、现代物流业、科技服务、信息服务及其他专业服务。 <br>
+						      现代金融业：资产管理、投资管理、财富管理、商业保理、融资租赁等 现代物流业：物流服务、物流管理、进出口贸易、国内贸易、供应链管理等！<br>
+	                 	 	</dd>
+	                 	 	<dt>问：如何注册前海公司？</dt>
+	                 	 	<dd>答：1、首先必须符合前海的准入目录，即符合上述4大产业方向<br>
+								   2、核名→前海地址挂靠→工商登记→开户 （如涉及前置审批、外商投资企业等需相关部门获批）<br>
+								   3、办理成功！
+	                 	 	</dd>
+	                 	 	<dt>问：前海有什么优惠政策？</dt>
+	                 	 	<dd>答：1、税收优惠 （企业所得税+个人所得税）<br>
+								   2、专项资金（每年9.2亿无偿补助）<br>
+							       3、低利率跨境贷（享受香港的年化利率，比境内低2~3个点）<br>
+   								   4、外债宏观审慎管理试点、集团内双向人民币资金池、跨境电商出口退税等
+	                 	 	</dd>
+	                 	 </dl>
+	                 	 <p class="note-box">
+	                 	 	<span class="texta">更多前海讯息及政策，请关注微信公众号：前海资讯。</span>
+	                 	 	<img class="imgbox qrcode" alt="请关注微信公众号：前海资讯" src="${ctxPath}/images/img/twoqcode.jpg">
+	                 	 </p>
+			     	</div>
+			      <div class="menuNavDiv none">
+			       	<h4 class="aboutTitle">融资租赁公司注册</h4>
+				       	<div class="content f_14">
+		                 	 <h2 class="f_b m_b_12">1、前海融资租赁介绍</h2>
+		                 	 <dl class="list-dl">
+		                 	    <dt>（一）营业范围：</dt>
+		                 	    <dd>融资租赁业务；租赁业务；向国内外购买租赁财产；租赁财产的残值处理及维修；租赁交易咨询和担保；经审批部门批准的其他业务。</dd>
+		                 	    <dt>（二）营业期限：</dt>
+		                 	    <dd>不能超过30年</dd>
+		                 	    <dt>（三）租赁财产包括：</dt>
+		                 	    <dd>
+		                 	      <ul class="list-dot-a">
+		                 	       	<li>（1）生产设备、通信设备、医疗设备、科研设备、检验检测设备、工程机械设备、办公设备等各类动产；</li>
+		                 	       	<li>（2）飞机、汽车、船舶等各类交通工具；</li>
+		                 	       	<li>（3）本条1、2项所述动产和交通工具附带的软件、技术等无形资产，但附带的无形资产价值不得超过租赁财产价值的二分之一。</li>
+		                 	      </ul>
+		                 	    </dd>
+		                 	    <dt>（四）前海融资租赁公司的注册要求（其他条件：<a href="/assets/img/rzzlzcyq.doc">下载附件</a>）</dt>
+		                 	    <dd>
+		                 	       <ul class="list-dot-a">
+		                 	       	<li>①公司必须是外资公司，且境外股东必须注册满1年以上。</li>
+		                 	       	<li>②融资租赁公司的注册资本最低为1000万美金以上。 </li>
+		                 	       	<li>③ 境外股东需提供最近一次的公司审计报告，审计报告需要载明企业总资产不得低于500万美金。</li>
+		                 	       	<li>④3个高级管理人员证明，需具有金融或融资租赁行业管理经验且无不良信用记录的证明材料。 </li>
+		                 	       </ul>
+		                 	    </dd>
+		                 	    <dt class="f_b m_b_12">2、融资租赁成立的流程：</dt>
+		                 	    <dd>1.前置审批材料准备&mdash;&mdash;2.网上申报及材料提交&mdash;&mdash;3.前置批文下发&mdash;&mdash;4.工商注册材料准备&mdash;&mdash;5.前海子公司工商注册（营业执照、刻章、组织机构代码与税务登记）&mdash;&mdash;6.银行开户与外汇登记&mdash;&mdash;7.注册资本注入（按章程约定）&mdash;&mdash;8.正式开展业务</dd>
+		                 	    <dt class="f_b m_b_12">3、欢迎联系我们融资租赁行业资深顾问了解更多。</dt>
+		                 	 </dl>
+	                 	</div>	
+			     </div>
+			     
+			      <div class="menuNavDiv none">
+			       	<h4 class="aboutTitle">前海自贸区资产管理公司注册</h4>
+			       	 <span class="tac p_12 f_gray show">发布时间：2016-04-12</span>
+	                  <div class="content">
+	                  		<p style="text-align: center;" class="qhzhq"><span style="font-family: 宋体;"><strong><span style="font-size:24px;">前海自贸区还能注册资产管理公司吗？</span></strong></span></p>
+	                  		<p style="text-align: center;"class="qhzhq"><span style="font-family: 宋体;"><strong><span style="font-size:24px;">前海自贸区有针对资产管理公司的优惠政策吗？</span></strong></span></p>
+	                  		<p style="text-align: center;" class="qhzhq"><span style="font-family: 宋体;"><strong><span style="font-size:24px;">前海自贸区注册资产管理公司如何操作？</span></strong></span></p><p style="text-align: center;"><span style="font-family: 宋体;"><span style="font-size:24px;">……</span></span></p><p style="text-align: center;"><span style="font-family: 宋体;"><span style="font-size:24px;color:#33ccff;"><strong>更多有关前海资产管理公司注册最新政策和信息，请联系我们！</strong></span></span></p><p style="text-align: center;"><span style="font-family: 宋体;"><span style="font-size:18px;"><br></span></span></p><p style="text-align: center;"><span style="font-size:24px;"><span style="font-family: 宋体;">一、</span><span style="font-family: 宋体;">前海资产管理公司简介</span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">1.<span style="font-family:宋体;">营业范围：</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">1</span><span style="font-family:宋体;">）收购并经营金融机构剥离的本外币不良资产；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">2</span><span style="font-family:宋体;">）追偿本外币债务；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">3</span><span style="font-family:宋体;">）对所收购本外币不良贷款形成的资产进行租赁或者以其他形式转让、重组；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">4</span><span style="font-family:宋体;">）本外币债权转股权，并对企业阶段性持股；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">5</span><span style="font-family:宋体;">）资产管理范围内公司的上市推荐及债券、股票承销；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">6</span><span style="font-family:宋体;">）经相关部门批准的不良资产证券化；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">7</span><span style="font-family:宋体;">）发行金融债券，向金融机构借款；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">8</span><span style="font-family:宋体;">）财务及法律咨询，资产及项目评估；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">9</span><span style="font-family:宋体;">）根据市场原则，商业化收购、管理和处置境内金融机构的不良资产；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">10</span><span style="font-family:宋体;">）接受委托，从事经金融监管部门批准的金融机构关闭清算业务；接受财政部、中国人民银行和国有银行的委托，管理和处置不良资产；接受其他金融机构、企业的委托，管理和处置不良资产；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">11</span><span style="font-family:宋体;">）运用现金资本金对所管理的政策性和商业化收购不良贷款的抵债实物资产进行必要投资；</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">12</span><span style="font-family:宋体;">）经中国银行业监督管理委员会等监管机构批准的其他业务活动。</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">注：以上十二项需到银监会审批；概括为：</span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">13</span><span style="font-family:宋体;">）主要包括资产收购、管理和处置，资产重组，接受委托管理和处置资产的服务，追加投资以及经批准的其他业务。</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">14</span><span style="font-family:宋体;">）管理运用自有资金；受托或委托资产管理业务；与资产管理业务相关的咨询业务；国家法律法规允许的其他资产管理业务。</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;"><span style="font-family:宋体;"><br></span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">2.<span style="font-family:宋体;">前海资产管理公司的注册要求</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">1</span><span style="font-family:宋体;">）注册资本金最低</span><span style="font-family:Calibri;">1000</span><span style="font-family:宋体;">万元起。</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">（<span style="font-family:Calibri;">2</span><span style="font-family:宋体;">）建议两个股东或以上。</span></span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">&nbsp;</span></span></p><p style="text-align: center;"><span style="font-family: 宋体;"><span style="font-size:24px;">二、前海资产管理公司注册流程</span></span></p><p style="text-align: center;"><span style="font-family: 宋体;"><span style="font-size:24px;"><img alt="" src="http://121.40.140.9:8080//img/4/1460432167989.jpg"><br></span></span></p><p><span style="font-size:18px;"><br></span></p><p style="text-align: center;"><span style="font-size:24px;"><span style="font-family: 宋体;">三、</span><span style="font-family: 宋体;">前海立方提供最专业的前海自贸区政策咨询服务</span></span></p><p><span style="font-family: 宋体;"><span style="font-size:18px;">前海立方是万事必应</span><span style="font-size:18px; font-family: Calibri;">(</span><span style="font-size:18px; font-family: 宋体;">国际</span><span style="font-size:18px; font-family: Calibri;">)</span><span style="font-family: 宋体;"><span style="font-size:18px;">集团旗下全资子公司，是前海管理局认证的首家“前海招商合伙人”。作为前海自贸区政策的专业咨询机构，前海立方独享众多前海自贸区最新官方政策和前海服务绿色通道，致力于协助前海管理局进行前海自贸区在全球范围内进行招商，是前海管理局的官方招商机构。</span></span></span></p><p style="text-align: center;"><span style="font-family: 宋体;"><span style="font-family: 宋体;"><span style="font-size:24px;color:#33ccff;">更多最新前海自贸区官方政策咨询，请与在线客服联系。</span></span></span></p><p></p>
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#f5f5f5" class="news_table">
+							  <tbody>
+							  <tr>
+							    <th width="100" valign="top" class="tac">
+							       <img class="show m_t_6" alt="前海资讯" src="${ctxPath}/images/img/smallcode.jpg">
+							    </th>
+							  <th class="info">
+							    <span class="title">小微信，大视野！</span>
+							    前海立方官方微信推出啦！关注前海立方微信，您可以随时随地查看前海最新资讯！
+							    <span class="texta">微信关注方法：1.扫描左侧二维码;<br>2.搜索”<strong class="f_b">前海资讯</strong>”关注前海资讯微信</span>
+							  </th>
+							  </tr>
+							  </tbody>
+							</table>
+							<div class="sharebox">
+							  <div class="pull-left">
+							    <span class="pull-left">分享到：</span>
+								<div class="pull-left">
+							 	<div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1462626859962"><a data-cmd="qzone" class="bds_qzone" href="#" title="分享到QQ空间"></a><a data-cmd="tsina" class="bds_tsina" href="#" title="分享到新浪微博"></a><a data-cmd="tqq" class="bds_tqq" href="#" title="分享到腾讯微博"></a><a data-cmd="renren" class="bds_renren" href="#" title="分享到人人网"></a><a data-cmd="weixin" class="bds_weixin" href="#" title="分享到微信"></a><a data-cmd="more" class="bds_more" href="#"></a></div>
+								</div>
+							  </div>
+							</div>
+							<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+						</div>
+			     </div>
+			     
+			      <div class="menuNavDiv menuNavDivp none">
+			       	<h4 class="aboutTitle">保理/互联网金融公司注册</h4>
+			       		 <h2 class="title-bar-menu">一、商业保理注册介绍</h2>
+	                 	 <p>前海商业保理公司的注册要求 </p>
+	                 	 <ul class="list-dot-a">
+	                 	 	<li>1.注册资本500万人民币</li>
+	                 	 	<li>2.经营范围限定于“保付代理（非银行融资类）”以及“从事保理业务的相关业务咨询”。 </li>
+	                 	 	<li>3.自然人股东或者法人股东均可以。 </li>
+	                 	 </ul>
+	                 	 <p>内资保理公司的经营范围： </p>
+	                 	 <p>“保付代理（非银行融资类）”以及“从事保理业务的相关业务咨询”是内资保理公司常见的经营范围，但保理公司经常加入的经营范围还可以加入很多，其他经营范围如果没有特殊要求都可以写入，比如以下的经营范围：经营进出口业务、经济信息咨询、投资兴办实业、供应链管理、受托资产管理、从事担保业务等。 </p>
+	                 	 <p>外资保理公司的经营范围： </p>
+	                 	 <p>根据《商务部关于香港、澳门服务提供者在深圳市、广州市试点设立商业保理企业的通知》，外商投资保理公司的常用允许经营范围如下：
+	                 	     </p><ul class="list-dot-a">
+	                 	     	<li>1）以受让应收账款的方式提供贸易融资；</li>
+	                 	     	<li>2）应收账款的收付结算、管理与催收；</li>
+	                 	     	<li>3）销售分户（分类）账管理；</li>
+	                 	     	<li>4）与本公司业务相关的非商业性坏账担保；</li>
+	                 	     	<li>5）客户资信调查与评估；</li>
+	                 	     	<li>6）相关咨询服务；</li>
+	                 	     	<li>7）法律法规准予从事的其他业务。</li>
+	                 	     </ul>
+	                 	  <p></p>
+	                 	 <h3 class="title-bar-menu">二、互联网金融注册介绍</h3>
+	                 	 <p>互联网金融公司的经营范围：</p>
+	                 	 <p>接受金融机构委托从事金融外包业务；依托互联网等技术手段，提供金融中介服务（根据国家规定需要审批的，获得审批后方可经营） + 其他无需前置批文的经营范围</p>
+			     </div>
+			     
+			      <div class="menuNavDiv none">
+			       	<h4 class="aboutTitle">跨境贷款</h4>
+			       	<div class="content f_14">
+	                  <p class="tc"><img class="img-responsive" alt="跨境贷款" src="${ctxPath}/images/img/dk1.jpg"></p>
+	                  <p>前海跨境人民币贷款的三种基本模式&nbsp; </p>
+	                  <h2 class="title-bar-menu">（一）关联企业担保模式&nbsp; </h2>
+	                  <ul class="list-dot-a">
+	                  	<li>1、提出申请：前海企业向境内结算银行提出跨境人民币贷款申请，预报贷款用途、期限、金额及大约提款时间。</li>
+	                  	<li>2、海外询价：境内结算行收到申请后，向境外分支机构或合作银行进行询价。境外银行出具贷款意向函。</li>
+	                  	<li>3、央行深圳分行备案：境内结算行收到境外银行出具的贷款意向函之后向中国人民银行深圳分行进行备案，央行备案通过后出具备案表。</li>
+	                  	<li>4、关联企业担保：前海企业的母公司或关联企业向境内结算行提出内保外贷申请（可将关联企业未使用完的信用额度切分给前海企业使用），将境内结算行开具的人民币保函提交境外银行。</li>
+	                  	<li>5、放款：境外银行凭保函向境内结算行发放贷款，通过前海结算。</li>
+	                  	<li>6、提款：前海企业提交相关资金用途说明，通过审核后，从境内结算行提款用于前海建设开发或日常经营建设。</li>
+	                  </ul>
+	                  <p class="tc"><img class="img-responsive" alt="跨境贷款" src="${ctxPath}/images/img/dk2.jpg"></p>
+	                  <h3 class="title-bar-menu">（二）银票质押模式</h3>
+	                  <ul class="list-dot-a">
+	                  	<li>1、提出申请：前海企业将银行承兑汇票全额质押于境内结算银行，以此提出跨境人民币贷款申请。</li>
+	                  	<li>2、海外询价：境内结算行收到申请后，向境外分支机构或合作银行进行询价。境外银行出具贷款意向函。</li>
+	                  	<li>3、央行深圳分行备案：境内结算行收到境外银行出具的贷款意向函之后向中国人民银行深圳分行进行备案，央行备案通过后出具备案表。</li>
+	                  	<li>4、提出担保申请：前海企业以全额质押的银票提出内保外贷申请，境内结算行开具的人民币保函提交境外银行。</li>
+	                  	<li>5、放款：境外银行凭保函向境内结算行发放贷款，通过前海结算。</li>
+	                  	<li>6、提款：前海企业提交相关资金用途说明，通过审核后，从境内结算行提款用于前海建设开发或日常经营建设。</li>
+	                  </ul>
+	                  <p class="tc"><img class="img-responsive" alt="银票质押模式" src="${ctxPath}/images/img/dk3.jpg"></p>
+	                  <h3 class="title-bar-menu">（三）、外存外贷模式&nbsp;</h3>
+	                  <ul class="list-dot-a">
+	                     <li>1、境外存款：前海企业的境外关联公司因为业务发展积存了大量人民币，将这部分人民币存入境外银行。&nbsp;</li>
+	                     <li>2、提出申请：前海企业以境外关联公司存入的人民币存款向境内结算行提出跨境人民币贷款申请。</li>
+	                     <li>其余程序均与以上两种方式相同，在这种模式下，境内银行无需开立内保外贷，仅做结算，因此不收取利息，只收取通道费。</li>
+	                  </ul>
+	                  <p class="tc"><img class="img-responsive" alt="银票质押模式" src="${ctxPath}/images/img/dk4.jpg"></p>
+	                 </div>
+			     </div>
+			     
+			      <div class="menuNavDiv none">
+			       	<h4 class="aboutTitle">专项资金申请</h4>
+			       	<div class="content">
+	                 	<p class="tc"> <img class="img-responsive" alt="专项资金申请" src="${ctxPath}/images/img/sq1.jpg"></p>
+	                 	 <p class="tc"><img class="img-responsive m_t_12" alt="专项资金申请" src="${ctxPath}/images/img/sq2.jpg"></p>
+	                 	 <h2 class="tc mt10 mb15">前海项目扶持基本流程：</h2>
+	                 	<div class="tac w_200">
+	                 	 			市前海管理局形式审查 <br> 
+									↓ <br>
+									评审机构综合评审（专家评审、现场考察、专项审查）<br> 
+									↓ <br>
+									市前海管理局初步意见<br> 
+									↓ <br>
+									市直相关行业主管部门单位意见<br> 
+									↓ <br>
+									市财政委合规性审查<br> 
+									↓ <br>
+									预公示 <br>
+									↓ <br>
+									试点工作领导小组审定<br> 
+									↓ <br>
+									财政部、商务部备案 <br>
+									↓ <br>
+									市财政委、市前海管理局下达资金计划 <br>
+									↓ <br>
+									签订扶持协议 <br>
+									↓ <br>
+									市财政委拨款
+	                 	</div>
+	                 	
+                 	</div>
+			     </div>
+			     
+			     <div class="menuNavDiv menuNavDivpa none">
+			       	<h4 class="aboutTitle">高层次人才认定</h4>
+			       	<div class="content f_14">
+	                 	 <h2 class="title-bar-menu">前海个人所得税优惠申报程序</h2>
+	                 	 <p>个人申请---单位复核申报---预约提交材料---提交书面申报材料---前海管理局审核---相关部门审核（前海管理局形成初审意见后提交市公安局、人力资源保障局、地税局、深圳国税局、金融办、知识产权局等相关部门进行审核）---公示结果---出具认定意见---补贴拨付</p>
+	                 	 <h2 class="title-bar-menu">前海个人所得税优惠申报认定</h2>
+	                 	 <p>（一）、申报时间&nbsp; </p>
+	                 	 <p>每年1月1日至1月31日通过所在单位向前海管理局进行上一年度的人才认定申报。&nbsp; </p>
+	                 	 <p>（二）、申报方式</p>
+	                 	 <p>采取自愿申报、审核认定和评审相结合的评定方式。认定名额原则上不设上限。仅接受以公司或机构为单位的个人所得税财政补贴申请，不接受个人申请。&nbsp; </p>
+	                 	 <p>（三）、申报人条件&nbsp; </p>
+	                 	 <ul>
+	                 	 	<li>1.&nbsp;具有外国国籍人士，或香港、澳门、台湾地区居民，或取得国外长期居留权的海外华侨，或取得国外长久居留权的归国留学人才。&nbsp; </li>
+	                 	 	<li>2.&nbsp;在前海创业或在前海登记注册的企业和相关机构工作。&nbsp; </li>
+	                 	 	<li>3.&nbsp;在前海依法缴纳个人所得税。&nbsp; </li>
+	                 	 	<li>4.&nbsp;在所在单位工作满一年，申请年度在前海实际工作时间不少于六个月。&nbsp; </li>
+	                 	 	<li>5.&nbsp;具备下列条件之一：&nbsp;<br>
+	                 	 		<dl class="p_l_24">
+	                 	 			<dd>1) 经国家、省级政府、深圳市认定的海外高层次人才（详见附件）；&nbsp; </dd>
+	                 	 			<dd>2)&nbsp;在前海注册并按照《深圳市鼓励总部企业发展暂行办法》（深府〔2012〕104号）认定的总部企业、世界五百强企业及其分支机构的管理或技术类人才；&nbsp; </dd>
+	                 	 			<dd>3)&nbsp;在前海注册的其他企业的中层及以上管理或同等层次技术类人才；&nbsp; </dd>
+	                 	 			<dd>4) 拥有国际认可执业资格或国内急需的发明专利的人才；&nbsp; </dd>
+	                 	 			<dd>5)不符合1-4条条件但确属前海发展紧缺的境外人才，能够证明其具有相应技术资历、专业能力或工作就的，可通过所在单位申报，由前海管理局会同市有关行业主管部门和行业协会共同认定。</dd>
+	                 	 		</dl>
+	                 	 	 </li>
+	                 	 </ul>
+	                 	 <h3 class="title-bar-menu">前海个人所得税优惠申报材料</h3>
+	                 	 <ul>
+	                 	 	<li>1、《前海深港现代服务业合作区境外高端人才和紧缺人才认定及个人所得税财政补贴审核表》和《前海深港现代服务业合作区境外高端人才和紧缺人才认定及个人所得税财政补贴申请汇总表》各一份。（注：以上表格请在前海管理局官方网站http://www.szqh.gov.cn/上下载并按要求填写打印后，由申请人、所在单位经办人、单位法人代表（负责人）签字并加盖单位公章）。</li>
+	                 	 	<li>2、申请人有效身份证明文件，其中：&nbsp; <br>
+								<dl class="p_l_24">
+									<dd>1)&nbsp;&nbsp;港澳台人士需提交护照及《港澳台人员就业证》复印件各1份（验原件）；</dd>
+									<dd>2)&nbsp;&nbsp;外籍人士需提交护照及《外国专家证》或《外国人就业证》）复印件各1份（验原件）；&nbsp; </dd>
+									<dd>3)&nbsp;&nbsp;获得国外长期或永久居留权的海外华侨和归国留学人士另需提供护照及国外长期或永久居留凭证的有效证件复印件各1份（验原件）。&nbsp;</dd>
+								</dl>	                 	 		
+	                 	 	</li>
+	                 	 	<li>3、所在单位出具的申请人个人现实表现证明，证明应包括以下内容：申请人依法纳税，无不良诚信记录，无侵犯知识产权行为，无其他违反法律、法规的行为（样本可在前海管理局网站http://www.szqh.gov.cn/上下载，收原件1份，加盖单位公章）。&nbsp; </li>
+	                 	 	<li>4、申请人劳动合同（收复印件1份，加盖单位公章）。&nbsp; </li>
+	                 	 	<li>5、地税局出具的记载申请人2013年度扣缴个人所得税报告表（明细）（收原件）、个人所得税完税凭证（收复印件1份，验原件）。&nbsp; </li>
+	                 	 	<li>6、申请单位工商营业执照副本及税务登记证（收复印件1份，加盖单位公章）。&nbsp; </li>
+	                 	 	<li>7、申请单位收款账号存折或银行卡复印件（收复印件2份）。&nbsp; </li>
+	                 	 	<li>8、申请人符合申请条件的相关证明材料：<br>
+	                 	 	   <dl class="p_l_24">
+	                 	 	   	<dd>1)&nbsp;经国家、省级政府、深圳市认定的海外高层次人才需提交认定证书复印件1&nbsp;份，验原件。&nbsp;</dd>
+	                 	 	   	<dd>2)&nbsp;在前海注册并按照《深圳市鼓励总部企业发展暂行办法》（深府〔2012〕104号）认定的总部企业、世界五百强企业及其分支机构的管理或技术类人才需由申请单位提供申请人正式任命文件复印件1份（验原件）或2013年度任职情况的证明文件（样本可于前海管理局网站http://www.szqh.gov.cn/上下载，收原件1份，加盖单位公章）。</dd>
+	                 	 	   	<dd>3)&nbsp;在前海注册的其他企业的中层及以上管理或同类层次技术类人才需由申请单位提供：<br>
+	                 	 	   	 a)申请人正式任命文件复印件1份（验原件）；&nbsp; <br>
+	                 	 	   	</dd>
+	                 	 	   	<dd>4)&nbsp;拥有国际认可职业资格或国内急需的发明专利人才需提供相应职业资格证书或专利证书复印件1份（验原件）。</dd>
+	                 	 	   	<dd>5)技术类人才需提供相应的技术资格证书或职称证书复印件1份（验原件）。</dd>
+	                 	 	   	<dd>6)其他符合申请条件有关资质要求的证明文件。&nbsp; </dd>
+	                 	 	   </dl>
+	                 	 	</li>
+	                 	 	<li>9、前海管理局要求提供的辅助材料&nbsp; </li>
+	                 	 </ul>
+                 	</div>
+			     </div>
+			     
+			</div>
+			<div class="cb"></div>
+		</div>
+		<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+	</body>
+</html>

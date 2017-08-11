@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>公司章程</title><!-- 个人独资 -->
+<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/nav_userClient.css">
+<link type="text/css" rel="stylesheet" href="${ctxPath}/css/userClient/constitution.css">
+<script type="text/javascript" src="${ctxPath}/js/userClient/constitution.js"></script>
+</head>
+<body>
+<%includeFileTemplate("/html/xnJavaScript.html"){ %><%}%>
+	<div class="w_1160 wrap clearfix">
+		<div id="nav_left" class="nav_left border_right">
+			<%includeFileTemplate("/html/userClient_navleft.html"){ %><%}%>
+		</div>
+		<div id="content">
+			<div class="clientRight">
+				<div class="baseMargin">
+					<h4 class="infoTit"><span>公司资料</span></h4>
+					<div class="border reports">
+					<div class="reportsTop">
+						<ul class="fl reportsUl">
+							<li class="reportsHover">公司章程</li>
+						</ul>
+						<a href="${ctxPath}/information/companyListzcgs"><p class="fz14 color68 fr cursor mr20">返回</p></a>
+						<div class="cb"></div>
+					</div>
+						<!-- 第一页 -->
+						<div id="dgdConstitution1">
+							<h4 class="mt30 mb30 fz16 color50 tc">合伙协议</h4>
+							<!-- 第一章  总  则 -->
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第一章<span class="ml10">总&nbsp;&nbsp;则</span></h5>
+								<p><span class="mr20">第一条</span>第一条　根据《中华人民共和国合伙企业法》（以下简称《合伙企业法》）、《中华人民共和国合伙企业登记管理办法》（以下简称《合伙企业登记管理办法》）及有关法律、行政法规、规章的有关规定，经全体合伙人
+协商一致，订立本协议。</p>
+								<p><span class="mr20">第二条</span>本企业为 合伙企业 ，是根据协议自愿组成的共同经营体。全体合伙人愿意遵守国家有关的法律、法规、规章，依法纳税，守法经营。</p>
+								<p><span class="mr20">第三条</span>本协议条款与法律、行政法规、规章不符的，以法律、行政法规、规章的规定为准。</p>
+								<p><span class="mr20">第四条</span>合伙人按照合伙协议享有权利，履行义务。</p>
+							</div>
+							
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第二章<span class="ml10">合伙企业的名称和主要经营场所的地点</span></h5>
+								<p><span class="mr20">第五条</span>合伙企业名称：<b>${constitution.companyName!}</b></p>
+								<p><span class="mr20">第六条</span>企业经营场所： <b>${constitution.cusOrderCompany.areaFullname!}${constitution.cusOrderCompany.addressDetails!}</b></p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第三章<span class="ml10">合伙目的、合伙经营范围和合伙期限</span></h5>
+								<p><span class="mr20">第七条</span>合伙目的： <b>合伙经营</b></p>
+								<p><span class="mr20">第八条</span>合伙经营范围： 
+									<b>${constitution.scopeDesc!}</b>
+								</p>
+								<p><span class="mr20">第九条</span>合伙期限为<b>永续经营</b></p>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第四章<span class="ml10">合伙人的姓名或者名称、住所</span></h5>
+								<p><span class="mr20">第十条</span>合伙人 <%if(!isEmpty(constitution.cusCompanyShareholders)){%>${constitution.cusCompanyShareholders.~size}<%}else{%>0<%}%>个，分别是：</p>
+								<%if(!isEmpty(constitution.cusCompanyShareholders)){%>
+												<%for(shareholders in constitution.cusCompanyShareholders){%>
+												<p>shareholdersLP.index 、 <b>${shareholders.shareholderName!}</b></p>
+												<p>住所（址）：<b>${shareholders.cardAddress!}</b></p>
+												<p>证件名称：
+												<%if(shareholders.documentType == 'yyzz'){%>
+													<b>营业执照</b>
+												<%}else if(shareholders.documentType == 'jgz'){%>
+													<b>军官证</b>
+												<%}else {%>
+													<b>身份证</b>
+												<%}%>
+												</p>
+												<p>证件号码：<b>${shareholders.documentNo!}</b></p>
+												<p>合伙人类别：<b><%if(shareholders.cooperativeNature == '0'){%>普通合伙人<%}else if(shareholders.cooperativeNature == '1'){%>有限合伙人<%}%></b></p>
+										 <%}%>
+								<%}%>
+							</div>
+							<div class="mb30 article">
+								<h5 class="tc mb30 fw fz14">第五章<span class="ml10">合伙人的出资方式、数额和缴付期限</span></h5>
+								<p><span class="mr20">第十一条</span>合伙人的出资方式、数额和缴付期限：</p>
+								<%if(!isEmpty(constitution.cusCompanyShareholders)){%>
+												<%for(shareholders in constitution.cusCompanyShareholders){%>
+												<p>shareholdersLP.index 、合伙人： <b>${shareholders.shareholderName!}</b></p>
+												<p>以<b>货币</b>认缴出资<b>${shareholders.shareholderMoney!}</b>万元。</p>
+										 <%}%>
+								<%}%>
+								<!-- <p>首期实缴出资<b>0</b>万元，在申请合伙企业设立登记前缴纳，认缴出资额应该在<b>2036-01-13</b>前缴足。</p> -->
+						</div>
+					</div>
+					<!-- 第二页 -->
+					<div  id="dgdConstitution2" class="none">
+						<div class="mb30 article mt20">
+							<h5 class="tc mb30 fw fz14">第六章<span class="ml10">利润分配、亏损分担方式</span></h5>
+							<p><span class="mr20">第十二条</span>合伙企业的利润由合伙人按照实缴出资比例分配。</p>
+							<p><span class="mr20">第十三条</span>合伙企业的亏损由合伙人按照实缴出资比例分担。</p>
+							<h5 class="tc mt20 mb30 fw fz14">第七章<span class="ml10">合伙事务的执行</span></h5>
+							<p><span class="mr20">第十四条</span>经全体合伙人决定，委托 1 个合伙人对外代表合伙企业，执行合伙事务。作为合伙人的法人、其他组织执行合伙事务的，由其委派的代表执行。其他合伙人不再执行合伙事务。</p>
+							<p><span class="mr20">第十五条</span>不执行合伙事务的合伙人有权监督执行事务合伙人执行合伙事务的情况。执行事务合伙人应当定期向其他合伙人报告事务执行情况以及合伙企业的经营和财务状况，其执行合伙事务所产生的收益归合伙企业，所产生的费用和亏损由合伙企业承担。</p>
+							<p><span class="mr20">第十六条</span>合伙人分别执行合伙事务的，执行事务合伙人可以对其他合伙人执行的事务提出异议。提出异议时，应当暂停该事务的执行。如果发生争议，依照本协议第十六条的规定作出表决。受委托执行合伙事务的合伙人不按照合伙协议或者全体合伙人的决定执行事务的，其他合伙人可以决定撤销该委托。</p>
+							<p><span class="mr20">第十七条</span>合伙人对合伙企业有关事项作出决议，实行合伙人一人一票并经全体合伙人过半数通过的表决办法。</p>
+							<p><span class="mr20">第十八条</span>合伙企业的下列事项应当经全体合伙人一致同意：</p>
+							<p>（一）改变合伙企业的名称；</p>
+							<p>（二）改变合伙企业的经营范围、主要经营场所的地点；</p>
+							<p>（三）处分合伙企业的不动产；</p>
+							<p>（四）转让或者处分合伙企业的知识产权和其他财产权利；</p>
+							<p>（五）以合伙企业名义为他人提供担保；</p>
+							<p>（六）聘任合伙人以外的人担任合伙企业的经营管理人员。</p>
+							<p><span class="mr20">第十九条</span>合伙人不得自营或者同他人合作经营与本合伙企业相竞争的业务；除经全体合伙人一致同意外，合伙人不得同本合伙企业进行交易。合伙人不得从事损害本合伙企业利益的活动。</p>
+							<p><span class="mr20">第二十条</span>合伙人经全体合伙人决定，可以增加或者减少对合伙企业的出资。</p>
+						</div>
+						<div class="mb30 article">
+							<h5 class="tc mb30 fw fz14">第八章<span class="ml10">入伙与退伙</span></h5>
+							<p><span class="mr20">第二十一条</span>
+								新合伙人入伙，经全体合伙人一致同意（注：也可依据《合伙企业法》第四十三条的规定在本条约定其它同意方式），依法订立书面入伙协议。订立入伙协议时，原合伙人应当向新合伙人如实告知原合伙企业的经营状况和财务状况。入伙的新合伙人与原合伙人享有同等权利，承担同等责任（注：也可依据《合伙企业法》第四十四条的规定在本条约定新合伙人
+的其它权利和责任）。新合伙人对入伙前合伙企业的债务承担无限连带责任。经全体合伙人一致同意，普通合伙人可以转变为有限合伙人，或者有限合伙人可以转变为普通合伙人。有限合伙人转变为普通合伙人的， 对其作为有限合伙人期间的合伙的合伙企业发生的债务承担有限连带责任；普通合伙人转变为有限合伙人的，对其作为普通合伙人期间的合伙企业发生的债务承担无限连带责任。
+							</p>
+							<p><span class="mr20">第二十二条</span>合伙协议约定合伙期限的,在合伙企业存续期间，有《合伙企业法》第四十五条规定的情形之一的，合伙人可以退伙。合伙协议未约定合伙期限的，合伙人在不给合伙企业事务执行造成不利影
+响的情况下，可以退伙，但应当提前三十日通知其他合伙人。合伙人违反《合伙企业法》第四十五、或四十六条规定退伙的，应当赔偿由此给合伙企业造成的损失。</p>
+							<p><span class="mr20">第二十三条</span>合伙人有《合伙企业法》第四十八条规定的情形之一的，当然退伙。</p>
+							<p>退伙事由实际发生之日为退伙生效日。</p>
+						</div>
+					</div>
+					<!-- 第三页 -->
+					<div  id="dgdConstitution3" class="none">
+						<div class="mb30 article mt20">
+							<p><span class="mr20">第二十四条</span>合伙人有《合伙企业法》第四十九条规定的情形之一的，经其他合伙人一致同意，可以决议将其除名。</p>
+							<p>对合伙人的除名决议应当书面通知被除名人。被除名人接到除名通知之日，除名生效，被除名人退伙。被除名人对除名决议有异议的，可以自接到除名通知之日起三十日内，向人民法院起诉。</p>
+							<p><span class="mr20">第二十五条</span>合伙人死亡或者被依法宣告死亡的，对该合伙人在合伙企业中的财产份额享有合法继承权的继承人，经全体合伙人一致同意，从继承开始之日起，取得该合伙企业的合伙人资格。</p>
+							<p>有《合伙企业法》第五十条规定的情形之一，合伙企业应当向合伙人的继承人退还被继承合伙人的财产份额。</p>
+							<p><span class="mr20">第二十六条</span>合伙人退伙，其他合伙人应当与该退伙人按照退伙时的合伙企业财产状况进行结算，退还退伙人的财产份额。退伙人对给合伙企业造成的损失负有赔偿责任的，相应扣减其应当赔偿的数额。退伙时有未了结的合伙企业事务的，待该事务了结后进行结算。
+退伙人在合伙企业中的财产份额，经全体合伙人决定，可以退还货币，也可以退还实物。</p>
+							<p><span class="mr20">第二十七条</span>合伙人退伙后，对基于其退伙前的原因发生的合伙企业债务，承担无限连带责任；退伙时，合伙企业财产少于合伙企业债务的，该退
+伙人应当依照本协议第十二条的规定分担亏损。</p>
+							<h5 class="tc mb30 fw fz14 mt20">第九章<span class="ml10">争议解决办法</span></h5>
+							<p><span class="mr20">第二十八条</span>合伙人履行合伙协议发生争议的，合伙人可以通过协商或者调解解决。不愿通过协商、调解解决或者协商、调解不成的，可以向人民法院起诉，或也可依据《合伙企业法》第一百零三条的规定在本条约定向仲裁机构申请仲裁。</p>
+							<p>合伙企业的解散与清算</p>
+							<p><span class="mr20">第二十九条</span>合伙企业有下列情形之一的，应当解散：</p>
+							<p>（一）合伙期限届满，合伙人决定不再经营；</p>
+							<p>（二）合伙协议约定的解散事由出现；</p>
+							<p>（三）全体合伙人决定解散；</p>
+							<p>（四）合伙人已不具备法定人数满三十天；</p>
+							<p>（五）合伙协议约定的合伙目的已经实现或者无法实现；</p>
+							<p>（六）依法被吊销营业执照、责令关闭或者被撤销；</p>
+							<p>（七）法律、行政法规规定的其他原因。</p>
+							<p><span class="mr20">第三十条</span>合伙企业应当按《合伙企业法》的规定进行清算。清算期间，合伙企业存续，但不得开展与清算无关的经营活动。合伙企业财产在支付清算费用和职工工资、社会保险费用、法定补偿金以及缴纳所欠税款、清偿债务后的剩余财产，依照本协议第十一条的规定进行
+分配。</p>
+							<p><span class="mr20">第三十一条</span>清算结束，清算人应当编制清算报告，经全体合伙人签名、盖章后，在十五日内向企业登记机关报送清算报告，申请办理合伙企业注销登记。</p>
+							
+							<h5 class="tc mb30 fw fz14 mt20">第十章<span class="ml10">违约责任</span></h5>
+							<p><span class="mr20">第三十二条</span>合伙人违反合伙协议的，应当依法承担违约责任。</p>
+							<h5 class="tc mb30 fw fz14 mt20">第十一章<span class="ml10">其他事项</span></h5>
+							<p><span class="mr20">第三十三条</span>经全体合伙人协商一致同意（注：也可根据《合伙企业法》第十九条第二款的规定在本条约定其它同意方式），可以修改或者补充合伙协议。</p>
+							<p><span class="mr20">第三十四条</span>本协议一式 2 份，合伙人各持一份，并报合伙企业登记机关一份。</p>
+							<p>本协议未尽事宜，按国家有关规定执行。</p>
+						</div>
+					</div>
+					
+					<!--分页-->
+					<div id="dgdPageDiv" class="paging">
+						<a pageIndex="up" href="javascript:void(0);">上一页</a>
+						<a class="hoverPage" pageIndex="1" href="javascript:void(0);">1</a>
+						<a  pageIndex="2" href="javascript:void(0);">2</a>
+						<a  pageIndex="3" href="javascript:void(0);">3</a>
+						<a  pageIndex="4" href="javascript:void(0);">4</a>
+						<a  pageIndex="next" href="javascript:void(0);">下一页</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

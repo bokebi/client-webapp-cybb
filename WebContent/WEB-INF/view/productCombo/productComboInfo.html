@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<%if(!isEmpty(seoComboInfo)){%>
+		<title>${seoComboInfo.title!}</title>
+		<meta name="keywords" content="${seoComboInfo.keywords!}" />
+		<meta name="description" content="${seoComboInfo.description!}" />
+		<%}%>
+		
+		<link rel="stylesheet" href="${ctxPath}/css/service/serviceCommon.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/service/accounting.css" />
+		<link rel="stylesheet" href="${ctxPath}/css/plugin/flexslider.css" type="text/css" />
+		<link rel="stylesheet" href="${ctxPath}/css/common/baseArea.css" />
+		<%includeFileTemplate("/html/dumCommon.html"){ %><%}%>
+		<script type="text/javascript" src="${ctxPath}/js/common/baseArea.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/plugin/jquery.flexslider-min.js"></script>
+		<script type="text/javascript" src="${ctxPath}/js/channel/index.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/plugin/tz_fly.js" ></script>
+		<script type="text/javascript" src="${ctxPath}/js/plugin/requestAnimationFrame.js"></script>
+		<script type="text/javascript" src="${ctxPath}/js/channel/changeService.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//左边产品显示
+				$(".productList dl dt").click(function(){
+					$(this).find("span").toggleClass("productrDtHover");	
+					$(this).next().toggle();
+				});
+				//服务详情
+				$(".contentDetailsList li").click(function(){
+					$(".contentDetailsList li").removeClass("hoverDetailsList");
+					$(this).addClass("hoverDetailsList");
+					var i = $(this).index();
+					$(".contentDetailsDiv > div").hide();
+					$($(".contentDetailsDiv1")[i]).show();
+				});
+				
+				
+			})
+		</script>
+		<style type="text/css">
+		.logo-center ul li img {
+    position: relative;
+    top: 30px!important;
+}
+		</style>
+	</head>	 
+	<body class="productModelBody">
+		<%includeFileTemplate("/WEB-INF/view/login/jumpLogin.html"){ %><%}%> 
+		<%includeFileTemplate("/html/nav_temp.html"){ %><%}%> 
+		<div class="w_1160 mb20">
+			<!--面包线-->
+			<div class="breadLines">
+				<img src="${ctxPath}/images/img/home.png" class="middle mr10"/><a href="${ctxPath}/">首页</a><span>></span>
+				<a href="javascript:void(0);" class="lineTit">${comboInfo.name!}</a>
+			</div>
+			<div>
+				<div class="fl banner">
+					<!--banner轮换-->
+					<div class="flexslider"> 
+				      <ul class="slides">
+							  	<li style="display: block;">
+									<a href="javascript:void(0);">
+								    	<img src="${comboInfo.imgFilePath}">
+								    </a>
+								</li>
+				      </ul> 
+					</div> 
+					<!--banner轮换 end-->
+				</div>
+				<div class="fl serviceLeft">
+					<h3 id="modelName" class="titH3 fl">${comboInfo.name}</h3>
+					<dl class="fl public">
+						
+					</dl>
+					<p class="cb"></p>
+					<div class="fz14 mt20 mb10 color50">${comboInfo.tilte!}</div>
+					<!--选择公司地址-->
+					<form id="frmService" autocomplete="off" method="post">
+						<input type="hidden" name="productId" value="${skuInfos.productId!}"/>
+						<input type="hidden" name="serviceId" value="${skuInfos.serviceId!}"/>
+						<input type="hidden" name="areaId" value="${skuInfos.areaId!}" />
+						<input type="hidden" name="nature" value="${skuInfos.nature!}"/>
+						<input type="hidden" name="periodNumber" value="${skuInfos.periodNumber!}"/>
+						<input type="hidden" name="attributeValueIds" value=""/>
+						<ul class="serviceArea pr">
+						<!-- 	<li class="close-li"><span class="icon icon-close"></span></li> -->
+							 <%if(!isEmpty(comboInfo.productSkus)){%>
+								<%for(sku in comboInfo.productSkus){%>
+									<li>
+										<dl class="taxesType attributeDl">
+										<dd class="texesTypeHover" ><label class="">${sku.name}</label></dd>
+										</dl>
+									</li>
+								<%}%>
+							<%}%>
+						</ul>
+					</form>
+					<div class="become">
+						<p class="serviceFees ml10 fl">
+							服务费 :<span>￥</span><b id="ordPrice">${comboInfo.price!}</b>
+						</p>
+						<p class="fr clinch mr10">
+							已成交<br /><span id="dljzCount">${comboInfo.orderCount!}</span>
+						</p>
+						<div class="cb"></div>
+					</div>
+					<dl class="buyCart">
+						<form action="${ctxPath}/ordCart/addCart.html" id="buyNowForm"  autocomplete="off">
+							<input type="hidden" name="skuId" id="skuId" value="${comboInfo.id!}"/>
+							<input type="hidden" name="type"  id="type"  value="${comboInfo.productType}"/>
+							<input type="hidden" name="count"  id="count" value="1"/>
+						</form>
+						<dd><a href="javascript:void(0);" class="buyNow" onclick="buyNowFun();">立即购买</a></dd>
+						<dd><a href="javascript:void(0);" class="addCart">加入购物车</a></dd>
+					</dl>					
+
+				</div>
+				<p class="cb"></p>
+			</div>
+			
+			<!--相关搜索，服务详情-->
+			<div class="centerLeft fl mt20">
+				<%includeFileTemplate("/WEB-INF/view/product/productLeft.html"){ %><%}%>
+			</div>
+			<div class="centerRight fl mt20">
+				<%if(!isEmpty(comboInfo.details)){%>
+					<ul class="contentDetailsList">
+						<%for(item in comboInfo.details){ var index = itemLP.index;%>
+								<li <%if(index==1){%> class="hoverDetailsList" <%}%>>${item.title}</li>
+						<%}%>
+					</ul>
+					<div class="contentDetailsDiv">
+						<%for(item in comboInfo.details){ var index1 = itemLP.index;%>
+								<%if(index1 == 1){%>
+									<div class="contentDetailsDiv1">
+								<%}else{%>
+									<div class="contentDetailsDiv1 none">
+								<%}%>
+						     			${item.productContent.content}
+						     		</div>
+						<%}%>
+					</div>
+				<%}%>
+			     
+			</div>
+			<div class="cb"></div>
+		</div>
+		</div>
+		<%includeFileTemplate("/html/footer_temp.html"){ %><%}%> 
+	</body>
+</html>

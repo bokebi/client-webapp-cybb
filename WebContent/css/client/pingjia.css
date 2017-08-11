@@ -1,0 +1,51 @@
+.right{background: #fff;padding-bottom:20px;color:#505050;position: relative;}
+.rightContent{padding:20px 30px 30px 30px;}
+.rightTop{overflow: hidden;height: 55px;line-height: 55px;padding-left:30px;padding-right:30px;margin-top:10px;border-bottom:1px solid #CCCCCC;}
+.right .rightTop h1{font-size:16px;float:left;}
+.right .rightTop a{float:right;display: inline-block;width:80px;height:38px;background: #30bef3;color:#fff;text-align: center;line-height: 38px;border-radius:10px;margin-top:10px;font-size:14px;font-weight: bold;}
+
+.rightContent .service-pj{height:140px;background: #f8f8f8;padding: 1px;}
+.rightContent .service-pj .pj-cont{height:110px;border-right:1px solid #dcdcdc;width: 255px;margin-top:10px;margin-left:20px;}
+.rightContent .pj-label{margin-top: 8px;margin-left: 20px;}
+.rightContent .pj-cont .img{margin-top:10px;}
+.rightContent .pj-label dl{float: left;margin:0px 8px;font-size:14px;}
+
+.colore66{color:#e66163;}
+.colorff8{color:#ff854e;font-size:14px;text-indent: 12px;margin-bottom:20px;margin-top:7px;}
+.score{margin-bottom: 15px;}
+.score p{display: inline-block;font-size:14px;color:#999999;width:125px;text-align: center;}
+.score span{font-size: 11px;display: inline-block;margin:0 3px;color:#666666;width:80px;text-align: right;}
+.scorei{display: inline-block;width:15px;height:16px;background: url("../../images/scoreicon.png")no-repeat;vertical-align: middle;cursor: pointer;}
+.ihover{display: inline-block;width:15px;height:16px;background: url("../../images/scoreiconRed.png")no-repeat;vertical-align: middle;cursor: pointer;}
+/* #business_score{margin-left:20px;} */
+
+#business_score span{width:150px;margin-bottom:10px;}
+
+.service-zs{height:385px;background: #f8f8f8;margin-top:10px;}
+.service-zs .zs-cont{width:255px;height:360px;border-right:1px solid #dcdcdc;margin-left:25px;margin-top: 15px;}
+.zs-cont p{color:#666666;margin:10px 0px;}
+.zs-cont .zs-title{color:#666666;width: 240px;}
+.zs-cont .zs-title p{display: inline-block;width: 118px;font-size:18px;}
+.zs-cont .zs-title p.xgm{text-align: right;font-size:12px;}
+.zs-cont .xf p{display: inline-block;}
+.zs-cont .xf-btn{display: inline-block;width:65px;height:30px;line-height: 30px;color:#FFFFFF;background: #fe8663;text-align: center;border-radius:10px;margin-left:5px;font-size:14px;}
+
+.scoreCont .score-text{padding-left:38px;margin-top:40px;position: relative;}
+.scoreCont label{vertical-align: top;margin-right:10px;color:#505050;}
+.scoreCont textarea{width:530px;height:100px;background: #fff;border:1px solid #30bef3;resize: none;}
+.scoreCont .num{position: absolute;right:30px;bottom:10px;color:#8f8f8f;}
+.scoreCont .pd{padding-left:100px;margin-top:2px;}
+.scoreCont .score-btn{color:#fff;background: #30bef3;width:220px;height:40px;line-height: 40px;border:none;text-align: center;display: inline-block;cursor: pointer;}
+/*提示框*/
+.prompt{width:340px;height:160px;position: absolute;top:50%;left:30%;background:#fff;
+    -webkit-box-shadow: 1px 2px 6px #ccc;
+    -moz-box-shadow: 1px 2px 6px #ccc;
+    box-shadow: 1px 2px 6px #ccc;}
+.prompt .prompttop{height:30px;line-height: 30px;color:#fff;font-weight:bold;background: #30bef3;}
+.prompt .prompttop p{width: 95%;display: inline-block;text-indent: 14px;}
+.prompt .pjcon{margin-top:30px;}
+.prompt .btn-clu{text-align: center;margin-top:10px;cursor: pointer;}
+.prompt .pj{text-align: center;margin: 0 auto;font-size:14px;line-height: 1.5;}
+.prompt .btn-clu button{width:50px;height:25px;line-height: 25px;text-align: center;margin:0px 25px;}
+.prompt .btn-clu .btn-que{background: #30bef3;color:#fff;border:1px solid #30bef3;}
+.prompt .btn-clu .btn-qx{background: #fafafa;border:1px solid #ccc;}
