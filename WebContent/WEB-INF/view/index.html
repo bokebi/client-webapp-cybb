@@ -191,38 +191,159 @@
 		</ul>
 	</div>
 
-	<!-- 创业模块 -->
-	<div class="start-business">
-		<h2 class="popular-services-h2">
-			开启创业之<span>路· 助</span>力企业发展
-		</h2>
-		<div class="start-business-main">
-			<div class="business-left">
-				<img src="${ctxPath}/images/newImg/business_bg.jpg">
-				<div class="business-category">
-					<%if(!isEmpty(serviceCategorySku)){var b = 0;for(item in
-					serviceCategorySku){%> <%if(!isEmpty(item.productSKUVos)){for (sku
-					in item.productSKUVos){b++;if(b<=15){%> <a
-						href=" ${ctxPath}/productModel/sku_${sku.id}.html" target="_blank">${sku.name}</a>
-					<%}}}%> <%}}%>
-				</div>
+	<!-- 咨询模块 -->
+	<style type="text/css">
+		.jqr_gt{
+			margin: 50px auto;
+		}
+		.jqr_gt_top{
+			display: inline-block;
+			margin-left: 15px;
+		}
+		.jqr_gt_top img{
+			vertical-align: top;
+		}
+		.jqr_gt_top p{
+			font-size: 16px;
+			color: #323232;
+		}
+		.jqr_gttable{
+			font-size: 0;
+		}
+		.jqr_gttable ul{
+			height: 50px;
+		}
+		.jqr_gttable li{
+		    display: inline-block;
+		    height: 50px;
+		    width: 400px;
+		    box-sizing: border-box;
+		    border-left: 1px solid #ff9f00;
+		    border-bottom: 1px solid #ff9f00;
+		    vertical-align: top;
+		}
+		.jqr_gttable_top{
+		     height: 40px;
+   			 border: 1px solid #ff9f00;
+		}
+		.jqr_gttable li:nth-last-of-type(1){
+			border-right: 1px solid #ff9f00;
+		}
+		.jqr_gttable_top p{
+			font-size: 18px;
+			color: #323232;
+			font-weight: bold;
+			margin: 8px 40px;
+		}
+		.jqr_gttable_top p span{
+			color: #fff;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			background-color: #ffad00;
+			border-radius: 50%;
+		}
+		.jqr_gttable li span{
+			display: inline-block;
+			width: 210px;
+			font-size: 16px;
+			color: #323232;
+			text-align: right;
+			line-height: 48px;
+		}
+		.jqr_gttable li a{
+		    display: inline-block;
+		}
+		.jqr_gttable li img{
+		    margin-left: 25px;
+    		vertical-align: bottom;
+		}
+		.jqr_gtxq{
+			border: 2px solid #f4a100;
+			margin-top: 25px;
+		}
+		.jqr_gtxq_top{
+			background-color: #f4a100;
+			height: 40px;
+		}
+		.jqr_gtxq_top p{
+			font-size: 14px;
+			color: #fff;
+			line-height: 40px;
+		}
+		.jqr_gtxq_top p span{
+			width: 30px;
+			height: 30px;
+			display: inline-block;
+			background: #fff url(../images/jqr_mkgt.png) no-repeat 5px 6px;
+			border-radius: 50%;
+			margin: 0 10px 0 20px;
+			vertical-align: middle;
+		}
+	</style>
+	<div class="w_1200 jqr_gt">
+		<div style="margin-left: 30px;">
+			<img src="${ctxPath}/images/jqr_mk.png" style="margin-bottom: -18px;"/>
+			<div class="jqr_gt_top">
+				<img src="${ctxPath}/images/jqr_mktop.png"/>
+				<p>沉淀全国10000+工商财税常见问题</p>
 			</div>
-			<div class="business-right">
-				<ul class="category-ulmore">
-					<%if(!isEmpty(serviceCategorySku)){var a = 0;for(item in
-					serviceCategorySku){%> <%if(!isEmpty(item.productSKUVos)){for (sku
-					in item.productSKUVos){a++;if(a<=9){%>
-					<li><a href="${ctxPath}/productModel/sku_${sku.id}.html"
-						target="_blank">
-							<h4 class="category-h4">${sku.name}</h4>
-							<p>${sku.name}</p>
-							<div class="price">
-								<label>￥<big>${sku.price}</big></label>起
-							</div> <img src="${ctxPath}/images/cy_${a}.jpg" class="category-bg" />
-					</a></li> <%}}}%> <%}}%>
-				</ul>
+		</div>
+		<div class="jqr_gttable">
+			<div class="jqr_gttable_top">
+				<p><span>?</span>常见问题3秒获取答案</p>
 			</div>
-			<div class="clear"></div>
+			<ul>
+				<li>
+					<span>各类公司经营范围大全?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a>
+				</li>
+				<li>
+					<span>注册公司流程?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				<li>
+					<span>注册公司准备材料?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<span>注册公司如何核名?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+				<li>
+					<span>公司注册资金怎么填?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+				<li>
+					<span>公司成立后怎么报税?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<span>如何查询公司信息?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+				<li>
+					<span>公司不报税会怎么样?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+				<li>
+					<span>公司一定要买社保吗?</span>
+					<a href="javascript:;"><img src="${ctxPath}/images/jqr_mkdj.png"/></a></li>
+				</li>
+			</ul>
+		</div>
+		<div class="jqr_gtxq">
+			<!--<div class="jqr_gtxq_top">
+				<p><span></span>工商政策机器人正在与您对话</p>
+			</div>-->
+			<iframe src="http://lzt.zoosnet.net/LR/Chatpre.aspx?id=LZT58330793&lng=cn" width="100%" height="400" style="border: none;">
+				
+			</iframe>
 		</div>
 	</div>
 
@@ -590,6 +711,7 @@
 			$(".childNav").show();
 			$(".childNavDl").show();
 			$(".clildNavDiv").hide();
+			
 			$(".title .close").click(function() {
 				$(".propBox").hide();
 				$("input[name=nuclearText]").val("");
