@@ -81,8 +81,6 @@
 				</form>
 			</div>
 		</div>
-
-
 		<!-- 免费查询您想注册的公司名称 end -->
 
 		<!--核名成功框-->
@@ -608,10 +606,11 @@
 			${recordnoexternalinfo.word} 
 		<%}%>
 	</div>
-	<%if(!isEmpty(baiduexternalinfo)){%> ${baiduexternalinfo.word} <%}%>
 	
 	<script type="text/javascript" src="${ctxPath}/js/index/superslide.js"></script>
 	<script type="text/javascript" src="${ctxPath}/js/channel/banner.js"></script>
+	<script type="text/javascript" src="${ctxPath}/js/nav_temp.js"></script>
 	<script type="text/javascript" src="${ctxPath}/js/only_index.js"></script>
+	<%if(!isEmpty(baiduexternalinfo)){%> ${baiduexternalinfo.word} <%}%>
 </body>
 </html>
